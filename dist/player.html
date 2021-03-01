@@ -13,11 +13,15 @@
   </head>
   <body>
     <iframe id="player" src="" width="465" height="465"></iframe>
+    <p><a id="link" href="" target="_blank">open original</a></p>
     <script type="text/javascript">
       if (location.hash) {
         const hash = location.hash.split("#")[1];
         const playerElem = document.getElementById("player");
-        playerElem.src = `/codes/${hash}/`;
+        const src = `/codes/${hash}/`;
+        playerElem.src = src;
+        const link = document.getElementById("link");
+        link.href = src;
       }
     </script>
   </body>

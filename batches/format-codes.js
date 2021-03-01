@@ -1,6 +1,6 @@
 const fs = require("fs");
 const path = require("path");
-const { v4: uuidv4 } = require("uuid");
+const { v5: uuidv5 } = require("uuid");
 const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const IOUtils = require("./utils/IOUtils");
@@ -28,6 +28,8 @@ const cdnReplacers = [
 
 const srcRootPath = path.join(process.cwd(), "src/archives");
 const distRootPath = path.join(process.cwd(), "dist");
+
+const codesDistRootPath = path.join(distRootPath, "codes");
 
 const distIndexFilePath = path.join(distRootPath, "index.html");
 
@@ -100,11 +102,13 @@ function buildIndexHTML(content) {
 async function main() {
   const dirs = IOUtils.getDirectories(srcRootPath);
 
-  await IOUtils.removeDir(distRootPath);
+  await IOUtils.removeDir(codesDistRootPath);
 
-  await IOUtils.createDir(distRootPath);
+  await IOUtils.createDir(codesDistRootPath);
 
   let indexContents = "";
+
+  dirs.sort();
 
   await Promise.all(
     dirs.map(async (dirName) => {
@@ -112,11 +116,16 @@ async function main() {
         path.join(srcRootPath, dirName)
       );
 
-      const newDirName = uuidv4();
+      const newDirName = uuidv5(
+        dirName,
+        "82b8e05c-4623-4c75-afc9-d986065f581c"
+      );
 
-      indexContents += `<p><a href="/${newDirName}/" target="_blank">${dirName}</a></p>\n`;
+      indexContents += `<p><a href="/player.html#${newDirName}" target="_blank">${dirName}</a></p>\n`;
 
-      const codeDistRootPath = path.join(distRootPath, newDirName);
+      const codeDistRootPath = path.join(codesDistRootPath, newDirName);
+
+      await IOUtils.removeDir(codeDistRootPath);
 
       await IOUtils.createDir(codeDistRootPath);
 

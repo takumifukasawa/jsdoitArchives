@@ -1,0 +1,29 @@
+$color: #3b5998;
+
+
+@mixin step($margin: 10px, $step: 1) {
+    top: $margin * $step;
+    left: $margin * $step;
+    background-color: lighten($color, $step * 3%);
+    //background-color: darken($color, $step * 10%);
+}
+
+
+.wrapper {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.box {
+    width: 100px;
+    height: 100px; 
+    opacity: 0.5;
+    position: absolute;
+}
+
+@for $i from 1 through 15 {
+    .box#{$i} {
+        @include step(20px, $i);
+    }
+}

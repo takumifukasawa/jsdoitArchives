@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background: #fff;
+  font: 30px sans-serif; }
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.default-input {
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.hour, .minutes {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  position: relative; }
+
+.content {
+  position: relative;
+  overflow: hidden; }
+
+.time {
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  position: relative;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: white; }
+
+#input-time {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 88px; }
+
+.hour-ten, .minutes-ten, .hour-one, .minutes-one {
+  width: 59px;
+  height: 84px;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .hour-ten[data-num="0"], .minutes-ten[data-num="0"], .hour-one[data-num="0"], .minutes-one[data-num="0"] {
+    background-image: url("http://jsrun.it/assets/K/P/a/j/KPajb.png"); }
+  .hour-ten[data-num="1"], .minutes-ten[data-num="1"], .hour-one[data-num="1"], .minutes-one[data-num="1"] {
+    background-image: url("http://jsrun.it/assets/m/G/s/3/mGs3F.png"); }
+  .hour-ten[data-num="2"], .minutes-ten[data-num="2"], .hour-one[data-num="2"], .minutes-one[data-num="2"] {
+    background-image: url("http://jsrun.it/assets/y/w/m/X/ywmXq.png"); }
+  .hour-ten[data-num="3"], .minutes-ten[data-num="3"], .hour-one[data-num="3"], .minutes-one[data-num="3"] {
+    background-image: url("http://jsrun.it/assets/m/F/0/T/mF0Te.png"); }
+  .hour-ten[data-num="4"], .minutes-ten[data-num="4"], .hour-one[data-num="4"], .minutes-one[data-num="4"] {
+    background-image: url("http://jsrun.it/assets/U/q/K/p/UqKpv.png"); }
+  .hour-ten[data-num="5"], .minutes-ten[data-num="5"], .hour-one[data-num="5"], .minutes-one[data-num="5"] {
+    background-image: url("http://jsrun.it/assets/U/q/R/K/UqRKh.png"); }
+  .hour-ten[data-num="6"], .minutes-ten[data-num="6"], .hour-one[data-num="6"], .minutes-one[data-num="6"] {
+    background-image: url("http://jsrun.it/assets/q/D/2/C/qD2CF.png"); }
+  .hour-ten[data-num="7"], .minutes-ten[data-num="7"], .hour-one[data-num="7"], .minutes-one[data-num="7"] {
+    background-image: url("http://jsrun.it/assets/g/Z/a/m/gZamV.png"); }
+  .hour-ten[data-num="8"], .minutes-ten[data-num="8"], .hour-one[data-num="8"], .minutes-one[data-num="8"] {
+    background-image: url("http://jsrun.it/assets/u/i/Z/s/uiZs5.png"); }
+  .hour-ten[data-num="9"], .minutes-ten[data-num="9"], .hour-one[data-num="9"], .minutes-one[data-num="9"] {
+    background-image: url("http://jsrun.it/assets/W/z/i/t/WzitF.png"); }

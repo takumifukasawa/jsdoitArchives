@@ -1,0 +1,11 @@
+@import "compass/reset";
+
+img, canvas {
+    vertical-align: top;
+}
+
+#ctrl {
+    position: absolute;
+    left: 0;
+    top: 0;
+}

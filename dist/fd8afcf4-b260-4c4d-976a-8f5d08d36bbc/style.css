@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #fdf;
+  font-family: "Nikukyu", sans-serif;
+  font-size: 90px;
+  color: #ef6767;
+}

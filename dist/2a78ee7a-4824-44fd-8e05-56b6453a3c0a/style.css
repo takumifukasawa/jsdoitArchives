@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+#wrapper {
+  width: 465px;
+  height: 465px;
+  background-color: #000;
+  overflow: hidden; }
+
+#spinner {
+  width: 150px;
+  height: 10px;
+  margin: 228px auto 0 auto;
+  font-size: 0;
+  text-align: center; }
+
+.spinner__item {
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #fff;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  opacity: 0.8;
+  animation: 1.4s ease-in-out infinite both; }
+  .spinner__item:nth-child(n+2) {
+    margin-left: 5px; }
+
+@keyframes loading {
+  0%, 45%, 100% {
+    transform: scale(1);
+    opacity: 0.8; }
+  20% {
+    transform: scale(0.15);
+    opacity: 0.4; } }

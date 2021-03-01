@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+body{
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color:#2262D1;
+    }
+}
+
+
+@media screen and (max-width: 980px) and (min-width: 769px){
+     body {
+        background-color:#f10010;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 981px) {
+    body {
+        background-color:#F9DF2C;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    body {
+        background-color: #68B876;
+    }
+}
+
+
+/*
+
+$bp__pc_big: 1200px;
+$bp__pc: 980px;
+$bp__tablet: 768px;
+$bp__sp: 320px;
+
+@mixin media($media-width) {
+	@if $media-width == sp {
+		@media screen and (max-width: $bp__sp) {
+			@content;
+		}
+	}
+	@else if $media-width == tablet {
+		@media screen and (max-width: $bp__tablet) {
+			@content;
+		}
+	}
+	@else if $media-width == pc_big {
+		@media screen and (max-width: $bp__pc_big) {
+			@content;
+		}
+	}
+}
+
+
+
+.wa{
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:10px;
+    left:10px;
+    background-color:green;
+    
+    @include media(sp){
+        background-color:red;
+    }
+    @include media(tablet){
+        background-color:blue;
+    }
+    @include media(pc_big){
+        background-color:white;
+    }
+    
+}
+*/
+

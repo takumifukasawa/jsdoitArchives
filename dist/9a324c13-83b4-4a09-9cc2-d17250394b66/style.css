@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.scroll-container {
+  position: absolute;
+  top: 30px;
+  width: 180px;
+  height: 400px;
+  overflow: scroll; }
+  .scroll-container::-webkit-scrollbar {
+    width: 5px;
+    background-color: #123456; }
+  .scroll-container::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    border-radius: 3px; }
+  .scroll-container::-webkit-scrollbar:horizontal {
+    height: 0px;
+    background-color: transparent; }
+
+.scroll-container-1 {
+  left: 30px; }
+
+.scroll-container-2 {
+  right: 30px;
+  -webkit-overflow-scrolling: touch; }
+
+.scroll-content {
+  height: 800px; }

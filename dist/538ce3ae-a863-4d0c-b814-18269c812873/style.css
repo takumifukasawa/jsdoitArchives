@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #dfd;
+  font: 30px sans-serif;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+}

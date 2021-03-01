@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background-color: black;
+  height: 2000px;
+  position: relative; }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0; }

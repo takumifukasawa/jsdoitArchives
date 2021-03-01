@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #dff;
+  font: 14px sans-serif;
+  line-height: 1.6em;
+  word-break: break-word;
+}
+
+span {
+    font-weight: bold;
+}

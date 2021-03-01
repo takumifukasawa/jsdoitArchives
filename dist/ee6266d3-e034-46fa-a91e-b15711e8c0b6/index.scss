@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#back {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+}
+
+#clip {
+    clip-path: circle(0px at 0px 0px);
+    -webkit-clip-path: circle(0px at 0px 0px);
+}

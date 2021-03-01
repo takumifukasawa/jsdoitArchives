@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+$width: 465px;
+$height: 465px;
+
+#wrapper {
+    background-color: #000;
+    width: $width;
+    height: $height;
+    overflow: hidden;
+}
+
+$box-size: 30px;
+
+.container {
+    width: $box-size;
+    height: $box-size;
+    position: relative;
+    margin-top: ($width - $box-size) / 2;
+    margin-left: ($height - $box-size) / 2
+}
+
+.box {
+    width: $box-size/2;
+    height: $box-size/2;
+    position: absolute;
+    background-color: #fff;
+}
+
+
+$time: 0.5s;
+$easing: linear;
+$deg: 90deg;
+
+.rotate1 {
+    top: 0px;
+    left: 0px;
+    animation: rotate1 $time $easing both;
+}
+.rotate2 {
+    top: $box-size/2;
+    left: 0px;
+    animation: rotate2 $time $easing both;
+}
+.rotate3 {
+    top: $box-size/2;
+    left: $box-size/2;
+    animation: rotate3 $time $easing both;
+}
+.rotate4 {
+    top: 0px;
+    left: $box-size/2;
+    animation: rotate4 $time $easing both;
+}
+
+
+@keyframes rotate1 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    100% {
+        transform: translate(0px, $box-size/2) rotate(-$deg);
+    }
+}
+
+
+@keyframes rotate2 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+
+    }
+    100% {
+        transform: translate($box-size/2, 0px) rotate(-$deg);
+    }
+}
+
+
+@keyframes rotate3 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+
+    }
+    100% {
+        transform: translate(0px, -($box-size/2)) rotate(-$deg);
+    }
+}
+
+
+@keyframes rotate4 {
+    0% {
+        transform: translate(0px, 0px) rotate(0deg);
+
+    }
+    100% {
+        transform: translate(-($box-size/2), 0px) rotate(-$deg);
+    }
+}
+
+
+
+
+
+
+
+

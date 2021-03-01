@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.scroll-container {
+    position: absolute;
+    top: 30px;
+    width: 180px;
+    height: 400px;
+    overflow: scroll;
+    
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: #123456;
+    }
+        
+    &::-webkit-scrollbar-thumb {
+        background-color: #cccccc;
+        border-radius: 3px;
+    }
+    
+    &::-webkit-scrollbar:horizontal {
+        height: 0px;
+        background-color: transparent;
+    }
+}
+
+.scroll-container-1 {
+    left: 30px;
+
+
+    
+
+}
+
+.scroll-container-2 {
+    right: 30px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scroll-content {
+    height: 800px;
+}

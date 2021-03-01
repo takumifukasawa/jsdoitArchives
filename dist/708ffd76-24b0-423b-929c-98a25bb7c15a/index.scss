@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.stamp, .credit {
+    position: absolute;
+}
+
+.stamp {
+    opacity: 0;
+}
+
+.credit {
+    right: 0;
+    bottom: 0;
+}
+
+.animate {
+    animation: stamp 0.4s ease-in 1 forwards;
+} 
+
+
+//========================
+// animation
+//========================
+
+
+$before-deg: 4deg;
+$after-deg: 5deg;
+
+@mixin shake-transform($moveX: 0px, $moveY: 0px, $scale: 1.0, $rotate: $after-deg) {
+    transform: translate($moveX, $moveY) scale($scale) rotate($rotate)
+} 
+
+@keyframes stamp {
+    0% {
+        opacity: 0;
+        @include shake-transform(0px, 0px, 1.2, $before-deg);
+    }
+    60% {
+        opacity: 1.0;
+        @include shake-transform(0px, 0px, 1.0);
+    }
+    70% {
+        @include shake-transform(0px, 0px, 1.0);
+    }
+    75% {
+        @include shake-transform(4px, 4px, 1.0);
+    }
+    80% {
+        @include shake-transform(3px, -3px, 1.0);
+    }
+    85% {
+        @include shake-transform(-3px, 3px, 1.0);
+    }
+    90% {
+        @include shake-transform(-2px, -2px, 1.0);
+    }
+    95% {
+        @include shake-transform(2px, 2px, 1.0);
+    }
+    100% {
+        opacity: 1.0;
+        @include shake-transform(0px, 0px, 1.0);
+    }
+}

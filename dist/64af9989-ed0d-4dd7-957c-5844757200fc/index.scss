@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font: 30px sans-serif;
+}
+
+@keyframes anime {
+    0% {
+        color: red;
+    }
+    100% {
+        color: green;
+    }
+}
+
+.para {
+    &.change {
+        animation: anime 2s ease-in-out 1;
+    }
+}

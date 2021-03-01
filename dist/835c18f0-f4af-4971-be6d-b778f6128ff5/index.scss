@@ -1,0 +1,43 @@
+@import "compass/reset";
+
+body {
+    background: #a3a3a3;
+}
+
+.console {
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 20px 20px;
+    border-radius: 15px;
+    width: 240px;
+    color: #3e3e3e;
+    font: 20px AvenirNext-Heavy;
+    text-align: right;
+    background: #e3e3e3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .8) inset;
+}
+
+.btn {
+    float: left;
+    margin: 20px;
+    border-radius: 50%;
+    width: 100px; height: 100px;
+    color: #e3e3e3;
+    font: 20px AvenirNext-Heavy;
+    line-height: 100px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5) inset;
+    }
+}
+
+.prev {
+    background: #00B0FF;
+}
+
+.next {
+    background: #F50057;
+}

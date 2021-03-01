@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+.wrapper {
+  background-color: red; }
+  .wrapper:before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; }

@@ -1,0 +1,1 @@
+$("#test").fadeIn(3500).addClass("trans");

@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+img, canvas {
+    position: absolute;
+}
+
+img { 
+    opacity: 0;
+}

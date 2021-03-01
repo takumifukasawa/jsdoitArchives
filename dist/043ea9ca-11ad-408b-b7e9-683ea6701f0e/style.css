@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background: #fdd;
+  font: 30px sans-serif; }
+
+.empty-target:empty {
+  background-color: yellow; }
+  .empty-target:empty:before {
+    content: "this is empty.";
+    display: block; }

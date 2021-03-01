@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    background-color: #000;
+    border:none;
+}
+
+.wrapper {
+    width: 465px;
+    height: 465px;
+    position: relative;
+}
+
+.absolute-center {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;    
+}
+
+$circle-wrapper-size: 100px;
+$circle-border: 2px;
+
+.circle-wrapper {
+    width: $circle-wrapper-size;
+    height: $circle-wrapper-size;
+    border: solid $circle-border #fff;
+    border-radius: $circle-wrapper-size/2;
+    box-sizing: border-box;
+    animation: circle-wrapper-rotate 4s ease-in-out infinite both;
+}
+
+$circle-item-size: 10px;
+
+.circle {
+    width: $circle-item-size;
+    height: $circle-item-size;
+    position: absolute;
+    background-color: #fff;
+    border-radius: $circle-item-size/2;
+}
+
+.circle-item {
+    top: ($circle-wrapper-size - $circle-item-size) / 2 - $circle-border;
+    left: -(($circle-item-size + $circle-border)/2);
+}
+
+.circle-node {
+    width: $circle-wrapper-size/2;
+    height: $circle-border;
+    background-color: #fff;
+    position: absolute;
+    top: ($circle-wrapper-size)/2 - $circle-border*3/2;
+    left: -($circle-item-size/2);
+    border-box: box-sizing;
+    
+}
+
+
+@keyframes circle-wrapper-rotate {
+    0% {
+        transform: rotate(0deg) scale(1.0);
+    }
+    20% {
+        transform: rotate(70deg) scale(1.2);
+    }
+    50% {
+        transform: rotate(190deg) scale(0.8);
+    }
+    70% {
+        transform: rotate(240deg) scale(1.3);
+    }
+    100% {
+        transform: rotate(360deg) scale(1.0);
+    }
+}

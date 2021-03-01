@@ -1,0 +1,5 @@
+body @media screen and (max-width: 320px) {
+  div {
+    width: 400px;
+  }
+}

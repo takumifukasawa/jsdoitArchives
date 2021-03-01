@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #fdf;
+  font: 30px sans-serif;
+}
+
+.hira-gothic {
+    font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', sans-serif;
+}
+
+.hira-mincho {
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', serif;
+}
+
+.yu-gothic {
+    font-family: '游ゴシック', 'Yu Gothic', sans-serif;
+}
+
+.yu-mincho {
+    font-family: "游明朝", "Yu Mincho", "游明朝体", YuMincho, serif;
+}

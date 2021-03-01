@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background-color: #fff; }
+
+#wrapper {
+  position: relative; }
+
+.content {
+  position: absolute;
+  margin: 0 auto; }
+
+.circle {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px; }

@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font: 30px sans-serif;
+}
+
+#wrapper {
+    width: 465px;
+    height; 465px;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    transition: top 1s ease-in-out, left 1s ease-in-out, background-color 1s ease-in-out;
+    opacity: 0.5;
+    animation: fuwa 2s ease-in-out infinite;
+}
+
+@keyframes fuwa {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.pos1 {
+    top: 60px;
+    left: 60px;
+    background-color: red;
+}
+
+.pos2 {
+    top: 60px;
+    left: 300px;
+    background-color: blue;
+}
+
+.pos3 {
+    top: 200px;
+    left: 180px;
+    background-color: green;
+}

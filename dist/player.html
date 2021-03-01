@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      iframe {
+        border: solid 1px #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="player" src="" width="465" height="465"></iframe>
+    <script type="text/javascript">
+      if (location.hash) {
+        const hash = location.hash.split("#")[1];
+        const playerElem = document.getElementById("player");
+        playerElem.src = `/codes/${hash}/`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 const IOUtils = require("./utils/IOUtils");
 
 const cdnReplacers = [
@@ -24,44 +25,51 @@ const cdnReplacers = [
 ];
 
 const srcRootPath = path.join(process.cwd(), "src/archives");
-const replacedRootPath = path.join(process.cwd(), "src/replaced");
+const distRootPath = path.join(process.cwd(), "dist");
 
-const dirs = IOUtils.getDirectories(srcRootPath);
+async function main() {
+  const dirs = IOUtils.getDirectories(srcRootPath);
 
-dirs.forEach(async (dirName) => {
-  const files = await IOUtils.getFilesInDirectory(
-    path.join(srcRootPath, dirName)
-  );
+  await IOUtils.removeDir(distRootPath);
 
-  await IOUtils.createDir(path.join(replacedRootPath, dirName));
+  await IOUtils.createDir(distRootPath);
 
-  files.forEach((fileName) => {
-    const content = fs.readFileSync(
-      path.join(srcRootPath, dirName, fileName),
-      "utf8"
+  dirs.forEach(async (dirName) => {
+    const files = await IOUtils.getFilesInDirectory(
+      path.join(srcRootPath, dirName)
     );
 
-    let newContent = content;
+    const newDirName = uuidv4();
 
-    cdnReplacers.forEach((replacer) => {
-      const matched = content.match(replacer.regex);
-      if (!matched) return;
-      const [oldCdn, version] = matched;
-      const newCdn = replacer.buildCdn(version);
-      newContent = content.replace(oldCdn, newCdn);
+    const codeDistRootPath = path.join(distRootPath, newDirName);
+
+    await IOUtils.createDir(codeDistRootPath);
+
+    files.forEach((fileName) => {
+      const content = fs.readFileSync(
+        path.join(srcRootPath, dirName, fileName),
+        "utf8"
+      );
+
+      let newContent = content;
+
+      cdnReplacers.forEach((replacer) => {
+        const matched = content.match(replacer.regex);
+        if (!matched) return;
+        const [oldCdn, version] = matched;
+        const newCdn = replacer.buildCdn(version);
+        newContent = content.replace(oldCdn, newCdn);
+      });
+
+      const writePath = path.join(codeDistRootPath, fileName);
+      fs.writeFileSync(writePath, newContent, (err) => {
+        if (err) throw err;
+      });
+
+      // const b = a.replace(jqueryRegex);
+      // console.log(a);
     });
-
-    const writePath = path.join(
-      process.cwd(),
-      "src/replaced",
-      dirName,
-      fileName
-    );
-    fs.writeFileSync(writePath, newContent, (err) => {
-      if (err) throw err;
-    });
-
-    // const b = a.replace(jqueryRegex);
-    // console.log(a);
   });
-});
+}
+
+main();

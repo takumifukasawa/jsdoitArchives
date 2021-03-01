@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const { v4: uuidv4 } = require("uuid");
+const sass = require("sass");
+const CoffeeScript = require("coffeescript");
 const IOUtils = require("./utils/IOUtils");
 
 const cdnReplacers = [
@@ -27,6 +29,49 @@ const cdnReplacers = [
 const srcRootPath = path.join(process.cwd(), "src/archives");
 const distRootPath = path.join(process.cwd(), "dist");
 
+/**
+ *
+ *
+ * @param {*} file
+ * @param {*} content
+ * @returns
+ */
+async function compileScss(file, content) {
+  return new Promise((resolve, reject) => {
+    sass.render({ file }, (err, result) => {
+      if (err) {
+        reject(content);
+        return;
+      }
+      resolve(result);
+    });
+  });
+}
+
+/**
+ *
+ *
+ * @param {*} file
+ * @param {*} content
+ * @returns
+ */
+async function compileCoffee(content) {
+  return new Promise((resolve, reject) => {
+    const res = CoffeeScript.compile(newContent, {
+      transpile: { presets: ["@babel/env"] },
+    });
+    if (!res) {
+      reject(content);
+      return;
+    }
+    resolve(res);
+  });
+}
+
+/**
+ *
+ *
+ */
 async function main() {
   const dirs = IOUtils.getDirectories(srcRootPath);
 
@@ -45,11 +90,11 @@ async function main() {
 
     await IOUtils.createDir(codeDistRootPath);
 
-    files.forEach((fileName) => {
-      const content = fs.readFileSync(
-        path.join(srcRootPath, dirName, fileName),
-        "utf8"
-      );
+    files.forEach(async (fileName) => {
+      const srcFilePath = path.join(srcRootPath, dirName, fileName);
+      const writePath = path.join(codeDistRootPath, fileName);
+
+      const content = fs.readFileSync(srcFilePath, "utf8");
 
       let newContent = content;
 
@@ -61,13 +106,21 @@ async function main() {
         newContent = content.replace(oldCdn, newCdn);
       });
 
-      const writePath = path.join(codeDistRootPath, fileName);
+      const ext = path.extname(fileName).split(".")[1];
+
+      // compile sass
+      if (ext === "scss") {
+        newContent = await compileScss(srcFilePath, newContent);
+      }
+
+      // compile coffee script
+      if (ext === "coffee") {
+        newContent = await compileCoffee(newContent);
+      }
+
       fs.writeFileSync(writePath, newContent, (err) => {
         if (err) throw err;
       });
-
-      // const b = a.replace(jqueryRegex);
-      // console.log(a);
     });
   });
 }

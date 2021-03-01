@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.wrapper {
+    width: 465px;
+    height: 465px;
+    position: relative;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: red;
+    &:after {
+        content: '';
+        display: block;
+        width: 150px;
+        height: 150px;
+        background-color: green;
+        position: absolute;
+        top: -25px;
+        left: -25px;
+    }
+    &:hover {
+        &:after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            cursor: pointer;
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            pointer-events: none;
+        }
+    }
+}

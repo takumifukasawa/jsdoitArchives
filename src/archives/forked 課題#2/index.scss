@@ -1,0 +1,78 @@
+@import "compass/reset";
+
+/* $speed = "0.1s"; */
+
+body {
+    font: 14px Poiret One;
+    background: #e3e3e3;
+}
+
+.btn {
+    width: 80px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    transition: box-shadow .2s ease-in-out;
+    
+    &:hover {
+        box-shadow: 0 0 1px rgba(0, 0, 0, .4);
+    }
+}
+
+.open {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+}
+
+
+.popup {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+    padding: 20px;
+    width: 320px; height: 180px;
+    background: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+    
+    transition: opacity 0.1s ease-in;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 10;
+    
+    .btn {
+        position: absolute;
+        right: 20px; bottom: 20px;
+    }
+    
+/*     &.bigger {
+        transform: scale(1.2);
+    } */
+    
+    &.show {
+        opacity: 100;
+  /*  transform: scale(1); */
+        pointer-events: auto;
+    }
+    
+}
+
+.overlay {
+    background: #000;
+    /* visibility: hidden; */
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    pointer-events: none;
+    
+    &.show {
+        /* visibility: visible; */
+        opacity: .8;
+    }
+ }
+

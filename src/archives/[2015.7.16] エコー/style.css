@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+#wrapper {
+  width: 465px;
+  height: 465px;
+  background-color: #000;
+  overflow: hidden; }
+
+#spinner {
+  transform: rotate(-45deg);
+  margin-top: 100px;
+  margin-left: 50px; }
+
+.item {
+  border-radius: 4px;
+  width: 4px;
+  background-color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px; }
+  .item:nth-child(0) {
+    height: 30px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 0s; }
+  .item:nth-child(1) {
+    height: 50px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 0.2s; }
+  .item:nth-child(2) {
+    height: 70px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 0.4s; }
+  .item:nth-child(3) {
+    height: 90px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 0.6s; }
+  .item:nth-child(4) {
+    height: 110px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 0.8s; }
+  .item:nth-child(5) {
+    height: 130px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 1s; }
+  .item:nth-child(6) {
+    height: 150px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 1.2s; }
+  .item:nth-child(7) {
+    height: 170px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 1.4s; }
+  .item:nth-child(8) {
+    height: 190px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 1.6s; }
+  .item:nth-child(9) {
+    height: 210px;
+    animation: echo 2.5s ease-in-out infinite both;
+    animation-delay: 1.8s; }
+
+@keyframes echo {
+  0% {
+    opacity: 0;
+    transform: translate(-10px, 0px); }
+  40% {
+    opacity: 1;
+    transform: translate(0px, 0px); }
+  80% {
+    opacity: 0;
+    transform: translate(-4px, 0px); }
+  100% {
+    opacity: 0; } }

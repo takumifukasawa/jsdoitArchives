@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+#wrapper {
+    width: 465px;
+    height: 465px;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    
+    &.current {
+        z-index: 2;
+    }
+    
+    &.scaleout {   
+        animation: material 2s ease-in-out both;
+    }
+    
+    &.framein {
+        animation: frame-in 0.5s ease-in-out both;
+    }
+    
+    &.first {
+        background-color: #FF8900;
+    }
+
+    &.secound {       
+        background-color: #fff;
+
+    }
+}
+    
+
+
+
+@keyframes material {
+    0% {
+        transform: scale(1.0);
+    }
+    40% {
+        transform: scale(0.3);
+    }
+    45% {
+        transform: scale(0.3);
+    }
+    100% {
+        transform: scale(9);
+    }
+}
+
+@keyframes frame-in {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}

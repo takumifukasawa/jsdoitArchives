@@ -1,0 +1,21 @@
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body {
+	font: 14px sans-serif;
+	background: #111122;
+}
+canvas {
+	background-color: #111122;
+    /*
+    width: 100%;
+    height: 100%;
+    */
+}
+.controls a {
+	text-decoration: none;
+	color: #ccf;
+	padding: 10px;
+}

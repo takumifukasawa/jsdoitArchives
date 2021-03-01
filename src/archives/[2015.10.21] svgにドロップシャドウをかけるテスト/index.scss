@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    background-color: #000
+}
+
+$offset: 20000;
+
+path {
+    stroke-width: 2;
+    fill: none;
+    stroke: #ffffff;
+    //stroke-dasharray: $offset;
+    //stroke-dashoffset: $offset;
+    //animation: svg-draw 30s ease-in-out infinite alternate forwards;
+}
+
+
+@keyframes svg-draw {
+    0% {
+        stroke-dashoffset: $offset;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

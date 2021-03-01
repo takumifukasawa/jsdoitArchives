@@ -1,0 +1,82 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background-color: #000; }
+
+#wrapper {
+  position: relative;
+  width: 465px;
+  height: 465px; }
+
+#button {
+  position: absolute;
+  width: 100px;
+  height: 25px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: table;
+  text-align: center;
+  cursor: pointer; }
+  #button:before, #button:after {
+    content: " ";
+    display: table-cell;
+    width: 1px; }
+
+.button-border {
+  border: none;
+  position: absolute;
+  opacity: 0;
+  transition: opacity, 0.3s ease-in-out, transform 0.3s ease-in-out; }
+  .button-border.current {
+    transform: scale(1, 1);
+    opacity: 1.0; }
+
+.border-top, .border-bottom {
+  width: 100px;
+  height: 1px;
+  transform: scale(0, 1); }
+
+.border-left, .border-right {
+  width: 1px;
+  height: 25px;
+  transform: scale(1, 0); }
+
+.border-top {
+  top: 0;
+  left: 0;
+  border-top: 1px solid #fff;
+  transform-origin: 0% 100%; }
+
+.border-right {
+  top: 0;
+  right: 0;
+  border-left: 1px solid #fff;
+  transform-origin: 100% 0%; }
+
+.border-bottom {
+  left: 0;
+  bottom: 0;
+  border-bottom: 1px solid #fff;
+  transform-origin: 100% 0%; }
+
+.border-left {
+  left: 0;
+  top: 0;
+  border-left: 1px solid #fff;
+  transform-origin: 100% 100%; }
+
+.button-text {
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  font-size: 11px;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 0.12em; }

@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    position: relative;
+    height: 400px;
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+    overflow: scroll;
+}
+
+.content {
+    height: 600px;
+    width: 100%;
+}

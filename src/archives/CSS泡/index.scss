@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #ffd;
+}
+
+.wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.awa {
+    $size: 6px;
+    width: $size;
+    height: $size;
+
+    position: absolute;
+    bottom: 0;
+
+    .awa-inner {
+        display: block;
+        width: $size;
+        height: $size;
+        background-color: red;
+        border-radius: $size;
+    }
+}
+
+@for $i from 1 through 1000 {
+    .awa {
+        &:nth-of-type(#{$i}) {
+            $tate-delay: random(150) * -.1 + unquote('s');
+            $yoko-delay: random(150) * -.1 + unquote('s');
+            left: random(100) + unquote('%');
+            animation: tate-#{$i} 2.4s ease-in $tate-delay infinite both;
+            .awa-inner {
+                animation: yoko-#{$i} 1s ease-in-out $yoko-delay infinite alternate both;
+            }
+        }
+    }
+    @keyframes tate-#{$i} {
+        0% {
+            opacity: 0;
+            transform: translate(0, 0);
+        }
+        5% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        80% {
+            opacity: 1;
+        }
+        95% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+            transform: translate(0, -80vw);
+        }
+    }            
+    @keyframes yoko-#{$i} {
+        0% {
+            transform: translate(-10px, 0);
+        }
+        100% {
+            transform: translate(10px, 0);
+        }
+    }
+}

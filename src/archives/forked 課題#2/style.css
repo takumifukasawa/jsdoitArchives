@@ -1,0 +1,110 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* $speed = "0.1s"; */
+body {
+  font: 14px Poiret One;
+  background: #e3e3e3; }
+
+.btn {
+  width: 80px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: box-shadow .2s ease-in-out; }
+  .btn:hover {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4); }
+
+.open {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto; }
+
+.popup {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  width: 320px;
+  height: 180px;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.1s ease-in;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 10;
+  /*     &.bigger {
+          transform: scale(1.2);
+      } */ }
+  .popup .btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px; }
+  .popup.show {
+    opacity: 100;
+    /*  transform: scale(1); */
+    pointer-events: auto; }
+
+.overlay {
+  background: #000;
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  pointer-events: none; }
+  .overlay.show {
+    /* visibility: visible; */
+    opacity: .8; }

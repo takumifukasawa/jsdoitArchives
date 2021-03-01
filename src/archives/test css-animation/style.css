@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background: #ddf;
+  font: 30px sans-serif; }
+
+.box {
+  width: 200px;
+  height: 200px;
+  animation: change-color 2s ease-out infinite both;
+  -webkit-animation: change-color 2s ease-out infinite both; }
+
+@keyframes change-color {
+  0% {
+    background-color: blue; }
+  50% {
+    background-color: red; }
+  100% {
+    background-color: blue; } }
+@-webkit-keyframes change-color {
+  0% {
+    background-color: blue; }
+  50% {
+    background-color: red; }
+  100% {
+    background-color: blue; } }

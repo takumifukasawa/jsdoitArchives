@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #ddf;
+  font: 30px sans-serif;
+}
+
+div#test {
+    transition-property: transform;
+    transition-duration: 4s;
+    transition-timing-function: ease;
+    transform: translateX(30px);
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+div#test.trans {
+    transform: translateX(100px) scale(2.0);
+}

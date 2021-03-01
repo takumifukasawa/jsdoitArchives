@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #000;
+}
+
+$offset: 480;
+
+circle {
+    stroke-width: 1;
+    fill: none;
+    stroke: #ffffff;
+    stroke-dasharray: $offset;
+    stroke-dashoffset: $offset;
+    animation: svg-draw 3s ease-in-out infinite alternate forwards;
+}
+
+@for $i from 0 through 28 {
+    $rand: random(12);
+    circle {
+        &:nth-child(#{$i}) {
+            animation-delay: $rand*0.25s;
+        }
+    }
+}
+
+@keyframes svg-draw {
+    0% {
+        stroke-dashoffset: $offset;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

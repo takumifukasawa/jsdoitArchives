@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #fdf;
+  font: 30px sans-serif;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.image {
+    -webkit-filter: grayscale(100%);
+}
+
+.image-overlay {
+    mix-blend-mode: screen;
+    background-color: #00a6e7;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

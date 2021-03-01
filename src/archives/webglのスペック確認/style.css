@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #dff;
+  font: 11px sans-serif;
+}
+
+#extensions-title, #parameters-title {
+    font-weight: bold;
+}

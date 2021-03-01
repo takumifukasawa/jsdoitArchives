@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.bg {
+    width: 465px;
+    height: 465px;
+    background: url('http://jsrun.it/assets/k/6/V/u/k6Vuu.gif') repeat center center;
+}

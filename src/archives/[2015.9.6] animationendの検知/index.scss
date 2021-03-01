@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.wrapper {
+    width: 465px;
+    height: 465px;
+    position: relative;
+    background-color: #fff;
+    transition: background-color 0.5s ease-in-out;
+    
+    &.bg {
+        background-color: #ccc;
+    }
+}
+
+.rect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    
+    background-color: red;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+
+
+    &.fadeout-prev {
+        animation: fadeout-prev 1s ease-in-out 1 both;
+        -webkit-animation: fadeout-prev 1s ease-in-out 1 both;
+    }        
+    &.fadein-next {
+        animation: fadein-next 1s ease-in-out 1 both;
+        -webkit-animation: fadein-next 1s ease-in-out 1 both;
+    }
+
+}
+
+$move: 20px;
+
+@keyframes fadeout-prev {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-($move));
+    }
+}
+@keyframes fadein-next {
+    from {
+        opacity: 0;
+        transform: translateX($move);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@-webkit-keyframes fadeout-prev {
+    from {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+    to {
+        opacity: 0;
+        -webkit-transform: translateX(-($move));
+    }
+}
+@-webkit-keyframes fadein-next {
+    from {
+        opacity: 0;
+        -webkit-transform: translateX($move);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+}

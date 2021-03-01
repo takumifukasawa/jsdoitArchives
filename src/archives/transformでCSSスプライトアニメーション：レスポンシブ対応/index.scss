@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #ffd;
+  font: 30px sans-serif;
+}
+
+@keyframes sprite-image {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+
+@mixin translate-sprite($src, $sw, $sh, $num) {
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    
+    &:before {    
+        content: '';
+        display: block;                 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-image: url($src);
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation: sprite-image 1s steps(#{$num}) infinite;
+        padding-top: ($sh / $sw) * 100%;
+    }
+        
+    &:after {
+        $cw: $sw;
+        $ch: $sh / $num;
+            
+        content: '';
+        display: block;
+        padding-top: ($ch / $cw) * 100%;
+    }    
+}
+
+.wrapper {
+    position: relative;
+    width: 465px;
+    height: 465px;
+}
+
+.sprite {
+    position: absolute;
+    top: 10vw;
+    left: 10vw;
+    margin: auto;
+    width: 80vw;
+    
+    @include translate-sprite('http://jsrun.it/assets/M/6/J/N/M6JN2.jpg', 600, 1600, 4); 
+}
+

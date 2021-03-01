@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #000;
+}
+
+#wrapper {
+    width: 465px;
+    height: 465px;
+    position: relative;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    height: 2px;
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.2);
+    border-top: solid 1px #fff;
+    transform-origin: 0% 0%;    
+    animation: star ease-in infinite both;
+}
+
+$num: 150;
+$area-width: 465;
+$area-height: 465;
+$base-width: 100;
+$deg: 360*5/8+deg;
+
+@for $i from 1 through $num {
+    $duration: 1.4s;
+    $delay: random(200)/10+s;
+    $top: random($area-width)+px;
+    $left: random($area-width)+px;
+    $width: $base-width - random(100)+px;
+    
+    #wrapper {
+        .star {
+            &:nth-child(#{$i}) {
+                width: 0px;
+                top: $top;
+                left: $left;
+                animation-duration: $duration;
+                animation-delay: $delay;
+            }
+        }
+    }
+}
+
+
+@keyframes star {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 0px) rotate($deg);        
+    }
+    40% {
+        opacity: 0;
+        transform: translate(0px, 0px) rotate($deg);        
+    }
+    50% {
+        width: $base-width + 40px;
+        opacity: 0.3;
+    }
+    70% {
+        width: $base-width + 40px;
+        transform: translate(120px, 120px) rotate($deg);
+    }
+    80% {
+        width: 0px;
+        opacity: 0;
+    }
+    100% {
+        width: 0px;
+        opacity: 0;
+        transform: translate(160px, 160px) rotate($deg);
+    }
+}

@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+  svg{
+    border : 1px solid #c0c0c0;
+  }
+  p{
+    margin : 10px;
+  }

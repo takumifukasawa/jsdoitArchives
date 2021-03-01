@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  position: relative;
+  width: 465px;
+  height: 465px; }
+
+.wrapper {
+  display: block;
+  width: 465px;
+  height: 169px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  overflow: hidden;
+  text-align: center; }
+
+.link {
+  width: 465px;
+  transform: rotate(-75deg);
+  display: inline-block;
+  opacity: 1;
+  transition: opacity ease-in 0.3s; }
+  .link:hover {
+    opacity: 0.6; }
+
+.img {
+  overflow: hidden; }
+  .img:before {
+    content: " ";
+    display: block;
+    background-image: url(http://jsrun.it/assets/g/S/I/p/gSIpF.jpg);
+    width: 465px;
+    height: 169px;
+    background-repeat: no-repeat;
+    transform: rotate(75deg);
+    background-position: 84px 0; }

@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+body {
+    background: #000;
+    position: relative;
+}
+
+#wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#button {
+    background-color: #000;
+    color: #fff;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    cursor: pointer;
+
+    transition: background-color linear 0.4s, color linear 0.4s;
+    
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+p {
+    border: solid 1px #fff;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 0.3em;
+    line-height: 1em;
+    padding: 1em 4em 0.9em 4em;
+    float: left;
+}

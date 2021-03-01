@@ -1,0 +1,73 @@
+$image-url: "http://jsrun.it/assets/s/j/y/W/sjyWx.jpg";
+$image-width: 120px;
+$image-height: 92px;
+$margin: 25px;
+$deg: 15deg;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    position: relative;
+    width: 465px;
+    height: 465px;
+    background-color: #000;
+}
+
+.wrapper {   
+    display: block;
+    width: 465px;
+    height: $image-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    font-size: 0;
+    
+}
+
+.link {
+    width: $image-width;
+    transform: skewX(-($deg));
+    display: inline-block;
+    opacity: 1;
+    transition: opacity ease-in 0.3s;
+    
+    &:nth-child(n+2) {
+        margin-left: -($margin);
+    }
+    
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.img {
+    overflow: hidden;
+    
+    &:before {
+        content: "";
+        display: block;
+        background-image: url($image-url);
+        width: $image-width;
+        height: $image-height;
+        background-repeat: no-repeat;
+        transform: skewX($deg);
+    }
+}
+
+.main-img {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30px;
+    margin: 0 auto;
+}

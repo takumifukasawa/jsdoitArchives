@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #ccc;
+}
+
+.button__bg {
+    box-sizing: border-box;
+    background: #888;
+    width: 200px;
+    height: 16px;
+    border-radius: 16px;
+    border: 3px solid #888;
+    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.button {
+    box-sizing: border-box;
+    width: 90px;
+    height: 16px;
+    border-radius: 16px;
+    border: 3px solid #ccc;
+    position: absolute;
+    top: -3px;
+    left: 4px;
+    transition: left 0.3s ease-in-out;
+    
+}
+
+.move {
+    left: 100px;
+}

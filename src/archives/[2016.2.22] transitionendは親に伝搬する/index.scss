@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.wrapper {
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+
+.wrapper > div {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transition: opacity 0.5s ease-in;
+    opacity: 0;
+    &.is-show {
+        opacity: 1;
+    }
+}

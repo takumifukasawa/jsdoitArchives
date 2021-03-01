@@ -1,0 +1,5 @@
+div.sp, @media screen and (min-width: 320px) {
+  div {
+    width: 400px;
+  }
+}

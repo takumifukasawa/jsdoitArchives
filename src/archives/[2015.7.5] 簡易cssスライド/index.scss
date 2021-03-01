@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+#wrapper {
+    position: relative;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 465px;
+}
+
+#pic2 {
+    width: 0%;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 1s ease-in, opacity 1s ease-in;
+    
+    &.fadein {
+        width: 100%;
+        opacity: 1;        
+    }
+}

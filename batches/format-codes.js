@@ -152,7 +152,7 @@ async function main() {
 
         const writeCodesFilePath = path.join(codeDistRootPath, newFile);
 
-        fs.writeFile(writeCodesFilePath, newContent, (err) => {
+        fs.writeFile(writeCodesFilePath, newContent, "utf8", (err) => {
           if (err) throw err;
         });
       });
@@ -162,6 +162,7 @@ async function main() {
   fs.writeFile(
     distIndexFilePath,
     buildIndexHTML(indexContents),
+    "utf8",
     (err, data) => {
       if (err) throw err;
     }

@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/takumifukasawa/jsdoitArchives#readme",
   "dependencies": {
-    "puppeteer": "^8.0.0"
+    "puppeteer": "^8.0.0",
+    "uuid": "^8.3.2"
   }
 }

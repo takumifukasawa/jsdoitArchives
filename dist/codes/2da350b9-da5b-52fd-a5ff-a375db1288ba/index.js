@@ -74,7 +74,7 @@ var changePosition = function changePosition() {
 
 // load texture
 var textureLoader = new THREE.TextureLoader();
-textureLoader.load('/common/img/photo-1439123068749-20f4035bd7ed.jpg', function (sprite) {
+textureLoader.load('/common/img/iZkDQMqeQlqhoCIywoFv_6005485056_c8622e0824_o.jpg', function (sprite) {
     texture = sprite;
     texture.needsUpdate = true;
     /*

@@ -19,7 +19,7 @@ var renderer = new PIXI.WebGLRenderer({
 
 var stage = new PIXI.Container();
 
-var src = '/common/img/iYvDeqVGRbebiQv2PIJi_DSC_8407.png';
+var src = '/common/img/photo-1481999666238-d4473c49f4fb.png';
 var texture = PIXI.Texture.fromImage(src);
 texture.baseTexture.addListener('loaded', function () {
     var container = new PIXI.Container();

@@ -31,7 +31,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = '/common/img/whtXWmDGTTuddi1ncK5v_IMG_0097.jpg';
+bgImage.src = '/common/img/photo-1463946377180-f5185c2783e5.jpeg';
 
 function onWindowResize() {
     wrapper.style.width = '';

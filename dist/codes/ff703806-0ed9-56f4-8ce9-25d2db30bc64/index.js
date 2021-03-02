@@ -111,7 +111,7 @@ var Main = (function () {
         this.ballsNum = 0;
 
         this.music = new Music({
-            src: "/common/audio/jingle9.mp3"
+            src: "/common/audio/jazz_opening.mp3"
         });
 
         this.initialize();

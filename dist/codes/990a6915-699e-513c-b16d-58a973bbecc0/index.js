@@ -26,7 +26,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = '/common/img/photo-1422393462206-207b0fbd8d6b.jpeg';
+bgImage.src = '/common/img/photo-1482784160316-6eb046863ece.jpeg';
 
 function onWindowResize() {
     wrapper.style.width = '';

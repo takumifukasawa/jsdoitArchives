@@ -45,7 +45,7 @@
     };
         
     Main.prototype.makeMaterial = function() {         
-        this.texture = THREE.ImageUtils.loadTexture("/common/img/photo-1417870839255-a23faa90c6b0.png");
+        this.texture = THREE.ImageUtils.loadTexture("/common/img/d5e1ad1d.png");
 
         this.material = new THREE.PointCloudMaterial({
             color: 0xFFFFFF,

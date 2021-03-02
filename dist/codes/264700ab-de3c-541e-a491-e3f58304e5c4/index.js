@@ -108,7 +108,7 @@
     };
     
     var main = new Main({
-        src: "/common/img/photo-1475475690428-61534882b644.jpeg"
+        src: "/common/img/qBUS7gZyT56yoqGcdnyX_airlines.jpg"
     });
     
 })(jQuery, window, window.document);

@@ -69,7 +69,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             value: function makeObjects() {
                 var geometry = new THREE.BoxGeometry(100, 100, 100);
                 var loader = new THREE.TextureLoader();
-                var texture = loader.load("/common/img/photo-1422393462206-207b0fbd8d6b.png");
+                var texture = loader.load("/common/img/pHyYeNZMRFOIRpYeW7X3_manacloseup-copy.png");
                 var material = new THREE.MeshPhongMaterial({ map: texture });
                 return new THREE.Mesh(geometry, material);
             }

@@ -19,13 +19,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = '/common/img/alejandroescamilla somethingpretty.jpg';
+bgImage.src = '/common/img/photo-1470104240373-bc1812eddc9f.jpeg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = '/common/img/photo-1476862921040-227a643bf014.png';
+texImage.src = '/common/img/photo-1472215001262-9605640fdcdf.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

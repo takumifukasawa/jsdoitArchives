@@ -12,8 +12,8 @@ var height = 0;
 
 var beforeTime = 0;
 
-var blackImageSrc = '/common/img/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.png';
-var blueImageSrc = '/common/img/photo-1469594292607-7bd90f8d3ba4.png';
+var blackImageSrc = '/common/img/photo-1415226161018-3ec581fa733d.png';
+var blueImageSrc = '/common/img/photo-1433190152045-5a94184895da.png';
 
 var vertexShader = document.querySelector('#vertexShader').textContent;
 var fragmentShader = document.querySelector('#fragmentShader').textContent;

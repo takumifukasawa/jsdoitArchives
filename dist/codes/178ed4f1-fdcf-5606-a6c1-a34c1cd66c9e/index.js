@@ -34,16 +34,16 @@ var reflection = PIXI.RenderTexture.create(width, height);
 
 var outputSprite = new PIXI.Sprite();
 
-var bgTexture = PIXI.Texture.fromImage('/common/img/photo-1444044205806-38f3ed106c10.jpeg');
+var bgTexture = PIXI.Texture.fromImage('/common/img/landscape.jpeg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);
     container.addChild(bgSprite);
 
-    var paperMapTexture = new PIXI.Texture.fromImage('/common/img/photo-1467810563316-b5476525c0f9.jpeg');
+    var paperMapTexture = new PIXI.Texture.fromImage('/common/img/photo-1431032843361-ec2cd229c751.jpeg');
 
     paperMapTexture.baseTexture.addListener('loaded', function () {
-        var displacementTexture = new PIXI.Texture.fromImage('/common/img/photo-1469594292607-7bd90f8d3ba4.jpeg');
+        var displacementTexture = new PIXI.Texture.fromImage('/common/img/photo-1475776408506-9a5371e7a068.jpeg');
 
         displacementTexture.baseTexture.addListener('loaded', function () {
             var vertexShader = document.querySelector('#vertex-shader');
@@ -83,7 +83,7 @@ bgTexture.baseTexture.addListener('loaded', function () {
             //filter = new PIXI.Filter(vertexShader.textContent, fragmentShader.textContent, uniforms);
             bgSprite.filters = [filter];
 
-            var displacementMap = PIXI.Sprite.fromImage('/common/img/URG2BbWQQ9SAcqLuTOLp_BP7A9947.jpg');
+            var displacementMap = PIXI.Sprite.fromImage('/common/img/photo-1454779132693-e5cd0a216ed3.jpeg');
             var displacementFilter = new PIXI.filters.DisplacementFilter(displacementMap);
             water = new PIXI.Sprite(reflection);
             water.filters = [displacementFilter];

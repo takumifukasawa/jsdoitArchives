@@ -3,7 +3,7 @@ $(function() {
 
     "use strict";
 
-    const IMAGE_SRC = "/common/img/photo-1417870839255-a23faa90c6b0.jpeg";
+    const IMAGE_SRC = "/common/img/photo-1421986527537-888d998adb74.jpg";
     
     /*
      * main

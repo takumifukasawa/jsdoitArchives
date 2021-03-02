@@ -177,7 +177,7 @@
     
     var main = new Main({
         canvasID: "my-canvas",
-        src: "/common/img/photo-1474302694023-9711af8045cf.jpeg"
+        src: "/common/img/photo-1481999666238-d4473c49f4fb.jpeg"
     });
     
 })(jQuery, window, window.document);

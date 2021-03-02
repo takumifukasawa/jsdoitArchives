@@ -47,7 +47,7 @@ async function main() {
         "82b8e05c-4623-4c75-afc9-d986065f581c"
       );
 
-      indexContents += `<p><a href="/player.html#${newDirName}" target="_blank">${dirName}</a></p>\n`;
+      indexContents += `<p><a href="/player.html?code=${newDirName}" target="_blank">${dirName}</a></p>\n`;
     })
   );
 

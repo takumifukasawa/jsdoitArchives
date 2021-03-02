@@ -3,6 +3,7 @@ const path = require("path");
 const { v5: uuidv5 } = require("uuid");
 const sass = require("sass");
 const CoffeeScript = require("coffeescript");
+const _ = require("lodash");
 const IOUtils = require("./utils/IOUtils");
 
 const srcRootPath = path.join(process.cwd(), "src/archives");
@@ -11,6 +12,18 @@ const distRootPath = path.join(process.cwd(), "dist");
 const codesDistRootPath = path.join(distRootPath, "codes");
 
 const distIndexFilePath = path.join(distRootPath, "index.html");
+const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
+
+const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
+  "jpg",
+  "jpeg",
+]);
+const pngImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
+  "png",
+]);
+
+const pngElemSampler = randomSampler(pngImages);
+const jpgElemSampler = randomSampler(jpgImages);
 
 const threejsCdns = [
   /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
@@ -242,6 +255,25 @@ async function compileCoffee(content) {
 /**
  *
  *
+ * @param {*} pool
+ * @returns
+ */
+function randomSampler(pool) {
+  const tmpPool = _.cloneDeep(pool);
+  const pick = () => {
+    const elem = _.sample(tmpPool);
+    const index = tmpPool.indexOf(elem);
+    tmpPool.slice(index, 1);
+    return elem;
+  };
+  return {
+    pick,
+  };
+}
+
+/**
+ *
+ *
  * @param {*} content
  * @returns
  */
@@ -260,14 +292,13 @@ function replaceImage(content) {
     let img = "";
     switch (ext) {
       case "png":
-        img = pngImages[i];
+        img = pngElemSampler.pick();
         break;
       case "jpg":
-        img = jpgImages[i];
+        img = jpgElemSampler.pick();
         break;
     }
     const basename = path.basename(img);
-    console.log(url, path.join("/common/img", basename));
     tmpContent = tmpContent.replace(url, path.join("/common/img", basename));
   }
 
@@ -296,16 +327,6 @@ function buildIndexHTML(content) {
 </body>
 </html>`;
 }
-
-const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
-
-const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
-  "jpg",
-  "jpeg",
-]);
-const pngImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
-  "png",
-]);
 
 /**
  *

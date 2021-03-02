@@ -59,7 +59,10 @@ const linkReplacers = [
       "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
   },
   {
-    regexs: [/http:\/\/jsrun\.it\/assets\/M\/7\/M\/h\/M7Mhi/],
+    regexs: [
+      /http:\/\/jsrun\.it\/assets\/M\/7\/M\/h\/M7Mhi/,
+      /http:\/\/jsrun\.it\/assets\/E\/D\/W\/u\/EDWut/,
+    ],
     buildCdn: () =>
       getThreejsNewCdn(88, "examples/js/controls/OrbitControls.js"),
   },

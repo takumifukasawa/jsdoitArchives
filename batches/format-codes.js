@@ -5,13 +5,10 @@ const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const _ = require("lodash");
 const IOUtils = require("./utils/IOUtils");
-
-const srcRootPath = path.join(process.cwd(), "src/archives");
-const distRootPath = path.join(process.cwd(), "dist");
+const { srcRootPath, distRootPath } = require("./constants");
 
 const codesDistRootPath = path.join(distRootPath, "codes");
 
-const distIndexFilePath = path.join(distRootPath, "index.html");
 const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
 
 const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
@@ -33,25 +30,25 @@ const threejsCdns = [
 
 const cdnReplacers = [
   {
-    regex: /http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*?)\/js/,
+    regexs: [/http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*?)\/js/],
     buildCdn: (version) => `https://code.jquery.com/jquery-${version}.min.js`,
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/jquery\.easing\.([0-9|\.]*?)\/js/,
+    regexs: [/http:\/\/jsdo\.it\/lib\/jquery\.easing\.([0-9|\.]*?)\/js/],
     buildCdn: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/${version}/jquery.easing.min.js`,
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/createjs-([0-9|\.])*?\/js/,
+    regexs: [/http:\/\/jsdo\.it\/lib\/createjs-([0-9|\.])*?\/js/],
     buildCdn: () => "https://code.createjs.com/1.0.0/createjs.min.js",
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/underscore-([0-9|\.]*?)\/js/,
+    regexs: [/http:\/\/jsdo\.it\/lib\/underscore-([0-9|\.]*?)\/js/],
     buildCdn: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/underscore.js/${version}/underscore-min.js`,
   },
   {
-    regex: /http:\/\/jsrun\.it\/assets\/6\/X\/t\/N\/6XtNc/,
+    regexs: [/http:\/\/jsrun\.it\/assets\/6\/X\/t\/N\/6XtNc/],
     buildCdn: () =>
       // "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js",
       "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
@@ -308,29 +305,6 @@ function replaceImage(content) {
 /**
  *
  *
- * @param {*} content
- * @returns
- */
-function buildIndexHTML(content) {
-  return `<html>
-  <head>
-    <title>Index</title>
-    <style>
-      p {
-        font-size: 12px;
-      }
-    </style>
-  </head>
-<body>
-  <h1>Index</h1>
-  ${content}
-</body>
-</html>`;
-}
-
-/**
- *
- *
  */
 async function main() {
   const dirs = IOUtils.getDirectories(srcRootPath);
@@ -339,9 +313,7 @@ async function main() {
 
   await IOUtils.createDir(codesDistRootPath);
 
-  let indexContents = "";
-
-  dirs.sort();
+  // dirs.sort();
 
   await Promise.all(
     dirs.map(async (dirName) => {
@@ -353,8 +325,6 @@ async function main() {
         dirName,
         "82b8e05c-4623-4c75-afc9-d986065f581c"
       );
-
-      indexContents += `<p><a href="/player.html#${newDirName}" target="_blank">${dirName}</a></p>\n`;
 
       const codeDistRootPath = path.join(codesDistRootPath, newDirName);
 
@@ -370,45 +340,59 @@ async function main() {
         let newFile = file;
         let newContent = content;
 
-        const threejsVersion = getThreejsVersion(content);
+        // threejsのバージョンがわかる場合は関連モジュールをreplace
+        {
+          const threejsVersion = getThreejsVersion(content);
 
-        if (threejsVersion) {
-          for (let i = 0; i < threeModules.length; i++) {
-            const replacer = threeModules[i];
+          if (threejsVersion) {
+            for (let i = 0; i < threeModules.length; i++) {
+              const replacer = threeModules[i];
+              const matched = matchedRegexs(newContent, replacer.regexs);
+              if (matched) {
+                // console.log(matched[0]);
+                const [regexCdn] = matched;
+                const newCdn = replacer.buildCdn(threejsVersion);
+                newContent = newContent.replace(regexCdn, newCdn);
+              }
+            }
+          }
+        }
+
+        // 各種linkをreplace
+        {
+          for (let i = 0; i < cdnReplacers.length; i++) {
+            const replacer = cdnReplacers[i];
             const matched = matchedRegexs(newContent, replacer.regexs);
             if (matched) {
               // console.log(matched[0]);
-              const [regexCdn] = matched;
-              const newCdn = replacer.buildCdn(threejsVersion);
+              const [regexCdn, version] = matched;
+              const newCdn = replacer.buildCdn(version);
               newContent = newContent.replace(regexCdn, newCdn);
             }
           }
         }
 
-        cdnReplacers.forEach((replacer) => {
-          const matched = newContent.match(replacer.regex);
-          if (!matched) return;
-          const [regexCdn, version] = matched;
-          const newCdn = replacer.buildCdn(version);
-          newContent = newContent.replace(regexCdn, newCdn);
-        });
-
         // replace image assets
         newContent = replaceImage(newContent);
 
-        const [fileName, fileExt] = path.extname(file).split(".")[1];
+        // ファイルの拡張子に応じてcompile
+        {
+          const [fileName, fileExt] = path.extname(file).split(".")[1];
 
-        // compile sass
-        if (fileExt === "scss") {
-          newContent = await compileScss(srcFilePath, newContent);
-          newFile = [fileName, "css"].join(".");
+          // compile sass
+          if (fileExt === "scss") {
+            newContent = await compileScss(srcFilePath, newContent);
+            newFile = [fileName, "css"].join(".");
+          }
+
+          // compile coffee script
+          if (fileExt === "coffee") {
+            newContent = await compileCoffee(newContent);
+            newFile = [fileName, "js"].join(".");
+          }
         }
 
-        // compile coffee script
-        if (fileExt === "coffee") {
-          newContent = await compileCoffee(newContent);
-          newFile = [fileName, "js"].join(".");
-        }
+        // 書き込み
 
         const writeCodesFilePath = path.join(codeDistRootPath, newFile);
 
@@ -417,15 +401,6 @@ async function main() {
         });
       });
     })
-  );
-
-  fs.writeFile(
-    distIndexFilePath,
-    buildIndexHTML(indexContents),
-    "utf8",
-    (err, data) => {
-      if (err) throw err;
-    }
   );
 }
 

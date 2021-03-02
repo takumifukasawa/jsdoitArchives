@@ -15,7 +15,7 @@ body {
 
 .image {
     -webkit-filter: grayscale(100%);
-    background-image: url(http://jsrun.it/assets/U/v/u/I/UvuIR.jpg);
+    background-image: url(/common/img/photo-1442589031151-61d5645469d7.jpeg);
     width: 465px;
     height: 465px;
 }

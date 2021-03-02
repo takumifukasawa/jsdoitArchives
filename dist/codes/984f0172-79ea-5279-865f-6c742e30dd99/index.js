@@ -168,6 +168,6 @@ function createParticle() {
         particleFlg = true;
     };
 
-    img.src = "http://jsrun.it/assets/A/g/y/P/AgyP5.png";
+    img.src = "/common/img/photo-1476862921040-227a643bf014.png";
     
 }

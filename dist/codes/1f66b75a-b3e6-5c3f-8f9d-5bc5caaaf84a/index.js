@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.soundSource = this.audioContext.createBufferSource();
             this.source = null;
             this.audio = new Audio();
-            this.srcUrl = "http://jsrun.it/assets/g/V/Z/0/gVZ0d.mp3";
+            this.srcUrl = "/common/audio/jazz_opening.mp3";
             this.analyser = this.audioContext.createAnalyser();
             this.timeDomain = new Uint8Array(1024);
 

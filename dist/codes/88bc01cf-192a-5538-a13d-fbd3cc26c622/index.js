@@ -136,7 +136,7 @@ scene.add(light);
 // load texture
 for (var i = 0; i < 10; i++) {
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('http://jsrun.it/assets/2/k/x/s/2kxs3.jpg?+Date.now()', function (texture) {
+    textureLoader.load('/common/img/photo-1432117068802-b224427256a5.jpeg?+Date.now()', function (texture) {
 
         texture.needsUpdate = true;
 

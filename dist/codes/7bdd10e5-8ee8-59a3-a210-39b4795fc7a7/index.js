@@ -50,11 +50,11 @@ var update = function update() {
 
 // load alpha map
 var alphaMapLoader = new THREE.TextureLoader();
-alphaMapLoader.load('http://jsrun.it/assets/Q/e/9/p/Qe9pW.png', function (alphaMapTexture) {
+alphaMapLoader.load('/common/img/photo-1444044205806-38f3ed106c10.png', function (alphaMapTexture) {
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('http://jsrun.it/assets/8/P/z/S/8PzSJ.jpg', function (texture) {
+    textureLoader.load('/common/img/photo-1446776899648-aa78eefe8ed0.jpeg', function (texture) {
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;
 

@@ -31,7 +31,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = 'http://jsrun.it/assets/C/r/X/q/CrXqV.jpg';
+bgImage.src = '/common/img/whtXWmDGTTuddi1ncK5v_IMG_0097.jpg';
 
 function onWindowResize() {
     wrapper.style.width = '';

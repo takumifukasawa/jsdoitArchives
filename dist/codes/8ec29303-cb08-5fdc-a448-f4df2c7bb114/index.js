@@ -89,7 +89,7 @@
     };
 
     ImageParticle.prototype.createParticle = function() {
-        this.img.src = "http://jsrun.it/assets/A/g/y/P/AgyP5.png";
+        this.img.src = "/common/img/d5e1ad1d.png";
 
         var _self = this;
 

@@ -80,7 +80,7 @@
     };
        
     var opts = {
-        src: "http://jsrun.it/assets/q/j/r/6/qjr6X.jpg"
+        src: "/common/img/photo-1464823063530-08f10ed1a2dd.jpeg"
     };
     var rotateImage = new RotateImage(opts);
     

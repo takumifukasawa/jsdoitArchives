@@ -11,7 +11,7 @@ var currentPointIndex = 0;
 
 var radius = 800;
 var deltaArc = 36;
-var imageSrc = 'http://jsrun.it/assets/A/y/5/4/Ay54X.png';
+var imageSrc = '/common/img/photo-1462524500090-89443873e2b4.png';
 
 var tubeWidth = 8;
 var linesNum = 30;

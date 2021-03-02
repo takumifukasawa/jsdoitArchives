@@ -40,8 +40,8 @@
         
     Main.prototype.makeMaterial = function() {         
         var texLoader = new THREE.TextureLoader();
-        this.texture = texLoader.load("http://jsrun.it/assets/u/X/i/p/uXipB.png");
-        //this.texture = THREE.ImageUtils.loadTexture("http://jsrun.it/assets/u/X/i/p/uXipB.png");
+        this.texture = texLoader.load("/common/img/photo-1482351403047-56c184e23fe1.png");
+        //this.texture = THREE.ImageUtils.loadTexture("/common/img/photo-1476862921040-227a643bf014.png");
 
         this.material = new THREE.PointsMaterial({
             color: 0xFFFFFF,

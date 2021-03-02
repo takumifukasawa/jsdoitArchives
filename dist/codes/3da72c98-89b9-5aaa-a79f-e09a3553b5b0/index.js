@@ -24,13 +24,13 @@ var renderer = new PIXI.autoDetectRenderer(1, 1, {
 
 var container = new PIXI.Container();
 
-var bgTexture = PIXI.Texture.fromImage('http://jsrun.it/assets/e/6/s/Z/e6sZC.jpg');
+var bgTexture = PIXI.Texture.fromImage('/common/img/photo-1464621922360-27f3bf0eca75.jpg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);
     container.addChild(bgSprite);
 
-    var paperMapTexture = new PIXI.Texture.fromImage('http://jsrun.it/assets/m/T/w/x/mTwxi.jpg');
+    var paperMapTexture = new PIXI.Texture.fromImage('/common/img/photo-1428452932365-4e7e1c4b0987.jpeg');
 
     paperMapTexture.baseTexture.addListener('loaded', function () {
         var fragmentShader = document.querySelector('#fragment-shader');

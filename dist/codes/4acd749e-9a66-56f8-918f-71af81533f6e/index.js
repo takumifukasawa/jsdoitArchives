@@ -11,7 +11,7 @@ var height = 0;
 
 var beforeTime = 0;
 
-var imageSrc = 'http://jsrun.it/assets/0/D/E/m/0DEmb.png';
+var imageSrc = '/common/img/photo-1415045384817-2f9cf7f2ed79.png';
 
 var vertexShader = document.querySelector('#vertexShader').textContent;
 var fragmentShader = document.querySelector('#fragmentShader').textContent;

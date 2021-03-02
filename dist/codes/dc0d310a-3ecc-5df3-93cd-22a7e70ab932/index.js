@@ -12,8 +12,8 @@ var height = 0;
 
 var beforeTime = 0;
 
-var blackImageSrc = 'http://jsrun.it/assets/0/P/9/8/0P988.png';
-var blueImageSrc = 'http://jsrun.it/assets/m/Z/i/O/mZiO4.png';
+var blackImageSrc = '/common/img/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.png';
+var blueImageSrc = '/common/img/photo-1469594292607-7bd90f8d3ba4.png';
 
 var vertexShader = document.querySelector('#vertexShader').textContent;
 var fragmentShader = document.querySelector('#fragmentShader').textContent;

@@ -13,16 +13,33 @@
   </head>
   <body>
     <iframe id="player" src="" width="465" height="465"></iframe>
+    <h3 id="player-title"></h3>
     <p><a id="link" href="" target="_blank">open original</a></p>
     <script type="text/javascript">
-      if (location.hash) {
-        const hash = location.hash.split("#")[1];
+      function main() {
+        if (!location.search) {
+          console.error("should specified query.");
+          return;
+        }
+        const query = location.search;
+        const id = query.split("=")[1];
+        if (!id) {
+          console.error("invalid code id.");
+          return;
+        }
         const playerElem = document.getElementById("player");
-        const src = `/codes/${hash}/`;
-        playerElem.src = src;
+        const src = `/codes/${id}/`;
+        const playerTitleElem = document.getElementById("player-title");
         const link = document.getElementById("link");
         link.href = src;
+
+        playerElem.onload = () => {
+          playerTitleElem.textContent = playerElem.contentDocument.title;
+        };
+
+        playerElem.src = src;
       }
+      main();
     </script>
   </body>
 </html>

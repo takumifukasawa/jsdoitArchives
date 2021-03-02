@@ -26,7 +26,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = 'http://jsrun.it/assets/C/r/X/q/CrXqV.jpg';
+bgImage.src = '/common/img/photo-1422393462206-207b0fbd8d6b.jpeg';
 
 function onWindowResize() {
     wrapper.style.width = '';

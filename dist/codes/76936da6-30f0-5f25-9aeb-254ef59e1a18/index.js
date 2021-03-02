@@ -7,10 +7,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var img = new Image();
-img.src = "http://jsrun.it/assets/w/4/P/b/w4Pbb.jpg";
+img.src = "/common/img/iYvDeqVGRbebiQv2PIJi_DSC_8407.jpeg";
 
 // キャッシュを強制的に使わせない -> onloadが必ず呼ばれる
-//img.src = "http://jsrun.it/assets/w/4/P/b/w4Pbb.jpg" + "?" + new Date().getTime();
+//img.src = "/common/img/unsplash_524010c76b52a_1.jpeg" + "?" + new Date().getTime();
 
 var draw = function(image) {
     // 2.naturalWidth, naturalHeightプロパティがある

@@ -6,7 +6,7 @@
     var THROTTLE    = 50,
         WID         = window.innerWidth,
         HEI         = window.innerHeight,
-        IMG         = "http://jsrun.it/assets/6/A/v/g/6Avgj.jpg";
+        IMG         = "/common/img/photo-1469899324414-c72bfb4d4161.jpeg";
        
     
     var Rect = function(opt) {

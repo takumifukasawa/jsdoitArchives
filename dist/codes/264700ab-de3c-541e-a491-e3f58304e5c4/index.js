@@ -108,7 +108,7 @@
     };
     
     var main = new Main({
-        src: "http://jsrun.it/assets/E/a/H/T/EaHT7.jpg"
+        src: "/common/img/photo-1475475690428-61534882b644.jpeg"
     });
     
 })(jQuery, window, window.document);

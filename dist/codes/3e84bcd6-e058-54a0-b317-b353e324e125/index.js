@@ -28,7 +28,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-var src = "http://jsrun.it/assets/Y/6/8/r/Y68rp.png";
+var src = "/common/img/photo-1442473483905-95eb436675f1.png";
 
 var textureLoader = new THREE.TextureLoader();
 textureLoader.load(src, function (tex) {

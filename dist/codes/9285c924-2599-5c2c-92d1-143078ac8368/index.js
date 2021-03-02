@@ -3,7 +3,7 @@ $(function() {
 
     "use strict";
 
-    const IMAGE_SRC = "http://jsrun.it/assets/b/L/N/A/bLNAw.jpg";
+    const IMAGE_SRC = "/common/img/photo-1417870839255-a23faa90c6b0.jpeg";
     
     /*
      * main

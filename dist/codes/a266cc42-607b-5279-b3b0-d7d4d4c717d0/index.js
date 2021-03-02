@@ -22,7 +22,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.soundSource = this.audioContext.createBufferSource();
             this.source = null;
             this.audio = new Audio();
-            this.srcUrl = "http://jsrun.it/assets/m/I/8/0/mI80Z.mp3";
+            this.srcUrl = "/common/audio/jingle9.mp3";
             this.analyser = this.audioContext.createAnalyser();
             this.timeDomain = new Uint8Array(1024);
 
@@ -157,7 +157,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.beforeTimeDomain = 0;
             this.beforeUpdateLoop = 0;
 
-            this.imgSrc = "http://jsrun.it/assets/a/1/v/u/a1vuV.jpg";
+            this.imgSrc = "/common/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg";
         }
 
         _createClass(Main, [{

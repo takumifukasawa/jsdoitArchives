@@ -116,7 +116,7 @@
     
     var main = new Main({
         canvasID: "my-canvas",
-        src: "http://jsrun.it/assets/8/c/w/9/8cw9R.jpg"
+        src: "/common/img/ujKaaIATKKx7vi5kkfQn__DSC3932.jpg"
     });
     
 })(jQuery, window, window.document);

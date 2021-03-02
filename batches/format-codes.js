@@ -5,31 +5,43 @@ const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const IOUtils = require("./utils/IOUtils");
 
+const srcRootPath = path.join(process.cwd(), "src/archives");
+const distRootPath = path.join(process.cwd(), "dist");
+
+const codesDistRootPath = path.join(distRootPath, "codes");
+
+const distIndexFilePath = path.join(distRootPath, "index.html");
+
 const threejsCdns = [
-  /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*)\/js/,
+  /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
   /https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/three\.js\/r?([0-9]{1,3})\/(three\.min|three)\.js/,
   /https:\/\/ajax\.googleapis\.com\/ajax\/libs\/threejs\/r([0-9]{1,3})\/three\.min\.js/,
-  // /https:\/\/unpkg\.com\/three@0\.([0-9]{1,3})\.0\/build\/three\.min\.js/,
 ];
 
 const cdnReplacers = [
   {
-    regex: /http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*)\/js/,
+    regex: /http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*?)\/js/,
     buildCdn: (version) => `https://code.jquery.com/jquery-${version}.min.js`,
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/jquery\.easing\.([0-9|\.]*)\/js/,
+    regex: /http:\/\/jsdo\.it\/lib\/jquery\.easing\.([0-9|\.]*?)\/js/,
     buildCdn: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/${version}/jquery.easing.min.js`,
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/createjs-([0-9|\.])*\/js/,
+    regex: /http:\/\/jsdo\.it\/lib\/createjs-([0-9|\.])*?\/js/,
     buildCdn: () => "https://code.createjs.com/1.0.0/createjs.min.js",
   },
   {
-    regex: /http:\/\/jsdo\.it\/lib\/underscore-([0-9|\.]*)\/js/,
+    regex: /http:\/\/jsdo\.it\/lib\/underscore-([0-9|\.]*?)\/js/,
     buildCdn: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/underscore.js/${version}/underscore-min.js`,
+  },
+  {
+    regex: /http:\/\/jsrun\.it\/assets\/6\/X\/t\/N\/6XtNc/,
+    buildCdn: () =>
+      // "https://cdnjs.cloudflare.com/ajax/libs/stats.js/r17/Stats.min.js",
+      "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
   },
 ];
 
@@ -66,6 +78,7 @@ const threeModules = [
     regexs: [
       /http:\/\/threejs\.org\/examples\/js\/controls\/OrbitControls\.js/,
       /http:\/\/n0bisuke\.github\.io\/practice_threejs\/OrbitControls\.js/,
+      /http:\/\/jsrun\.it\/assets\/W\/k\/Z\/U\/WkZUc/,
     ],
     buildCdn: (version) =>
       getThreejsNewCdn(version, "examples/js/controls/OrbitControls.js"),
@@ -165,10 +178,11 @@ function matchedRegexs(content, regexs) {
 function getThreejsVersion(content) {
   const matched = matchedRegexs(content, threejsCdns);
   if (matched) {
-    console.log(matched[0], matched[1]);
+    // console.log(matched[0], matched[1]);
     const [, version] = matched;
     let v = parseInt(version, 10);
     v = Math.max(v, 74);
+    // v = Math.max(v, 74);
     return v;
   }
 
@@ -185,13 +199,6 @@ function getThreejsVersion(content) {
 function getThreejsNewCdn(version, path) {
   return `https://unpkg.com/three@0.${version}.0/${path}`;
 }
-
-const srcRootPath = path.join(process.cwd(), "src/archives");
-const distRootPath = path.join(process.cwd(), "dist");
-
-const codesDistRootPath = path.join(distRootPath, "codes");
-
-const distIndexFilePath = path.join(distRootPath, "index.html");
 
 /**
  *
@@ -238,6 +245,41 @@ async function compileCoffee(content) {
  * @param {*} content
  * @returns
  */
+function replaceImage(content) {
+  let tmpContent = content;
+
+  const regex = /(http:\/\/jsrun\.it)?\/assets\/.*?\.(png|jpg)/g;
+  const matched = [...tmpContent.matchAll(regex)];
+
+  if (matched.length < 1) {
+    return tmpContent;
+  }
+
+  for (let i = 0; i < matched.length; i++) {
+    const [url, , ext] = matched[i];
+    let img = "";
+    switch (ext) {
+      case "png":
+        img = pngImages[i];
+        break;
+      case "jpg":
+        img = jpgImages[i];
+        break;
+    }
+    const basename = path.basename(img);
+    console.log(url, path.join("/common/img", basename));
+    tmpContent = tmpContent.replace(url, path.join("/common/img", basename));
+  }
+
+  return tmpContent;
+}
+
+/**
+ *
+ *
+ * @param {*} content
+ * @returns
+ */
 function buildIndexHTML(content) {
   return `<html>
   <head>
@@ -254,6 +296,16 @@ function buildIndexHTML(content) {
 </body>
 </html>`;
 }
+
+const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
+
+const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
+  "jpg",
+  "jpeg",
+]);
+const pngImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
+  "png",
+]);
 
 /**
  *
@@ -319,6 +371,9 @@ async function main() {
           const newCdn = replacer.buildCdn(version);
           newContent = newContent.replace(regexCdn, newCdn);
         });
+
+        // replace image assets
+        newContent = replaceImage(newContent);
 
         const [fileName, fileExt] = path.extname(file).split(".")[1];
 

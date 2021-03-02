@@ -10,6 +10,7 @@ const { srcRootPath, distRootPath } = require("./constants");
 const codesDistRootPath = path.join(distRootPath, "codes");
 
 const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
+const distCommonAudioAssetsPath = path.join(process.cwd(), "dist/common/audio");
 
 const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
   "jpg",
@@ -18,17 +19,22 @@ const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
 const pngImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
   "png",
 ]);
+const audioAssets = IOUtils.recursiveFindByExtensions(
+  distCommonAudioAssetsPath,
+  ["mp3"]
+);
 
 const pngElemSampler = randomSampler(pngImages);
 const jpgElemSampler = randomSampler(jpgImages);
+const audioAssetSampler = randomSampler(audioAssets);
 
-const threejsCdns = [
+const threejsCdnRegexs = [
   /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
   /https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/three\.js\/r?([0-9]{1,3})\/(three\.min|three)\.js/,
   /https:\/\/ajax\.googleapis\.com\/ajax\/libs\/threejs\/r([0-9]{1,3})\/three\.min\.js/,
 ];
 
-const cdnReplacers = [
+const linkReplacers = [
   {
     regexs: [/http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*?)\/js/],
     buildCdn: (version) => `https://code.jquery.com/jquery-${version}.min.js`,
@@ -59,9 +65,9 @@ const cdnReplacers = [
   },
 ];
 
-const threeModules = [
+const threeModulesReplacers = [
   {
-    regexs: threejsCdns,
+    regexs: threejsCdnRegexs,
     buildCdn: (version) => {
       if (version < 78) {
         return getThreejsNewCdn(version, "three.min.js");
@@ -190,7 +196,7 @@ function matchedRegexs(content, regexs) {
  * @returns
  */
 function getThreejsVersion(content) {
-  const matched = matchedRegexs(content, threejsCdns);
+  const matched = matchedRegexs(content, threejsCdnRegexs);
   if (matched) {
     // console.log(matched[0], matched[1]);
     const [, version] = matched;
@@ -260,8 +266,11 @@ async function compileCoffee(content) {
  * @returns
  */
 function randomSampler(pool) {
-  const tmpPool = _.cloneDeep(pool);
+  let tmpPool = [];
   const pick = () => {
+    if (tmpPool.length < 1) {
+      tmpPool = _.cloneDeep(pool);
+    }
     const elem = _.sample(tmpPool);
     const index = tmpPool.indexOf(elem);
     tmpPool.slice(index, 1);
@@ -301,6 +310,34 @@ function replaceImage(content) {
     }
     const basename = path.basename(img);
     tmpContent = tmpContent.replace(url, path.join("/common/img", basename));
+  }
+
+  return tmpContent;
+}
+
+/**
+ *
+ *
+ * @param {*} content
+ * @returns
+ */
+function replaceAudio(content) {
+  let tmpContent = content;
+
+  const regex = /https?:\/\/.*?.mp3/g;
+  const matched = [...tmpContent.matchAll(regex)];
+
+  if (matched.length < 1) {
+    return tmpContent;
+  }
+
+  for (let i = 0; i < matched.length; i++) {
+    const [url] = matched[i];
+
+    const asset = audioAssetSampler.pick();
+
+    const basename = path.basename(asset);
+    tmpContent = tmpContent.replace(url, path.join("/common/audio", basename));
   }
 
   return tmpContent;
@@ -349,8 +386,8 @@ async function main() {
           const threejsVersion = getThreejsVersion(content);
 
           if (threejsVersion) {
-            for (let i = 0; i < threeModules.length; i++) {
-              const replacer = threeModules[i];
+            for (let i = 0; i < threeModulesReplacers.length; i++) {
+              const replacer = threeModulesReplacers[i];
               const matched = matchedRegexs(newContent, replacer.regexs);
               if (matched) {
                 // console.log(matched[0]);
@@ -364,8 +401,8 @@ async function main() {
 
         // 各種linkをreplace
         {
-          for (let i = 0; i < cdnReplacers.length; i++) {
-            const replacer = cdnReplacers[i];
+          for (let i = 0; i < linkReplacers.length; i++) {
+            const replacer = linkReplacers[i];
             const matched = matchedRegexs(newContent, replacer.regexs);
             if (matched) {
               // console.log(matched[0]);
@@ -378,6 +415,9 @@ async function main() {
 
         // replace image assets
         newContent = replaceImage(newContent);
+
+        // replace audio assets
+        newContent = replaceAudio(newContent);
 
         // ファイルの拡張子に応じてcompile
         {

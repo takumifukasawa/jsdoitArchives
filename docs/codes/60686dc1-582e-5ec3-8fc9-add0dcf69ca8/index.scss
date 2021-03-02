@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background: #fff;
+  font: 30px sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hour, .minutes {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+}
+
+.minutes {
+    margin-left: 20px;
+}
+
+select {
+    position: relative;
+    display: block;
+    width: 112px;
+    height: 84px;
+    opacity: 0;
+}
+
+.hour-ten, .minutes-ten {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.hour-one, .minutes-one {
+    position: absolute;
+    top: 0;
+    left: 50px;
+    pointer-events: none;
+}
+
+.hour-ten, .minutes-ten, .hour-one, .minutes-one {
+    width: 59px;
+    height: 84px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &[data-num="0"] {
+        background-image: url("/common/img/photo-1444792131309-2e517032ded6.png");      
+    }
+    &[data-num="1"] {
+        background-image: url("/common/img/photo-1467810563316-b5476525c0f9.png");      
+    }
+    &[data-num="2"] {
+        background-image: url("/common/img/photo-1457369804613-52c61a468e7d.png");      
+    }
+    &[data-num="3"] {
+        background-image: url("/common/img/photo-1448318440207-ef1893eb8ac0.png");      
+    }
+    &[data-num="4"] {
+        background-image: url("/common/img/photo-1432256851563-20155d0b7a39.png");      
+    }
+    &[data-num="5"] {
+        background-image: url("/common/img/photo-1468476396571-4d6f2a427ee7.png");      
+    }
+    &[data-num="6"] {
+        background-image: url("/common/img/photo-1449942120512-7a6f1ea6b0c4.png");      
+    }
+    &[data-num="7"] {
+        background-image: url("/common/img/photo-1428999418909-363f8e091c50.png");      
+    }
+    &[data-num="8"] {
+        background-image: url("/common/img/photo-1470104240373-bc1812eddc9f.png");      
+    }
+    &[data-num="9"] {
+        background-image: url("/common/img/photo-1459445364195-16475050193c.png");      
+    }
+}

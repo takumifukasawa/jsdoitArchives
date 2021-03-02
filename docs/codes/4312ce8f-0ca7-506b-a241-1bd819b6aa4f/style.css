@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url("/common/img/photo-1464823063530-08f10ed1a2dd.jpeg");
+    background-size: cover;
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}

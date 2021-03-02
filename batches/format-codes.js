@@ -9,8 +9,8 @@ const { srcRootPath, distRootPath } = require("./constants");
 
 const codesDistRootPath = path.join(distRootPath, "codes");
 
-const distCommonImgAssetsPath = path.join(process.cwd(), "dist/common/img");
-const distCommonAudioAssetsPath = path.join(process.cwd(), "dist/common/audio");
+const distCommonImgAssetsPath = path.join(distRootPath, "common/img");
+const distCommonAudioAssetsPath = path.join(distRootPath, "common/audio");
 
 const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
   "jpg",

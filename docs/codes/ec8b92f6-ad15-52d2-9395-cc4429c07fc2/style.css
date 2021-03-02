@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+body {
+  background: #ffd;
+  font: 30px sans-serif; }
+
+@keyframes sprite-image {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, -100%); } }
+.wrapper {
+  position: relative;
+  width: 465px;
+  height: 465px; }
+
+.sprite {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 400px;
+  height: 266px; }
+  .sprite:before {
+    content: "";
+    display: block;
+    width: 400px;
+    height: 1064px;
+    background-image: url(/common/img/photo-1431032843361-ec2cd229c751.jpeg);
+    background-size: 400px 1064px;
+    animation: sprite-image 1s steps(4) infinite; }

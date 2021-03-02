@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.sprite {
+    width: 240px;
+    height: 160px;
+    //background-size: 100%;
+    background-image: url('/common/img/photo-1432117068802-b224427256a5.png');
+
+    &[data-index="1"] {
+        background-position: 0px 0px;
+    }
+    &[data-index="2"] {
+        background-position: 0px 100%;
+    }
+    &[data-index="3"] {
+        background-position: 100% 0px;
+    }    
+    &[data-index="4"] {
+        background-position: 100% 100%;
+    }
+    
+}
+

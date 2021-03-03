@@ -64,7 +64,7 @@ var Main = (function () {
             this.scene.add(this.smokeGroup);
 
             var loader = new THREE.TextureLoader();
-            loader.load("/jsdoitArchives/assets/img/photo-1444044205806-38f3ed106c10.png", function (texture) {
+            loader.load("/jsdoitArchives/assets/img/photo-1471851455650-fae7acd5364f.png", function (texture) {
                 //texture.needsUpdate = true;
                 texture.minFilter = THREE.LinearFilter;
                 var smokeMaterial = new THREE.MeshLambertMaterial({

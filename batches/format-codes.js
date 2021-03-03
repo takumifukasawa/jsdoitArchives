@@ -224,14 +224,26 @@ function getThreejsNewCdn(version, path) {
   return `https://unpkg.com/three@0.${version}.0/${path}`;
 }
 
-function formatHtml(content, url) {
-  const root = parse(content);
-  const head = root.querySelector("head");
-  const title = root.querySelector("title").textContent;
+async function formatHtml(content, dirName, url) {
+  return new Promise((resolve) => {
+    const root = parse(content);
+    const head = root.querySelector("head");
+    const title = root.querySelector("title").textContent;
 
-  const ogImage = path.join(url, "ogp.png");
-  let headText = head.toString();
-  headText += `
+    let headText = head.toString();
+
+    const ogpPath = path.join(
+      constants.srcRootPath,
+      "thumbnails",
+      dirName,
+      "ogp.png"
+    );
+
+    fs.access(ogpPath, fs.F_OK, (err) => {
+      const ogImage = err
+        ? resolveUrl.imgAssetsPath("default-ogp.png")
+        : path.join(url, "ogp.png");
+      headText += `
 <meta name="twitter:card" content="summary" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${url}" />
@@ -241,17 +253,19 @@ function formatHtml(content, url) {
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 `;
-  head.set_content(headText);
-  // head.set_content('<og id="test"></div>');
+      head.set_content(headText);
+      // head.set_content('<og id="test"></div>');
 
-  // `
-  // <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
-  // <meta property="og:title" content="A Twitter for My Sister" />
-  // <meta property="og:description" content="${}" />
-  // <meta property="og:image" content="${}" />
-  // `
+      // `
+      // <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
+      // <meta property="og:title" content="A Twitter for My Sister" />
+      // <meta property="og:description" content="${}" />
+      // <meta property="og:image" content="${}" />
+      // `
 
-  return root.toString();
+      resolve(root.toString());
+    });
+  });
 }
 
 /**
@@ -473,7 +487,11 @@ async function main() {
 
           // html format html
           if (fileExt === "html") {
-            newContent = formatHtml(newContent, resolveUrl.codeUrl(newDirName));
+            newContent = await formatHtml(
+              newContent,
+              newDirName,
+              resolveUrl.codeUrl(newDirName)
+            );
           }
 
           // // compile sass

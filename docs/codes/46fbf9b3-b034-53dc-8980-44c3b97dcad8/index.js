@@ -38,7 +38,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/jsdoitArchives/assets/img/pink-sky.jpeg', function (texture) {
+loader.load('/jsdoitArchives/assets/img/photo-1481999666238-d4473c49f4fb.jpeg', function (texture) {
     init(texture);
 });
 

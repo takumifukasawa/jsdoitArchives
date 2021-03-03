@@ -168,6 +168,6 @@ function createParticle() {
         particleFlg = true;
     };
 
-    img.src = "/jsdoitArchives/assets/img/pHyYeNZMRFOIRpYeW7X3_manacloseup-copy.png";
+    img.src = "/jsdoitArchives/assets/img/photo-1439123068749-20f4035bd7ed.png";
     
 }

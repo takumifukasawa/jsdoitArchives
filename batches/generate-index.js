@@ -1,8 +1,11 @@
+const { parse } = require("node-html-parser");
 const fs = require("fs");
 const path = require("path");
 const { v5: uuidv5 } = require("uuid");
 const { srcRootPath, distRootPath } = require("./constants");
 const IOUtils = require("./utils/IOUtils");
+const asyncUtils = require("./utils/asyncUtils");
+const constants = require("./constants");
 
 const distIndexFilePath = path.join(distRootPath, "index.html");
 
@@ -24,6 +27,7 @@ function buildIndexHTML(content) {
   </head>
 <body>
   <h1>Index</h1>
+  <div id="content"></div>
   ${content}
 </body>
 </html>`;
@@ -40,21 +44,39 @@ async function main() {
 
   dirs.sort();
 
-  await Promise.all(
-    dirs.map(async (dirName) => {
-      const newDirName = uuidv5(
-        dirName,
-        "82b8e05c-4623-4c75-afc9-d986065f581c"
-      );
+  asyncUtils.execPromiseInSequence(
+    dirs.map((dirName) => async () => {
+      return new Promise((resolve) => {
+        const newDirName = uuidv5(
+          dirName,
+          "82b8e05c-4623-4c75-afc9-d986065f581c"
+        );
+        const thumbnailPath = path.join(
+          constants.distRootPath,
+          "codes",
+          newDirName,
+          "thumbnail.png"
+        );
 
-      indexContents += `<p><a href="player.html?code=${newDirName}" target="_blank">${dirName}</a></p>\n`;
+        fs.access(thumbnailPath, fs.F_OK, (err) => {
+          const thumbnailSrc = err
+            ? "/common/img/thumbnail.png"
+            : path.join("/common/img/", dirName, "thumbnail.png");
+          indexContents += `<p><a href="player.html?code=${newDirName}" target="_blank">${dirName}</a><img src="${thumbnailSrc}" alt="" /></p>\n`;
+          resolve();
+        });
+      });
     })
   );
+
+  const root = parse(buildIndexHTML(""));
+  root.set_content(indexContents);
 
   // index file を書き込み
   fs.writeFile(
     distIndexFilePath,
-    buildIndexHTML(indexContents),
+    root.toString(),
+    // buildIndexHTML(indexContents),
     "utf8",
     (err, data) => {
       if (err) throw err;

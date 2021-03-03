@@ -18,8 +18,8 @@ var Analyser = (function () {
         this.soundSource = this.audioContext.createBufferSource();
         this.source = null;
         this.audio = new Audio();
-        this.srcUrl = "/common/audio/jazz_opening.mp3";
-        //this.srcUrl = "/common/audio/jazz_opening.mp3";
+        this.srcUrl = "/common/audio/jingle9.mp3";
+        //this.srcUrl = "/common/audio/jingle9.mp3";
         this.analyser = this.audioContext.createAnalyser();
         this.timeDomain = new Uint8Array(1024);
 

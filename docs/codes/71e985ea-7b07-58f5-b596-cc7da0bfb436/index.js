@@ -64,7 +64,7 @@ var Main = (function () {
             this.scene.add(this.smokeGroup);
 
             var loader = new THREE.TextureLoader();
-            loader.load("/common/img/IKMsqwyaR6qN0kq48STw_annapurna.png", function (texture) {
+            loader.load("common/img/photo-1464621922360-27f3bf0eca75.png", function (texture) {
                 //texture.needsUpdate = true;
                 texture.minFilter = THREE.LinearFilter;
                 var smokeMaterial = new THREE.MeshLambertMaterial({

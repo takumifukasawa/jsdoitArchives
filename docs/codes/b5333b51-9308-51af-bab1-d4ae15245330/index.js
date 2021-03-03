@@ -39,7 +39,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/common/img/JaI1BywIT5Or8Jfmci1E_zakopane.jpg', function (texture) {
+loader.load('common/img/IPEivX6xSBaiYOukY88V_DSC06462_tonemapped.jpg', function (texture) {
     init(texture);
 });
 

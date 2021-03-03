@@ -315,7 +315,7 @@ function replaceImage(content) {
         break;
     }
     const basename = path.basename(img);
-    tmpContent = tmpContent.replace(url, path.join("/common/img", basename));
+    tmpContent = tmpContent.replace(url, path.join("./common/img", basename));
   }
 
   return tmpContent;

@@ -1,6 +1,6 @@
 var wrapper = document.getElementById('wrapper');
 
-var src = "/common/audio/next_time.mp3";
+var src = "/common/audio/jazz_opening.mp3";
 
 var audio = document.createElement("audio");
 

@@ -43,14 +43,14 @@ var outputSprite = new PIXI.Sprite(currentTexture);
 outputSprite.anchor.set(0.5);
 app.stage.addChild(outputSprite);
 
-var bgTexture = PIXI.Texture.fromImage('/common/img/photo-1414541944151-2f3ec1cfd87d.jpeg');
+var bgTexture = PIXI.Texture.fromImage('common/img/photo-1468476775582-6bede20f356f.jpeg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);
 
     app.stage.addChild(bgSprite);
 
-    var paperMapTexture = new PIXI.Texture.fromImage('/common/img/photo-1431576901776-e539bd916ba2.jpeg');
+    var paperMapTexture = new PIXI.Texture.fromImage('common/img/photo-1453227588063-bb302b62f50b.jpeg');
 
     paperMapTexture.baseTexture.addListener('loaded', function () {
         var fragmentShader = document.querySelector('#fragment-shader');

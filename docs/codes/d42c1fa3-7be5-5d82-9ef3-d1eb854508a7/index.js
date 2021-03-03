@@ -23,7 +23,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = '/common/img/photo-1429734160945-4f85244d6a5a.jpeg';
+bgImage.src = 'common/img/photo-1469053913977-1d2f009670d9.jpeg';
 
 function onWindowResize() {
     wrapper.style.width = '';

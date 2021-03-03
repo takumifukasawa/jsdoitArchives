@@ -37,7 +37,7 @@ light.position.set(0, 0, 200);
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/common/img/pHyYeNZMRFOIRpYeW7X3_manacloseup copy.jpg', function (texture) {
+loader.load('common/img/photo-1428189923803-e9801d464d76.jpeg', function (texture) {
     init(texture);
 });
 

@@ -26,12 +26,12 @@ function initSkybox() {
     sceneCube.add(cameraCube);
 
     var urls = [
-        '/common/img/photo-1416431168657-a6c4184348ab.jpeg',
-        '/common/img/photo-1475710534222-6165a8b45449.jpeg',
-        '/common/img/photo-1465205568425-23fdd3805e49.jpeg',
-        '/common/img/photo-1475452488328-eba178d37e85.jpeg',
-        '/common/img/photo-1482154905330-d746d3a7ca4a.jpeg',
-        '/common/img/photo-1460400408855-36abd76648b9.jpg'
+        'common/img/photo-1461611034385-e082102d5c75.jpeg',
+        'common/img/photo-1481999666238-d4473c49f4fb.jpeg',
+        'common/img/photo-1465205568425-23fdd3805e49.jpeg',
+        'common/img/IPEivX6xSBaiYOukY88V_DSC06462_tonemapped.jpg',
+        'common/img/photo-1439546743462-802cabef8e97.jpeg',
+        'common/img/photo-1482351403047-56c184e23fe1.jpeg'
     ];
 
     textureCube = THREE.ImageUtils.loadTextureCube(urls);
@@ -73,7 +73,7 @@ function createScene(geometry, materials) {
             },
              texture: {
                 type: 't',
-                value: THREE.ImageUtils.loadTexture('/common/img/photo-1482160549825-59d1b23cb208.png')
+                value: THREE.ImageUtils.loadTexture('common/img/JaI1BywIT5Or8Jfmci1E_zakopane.png')
             }
         }
     });
@@ -123,7 +123,7 @@ function initGround() {
 
     var groundMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: initTexture});
 
-    var groundTexture = THREE.ImageUtils.loadTexture('/common/img/unsplash_524010c76b52a_1.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
+    var groundTexture = THREE.ImageUtils.loadTexture('common/img/photo-1475446594262-4e6a9a1348f4.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
     groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
     groundTexture.repeat.set(25, 25);
     groundTexture.anisotropy = 6;

@@ -168,6 +168,6 @@ function createParticle() {
         particleFlg = true;
     };
 
-    img.src = "/common/img/photo-1474635183442-1d29a9be83d3.png";
+    img.src = "common/img/photo-1433208406127-d9e1a0a1f1aa.png";
     
 }

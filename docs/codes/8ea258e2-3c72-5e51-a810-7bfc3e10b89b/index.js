@@ -14,7 +14,7 @@ var renderer = new PIXI.WebGLRenderer(WIDTH, HEIGHT, { backgroundColor: 0xEEEEEE
 document.body.appendChild(renderer.view);
 
 // create a texture from an image path
-var texture = PIXI.Texture.fromImage("/common/img/photo-1428908684367-2fe456a630bb.png");
+var texture = PIXI.Texture.fromImage("common/img/photo-1439123068749-20f4035bd7ed.png");
 var smokes = [];
 
 for (var i = 0, len = 200; i < len; i++) {

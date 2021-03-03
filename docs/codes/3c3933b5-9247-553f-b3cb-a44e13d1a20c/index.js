@@ -30,7 +30,7 @@ function init() {
     subCamera = new THREE.PerspectiveCamera(60, renderTarget.width / renderTarget.height, 0.1, 1000);
     subCamera.position.z = 20;
 
-    var texture = THREE.ImageUtils.loadTexture('/common/img/unsplash_524010c76b52a_1.jpeg');
+    var texture = THREE.ImageUtils.loadTexture('common/img/photo-1433208406127-d9e1a0a1f1aa.jpeg');
     var subGeometry = new THREE.BoxGeometry(10, 10, 10);
     var subMaterial = new THREE.MeshBasicMaterial({map: texture, wireframe: false});    
     var subMesh = new THREE.Mesh(subGeometry, subMaterial);

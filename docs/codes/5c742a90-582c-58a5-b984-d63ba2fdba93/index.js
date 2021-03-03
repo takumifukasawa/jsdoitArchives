@@ -136,7 +136,7 @@
     
     var main = new Main({
         canvasID: "my-canvas",
-        src: "/common/img/PlEgx5PSoiiJOmnE2izQ_NYC skyline empire-1.jpg"
+        src: "common/img/photo-1444792131309-2e517032ded6.jpeg"
     });
     
 })(jQuery, window, window.document);

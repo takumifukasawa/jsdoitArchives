@@ -5,7 +5,7 @@
     var THROTTLE    = 50,
         WID         = window.innerWidth,
         HEI         = window.innerHeight,
-        IMG         = "/common/img/pelican.jpg";
+        IMG         = "common/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg";
        
     
     var Rect = function(opt) {

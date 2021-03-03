@@ -69,11 +69,11 @@ var changePosition = function changePosition() {
 
 // load alpha map
 var alphaMapLoader = new THREE.TextureLoader();
-alphaMapLoader.load('/common/img/photo-1475778057357-d35f37fa89dd.png', function (alphaMapTexture) {
+alphaMapLoader.load('common/img/photo-1470338622423-81a89b56393f.png', function (alphaMapTexture) {
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/common/img/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.jpg', function (sprite) {
+    textureLoader.load('common/img/photo-1473864942302-4e0b5f8ce743.jpeg', function (sprite) {
         texture = sprite;
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;

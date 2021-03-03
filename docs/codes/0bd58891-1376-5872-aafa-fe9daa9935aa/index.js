@@ -23,7 +23,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1462903004115-f8e27d6a3985.png", "/jsdoitArchives/assets/img/photo-1444837881208-4d46d5c1f127.png", "/jsdoitArchives/assets/img/L2NfDz5SOm7Gbf755qpw_DSCF0490.png", "/jsdoitArchives/assets/img/whtXWmDGTTuddi1ncK5v_IMG_0097.png", "/jsdoitArchives/assets/img/photo-1465447142348-e9952c393450.png", "/jsdoitArchives/assets/img/photo-1448960968772-b63b3f40dfc1.png", "/jsdoitArchives/assets/img/photo-1446714276218-bd84d334af98.png"];
+            this.images = ["/jsdoitArchives/assets/img/photo-1421986527537-888d998adb74.png", "/jsdoitArchives/assets/img/photo-1469793032099-27d09c984b8b.png", "/jsdoitArchives/assets/img/photo-1468807323685-7506dc848edb.png", "/jsdoitArchives/assets/img/photo-1414788020357-3690cfdab669.png", "/jsdoitArchives/assets/img/photo-1449942120512-7a6f1ea6b0c4.png", "/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png", "/jsdoitArchives/assets/img/photo-1463946377180-f5185c2783e5.png"];
         }
 
         _createClass(Main, [{

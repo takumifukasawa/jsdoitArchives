@@ -33,7 +33,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/jsdoitArchives/assets/img/D9xlw7UxTBqQw5sLf8cJ_reef insp-72.jpg', function (texture) {
+loader.load('/jsdoitArchives/assets/img/photo-1476819781034-f28f6631e10b.jpeg', function (texture) {
     init(texture);
 });
 

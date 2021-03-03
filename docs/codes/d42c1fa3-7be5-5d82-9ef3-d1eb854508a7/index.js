@@ -23,7 +23,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = '/jsdoitArchives/assets/img/photo-1471539491521-29b5b92d0e47.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/pelican.jpg';
 
 function onWindowResize() {
     wrapper.style.width = '';

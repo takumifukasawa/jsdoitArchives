@@ -138,7 +138,7 @@ scene.add(light);
 // load texture
 for (var i = 0; i < TILE_NUM; i++) {
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/IKMsqwyaR6qN0kq48STw_annapurna.jpg?+Date.now()', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1472215001262-9605640fdcdf.jpeg?+Date.now()', function (texture) {
 
         texture.needsUpdate = true;
 

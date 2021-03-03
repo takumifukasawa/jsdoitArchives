@@ -19,13 +19,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = '/jsdoitArchives/assets/img/photo-1440964829947-ca3277bd37f8.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/photo-1474821792123-fa67193d18a5.jpeg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = '/jsdoitArchives/assets/img/photo-1482160549825-59d1b23cb208.png';
+texImage.src = '/jsdoitArchives/assets/img/pink-sky.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

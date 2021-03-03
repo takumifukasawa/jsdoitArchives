@@ -26,7 +26,7 @@
         */       
         this.container.appendChild(this.renderer.domElement);
         
-        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1467810563316-b5476525c0f9.png");
+        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC-skyline-empire-1.png");
         
         this.stats = new Stats();
         this.stats.domElement.style.position = 'absolute';

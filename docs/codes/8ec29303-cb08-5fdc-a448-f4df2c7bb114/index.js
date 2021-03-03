@@ -89,7 +89,7 @@
     };
 
     ImageParticle.prototype.createParticle = function() {
-        this.img.src = "/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC-skyline-empire-1.png";
+        this.img.src = "/jsdoitArchives/assets/img/photo-1462903004115-f8e27d6a3985.png";
 
         var _self = this;
 

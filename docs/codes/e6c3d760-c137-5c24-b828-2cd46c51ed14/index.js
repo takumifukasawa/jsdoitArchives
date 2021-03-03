@@ -20,8 +20,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/unsplash_5263607dd1bfc_2.png", "/jsdoitArchives/assets/img/photo-1483728642387-6c3bdd6c93e5.png", "/jsdoitArchives/assets/img/photo-1454779132693-e5cd0a216ed3.png", "/jsdoitArchives/assets/img/photo-1467521335787-2f0fc0f0e9a0.png", "/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png", "/jsdoitArchives/assets/img/photo-1469793032099-27d09c984b8b.png", "/jsdoitArchives/assets/img/photo-1444837881208-4d46d5c1f127.png"];
-            this.imageSrc = "/jsdoitArchives/assets/img/photo-1431492299426-2ea1ce429cc0.png";
+            this.images = ["/jsdoitArchives/assets/img/photo-1446714276218-bd84d334af98.png", "/jsdoitArchives/assets/img/photo-1429616588302-fec569e203ce.png", "/jsdoitArchives/assets/img/photo-1471851455650-fae7acd5364f.png", "/jsdoitArchives/assets/img/photo-1467094568967-95f87ee9c873.png", "/jsdoitArchives/assets/img/photo-1444792131309-2e517032ded6.png", "/jsdoitArchives/assets/img/JaI1BywIT5Or8Jfmci1E_zakopane.png", "/jsdoitArchives/assets/img/photo-1437650128481-845e6e35bd75.png"];
+            this.imageSrc = "/jsdoitArchives/assets/img/photo-1437936251057-dfbf79980ce5.png";
         }
 
         _createClass(Main, [{

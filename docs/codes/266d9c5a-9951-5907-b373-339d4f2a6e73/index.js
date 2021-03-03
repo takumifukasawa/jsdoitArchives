@@ -45,7 +45,7 @@
     };
         
     Main.prototype.makeMaterial = function() {         
-        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/pelican.png");
+        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/wdXqHcTwSTmLuKOGz92L_Landscape.png");
 
         this.material = new THREE.PointCloudMaterial({
             color: 0xFFFFFF,

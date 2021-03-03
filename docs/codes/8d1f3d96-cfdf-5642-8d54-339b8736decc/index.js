@@ -20,7 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1460499593944-39e14f96a8c6.png", "/jsdoitArchives/assets/img/photo-1460499593944-39e14f96a8c6.png", "/jsdoitArchives/assets/img/photo-1473167146081-90eecb675695.png", "/jsdoitArchives/assets/img/photo-1417716226287-2f8cd2e80274.png", "/jsdoitArchives/assets/img/photo-1451479456262-b94f205059be.png", "/jsdoitArchives/assets/img/photo-1416934625760-d56f5e79f6fe.png", "/jsdoitArchives/assets/img/photo-1471455558438-c1e9d5854d85.png"];
+            this.images = ["/jsdoitArchives/assets/img/photo-1418985991508-e47386d96a71.png", "/jsdoitArchives/assets/img/photo-1429734160945-4f85244d6a5a.png", "/jsdoitArchives/assets/img/unsplash_524010c76b52a_1.png", "/jsdoitArchives/assets/img/photo-1427501482951-3da9b725be23.png", "/jsdoitArchives/assets/img/pink-sky.png", "/jsdoitArchives/assets/img/photo-1464695110811-dcf3903dc2f4.png", "/jsdoitArchives/assets/img/iZkDQMqeQlqhoCIywoFv_6005485056_c8622e0824_o.png"];
         }
 
         _createClass(Main, [{

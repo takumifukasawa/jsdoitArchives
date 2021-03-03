@@ -8,7 +8,7 @@
         SLICES = 12,
         HALF_PI = Math.PI / 2,
         TWO_PI = Math.PI * 2,
-        IMG_SRC = "/jsdoitArchives/assets/img/pHyYeNZMRFOIRpYeW7X3_manacloseup copy.jpg",
+        IMG_SRC = "/jsdoitArchives/assets/img/photo-1451431487663-470c5380d27c.jpg",
         
         NUM = 40,
         RADIUS = 120,

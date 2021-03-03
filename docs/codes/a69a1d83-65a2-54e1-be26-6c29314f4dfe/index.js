@@ -41,7 +41,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/jsdoitArchives/assets/img/pelican.jpg', function (texture) {
+loader.load('/jsdoitArchives/assets/img/photo-1458365288895-9f58c5d8ff09.jpeg', function (texture) {
     init(texture);
 });
 

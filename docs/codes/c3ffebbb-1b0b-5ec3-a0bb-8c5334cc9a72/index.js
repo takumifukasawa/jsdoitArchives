@@ -29,7 +29,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-var src = "/jsdoitArchives/assets/img/photo-1475776408506-9a5371e7a068.jpeg";
+var src = "/jsdoitArchives/assets/img/photo-1462733441571-9312d0b53818.jpg";
 
 var textureLoader = new THREE.TextureLoader();
 textureLoader.load(src, function (tex) {

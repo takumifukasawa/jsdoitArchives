@@ -20,8 +20,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1451431487663-470c5380d27c.png", "/jsdoitArchives/assets/img/photo-1444792131309-2e517032ded6.png", "/jsdoitArchives/assets/img/photo-1461770354136-8f58567b617a.png", "/jsdoitArchives/assets/img/photo-1463780324318-d1a8ddc05a11.png", "/jsdoitArchives/assets/img/photo-1439761414027-4f4ebeeda3a3.png", "/jsdoitArchives/assets/img/photo-1476862921040-227a643bf014.png", "/jsdoitArchives/assets/img/photo-1474635183442-1d29a9be83d3.png"];
-            this.imageSrc = "/jsdoitArchives/assets/img/O7A9fAvYSXC7NTdz8gLQ_IMGP1039.png";
+            this.images = ["/jsdoitArchives/assets/img/unsplash_5263607dd1bfc_2.png", "/jsdoitArchives/assets/img/photo-1483728642387-6c3bdd6c93e5.png", "/jsdoitArchives/assets/img/photo-1454779132693-e5cd0a216ed3.png", "/jsdoitArchives/assets/img/photo-1467521335787-2f0fc0f0e9a0.png", "/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png", "/jsdoitArchives/assets/img/photo-1469793032099-27d09c984b8b.png", "/jsdoitArchives/assets/img/photo-1444837881208-4d46d5c1f127.png"];
+            this.imageSrc = "/jsdoitArchives/assets/img/photo-1431492299426-2ea1ce429cc0.png";
         }
 
         _createClass(Main, [{

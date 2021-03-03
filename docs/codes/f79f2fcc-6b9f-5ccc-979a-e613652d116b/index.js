@@ -26,12 +26,12 @@ function initSkybox() {
     sceneCube.add(cameraCube);
 
     var urls = [
-        'assets/img/photo-1474267119072-677dd7959e96.jpeg',
-        'assets/img/photo-1458724338480-79bc7a8352e4.jpeg',
-        'assets/img/photo-1473167146081-90eecb675695.jpeg',
-        'assets/img/photo-1428190318100-06790c8b2e5a.jpeg',
-        'assets/img/photo-1465205568425-23fdd3805e49.jpeg',
-        'assets/img/photo-1472190649224-495422e1b602.jpeg'
+        'assets/img/photo-1427501482951-3da9b725be23.jpeg',
+        'assets/img/photo-1467321638755-7246fd0dc1f3.jpg',
+        'assets/img/photo-1444044205806-38f3ed106c10.jpeg',
+        'assets/img/photo-1433190152045-5a94184895da.jpeg',
+        'assets/img/photo-1475446594262-4e6a9a1348f4.jpeg',
+        'assets/img/photo-1429080695038-cdf6ae5dbc13.jpg'
     ];
 
     textureCube = THREE.ImageUtils.loadTextureCube(urls);
@@ -73,7 +73,7 @@ function createScene(geometry, materials) {
             },
              texture: {
                 type: 't',
-                value: THREE.ImageUtils.loadTexture('assets/img/ZLSw0SXxThSrkXRIiCdT_DSC_0345.png')
+                value: THREE.ImageUtils.loadTexture('assets/img/829d24cf.png')
             }
         }
     });
@@ -123,7 +123,7 @@ function initGround() {
 
     var groundMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: initTexture});
 
-    var groundTexture = THREE.ImageUtils.loadTexture('assets/img/photo-1465415513839-55341da57a98.jpg', undefined, function () { groundMaterial.map = groundTexture; });
+    var groundTexture = THREE.ImageUtils.loadTexture('assets/img/f9c22c58.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
     groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
     groundTexture.repeat.set(25, 25);
     groundTexture.anisotropy = 6;

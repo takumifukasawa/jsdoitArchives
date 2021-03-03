@@ -43,7 +43,7 @@ var img = document.createElement("img");
 img.onload = function () {
     init();
 };
-img.src = "assets/img/photo-1453280339213-efb07f95531b.jpeg";
+img.src = "assets/img/photo-1475452488328-eba178d37e85.jpeg";
 
 //---------------------------------------------------
 // box

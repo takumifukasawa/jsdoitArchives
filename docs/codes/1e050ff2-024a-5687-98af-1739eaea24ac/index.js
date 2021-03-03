@@ -26,7 +26,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.beforeTimeDomain = 0;
             this.beforeUpdateLoop = 0;
 
-            this.imgSrc = "assets/img/photo-1472195870936-d88b0d4c1b41.jpeg";
+            this.imgSrc = "assets/img/photo-1464400694175-33544b41703d.jpg";
         }
 
         _createClass(Main, [{

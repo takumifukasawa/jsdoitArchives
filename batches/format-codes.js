@@ -17,6 +17,7 @@ const jpgImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, [
   "jpeg",
 ]);
 const pngImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, ["png"]);
+const gifImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, ["gif"]);
 const audioAssets = IOUtils.recursiveFindByExtensions(distAudioAssetsPath, [
   "mp3",
 ]);
@@ -24,6 +25,7 @@ const audioAssets = IOUtils.recursiveFindByExtensions(distAudioAssetsPath, [
 const pngElemSampler = randomSampler(pngImages);
 const jpgElemSampler = randomSampler(jpgImages);
 const audioAssetSampler = randomSampler(audioAssets);
+const gifElemSampler = randomSampler(gifImages);
 
 const threejsCdnRegexs = [
   /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
@@ -290,7 +292,7 @@ function randomSampler(pool) {
 function replaceImage(content) {
   let tmpContent = content;
 
-  const regex = /(http:\/\/jsrun\.it)?\/assets\/.*?\.(png|jpg)/g;
+  const regex = /(http:\/\/jsrun\.it)?\/assets\/.*?\.(png|jpg|gif)/g;
   const matched = [...tmpContent.matchAll(regex)];
 
   if (matched.length < 1) {
@@ -306,6 +308,9 @@ function replaceImage(content) {
         break;
       case "jpg":
         img = jpgElemSampler.pick();
+        break;
+      case "gif":
+        img = gifElemSampler.pick();
         break;
     }
     const basename = path.basename(img);

@@ -21,13 +21,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = 'assets/img/pelican.jpg';
+bgImage.src = 'assets/img/photo-1475598322381-f1b499717dda.jpeg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = 'assets/img/photo-1448318440207-ef1893eb8ac0.png';
+texImage.src = 'assets/img/JaI1BywIT5Or8Jfmci1E_zakopane.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

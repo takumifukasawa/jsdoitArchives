@@ -65,7 +65,7 @@ function init() {
     geometry.addAttribute('uv', new THREE.BufferAttribute(texcoord, 2));
     geometry.addAttribute('index', new THREE.BufferAttribute(indices, 1));
     var uniforms = {
-        texture : { type: "t", value: THREE.ImageUtils.loadTexture( 'assets/img/photo-1416431168657-a6c4184348ab.jpeg' ) }  // frog.jpg
+        texture : { type: "t", value: THREE.ImageUtils.loadTexture( 'assets/img/photo-1464039397811-476f652a343b.jpeg' ) }  // frog.jpg
     };
 
     var material = new THREE.RawShaderMaterial({

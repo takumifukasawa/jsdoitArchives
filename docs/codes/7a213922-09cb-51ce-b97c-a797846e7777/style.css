@@ -8,7 +8,7 @@ body {
   font: 30px sans-serif; }
 
 .wrapper {
-  background-image: url(assets/img/wdXqHcTwSTmLuKOGz92L_Landscape.jpg);
+  background-image: url(assets/img/photo-1439736637365-748f240b24fb.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 465px;
@@ -23,7 +23,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  background-image: url("assets/img/photo-1462819067004-905a72ea3996.png");
+  background-image: url("assets/img/unsplash_5263607dd1bfc_2.png");
   background-size: cover; }
   .btn:after {
     content: '';
@@ -33,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("assets/img/photo-1472215001262-9605640fdcdf.png");
+    background-image: url("assets/img/photo-1464740042629-b78a46b310ae.png");
     background-size: cover;
     opacity: 0;
     pointer-events: none;

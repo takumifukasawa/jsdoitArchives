@@ -128,9 +128,9 @@ var frontDiffuseMapLoader = new THREE.TextureLoader();
 var backDiffuseMapLoader = new THREE.TextureLoader();
 var heightMapLoader = new THREE.TextureLoader();
 
-frontDiffuseMapLoader.load("assets/img/photo-1425036458755-dc303a604201.jpeg", function (frontMap) {
-    backDiffuseMapLoader.load("assets/img/photo-1468476396571-4d6f2a427ee7.jpeg", function (backMap) {
-        heightMapLoader.load("assets/img/photo-1429547584745-d8bec594c82e.png", function (heightMap) {
+frontDiffuseMapLoader.load("assets/img/photo-1415045384817-2f9cf7f2ed79.jpeg", function (frontMap) {
+    backDiffuseMapLoader.load("assets/img/PlEgx5PSoiiJOmnE2izQ_NYC skyline empire-1.jpg", function (backMap) {
+        heightMapLoader.load("assets/img/photo-1443527216320-7e744084f5a7.png", function (heightMap) {
             createMesh(frontMap, backMap, heightMap);
             init();
         });

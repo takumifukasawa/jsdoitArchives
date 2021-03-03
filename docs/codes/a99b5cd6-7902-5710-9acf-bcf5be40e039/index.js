@@ -75,7 +75,7 @@ var changePosition = function changePosition() {
 
 // load texture
 var textureLoader = new THREE.TextureLoader();
-textureLoader.load('assets/img/blue-bird.jpeg', function (sprite) {
+textureLoader.load('assets/img/photo-1464822759023-fed622ff2c3b.jpeg', function (sprite) {
     texture = sprite;
     texture.needsUpdate = true;
     /*

@@ -20,7 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["assets/img/wdXqHcTwSTmLuKOGz92L_Landscape.png", "assets/img/photo-1468476775582-6bede20f356f.png", "assets/img/photo-1475710534222-6165a8b45449.png", "assets/img/photo-1475710534222-6165a8b45449.png", "assets/img/photo-1416934625760-d56f5e79f6fe.png", "assets/img/photo-1482160549825-59d1b23cb208.png", "assets/img/photo-1439761414027-4f4ebeeda3a3.png"];
+            this.images = ["assets/img/photo-1428189923803-e9801d464d76.png", "assets/img/photo-1475778057357-d35f37fa89dd.png", "assets/img/photo-1429305336325-b84ace7eba3b.png", "assets/img/pelican.png", "assets/img/pelican.png", "assets/img/photo-1428999418909-363f8e091c50.png", "assets/img/photo-1471539491521-29b5b92d0e47.png"];
         }
 
         _createClass(Main, [{

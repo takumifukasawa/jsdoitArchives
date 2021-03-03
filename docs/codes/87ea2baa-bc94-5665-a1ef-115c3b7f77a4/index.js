@@ -29,7 +29,7 @@ metaAppleStatusBar.setAttribute("default", "apple-mobile-web-app-status-bar-styl
 document.getElementsByTagName('head')[0].appendChild(metaAppleStatusBar);
 
 var webClipIconLink = document.createElement("link");
-webClipIconLink.setAttribute("href", "assets/img/ZLSw0SXxThSrkXRIiCdT_DSC_0345.png");
+webClipIconLink.setAttribute("href", "assets/img/PcLGXNjMTdiFVKTrElCl__DSC2245.png");
 webClipIconLink.setAttribute("ref", "apple-touch-icon");
 document.getElementsByTagName('head')[0].appendChild(webClipIconLink);
 

@@ -8,7 +8,7 @@ canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
 
 var image = new Image();
-image.src = "assets/img/photo-1464740042629-b78a46b310ae.jpg";
+image.src = "assets/img/photo-1468807323685-7506dc848edb.jpeg";
 
 var run = function() {
     setInterval(function() {

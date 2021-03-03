@@ -89,7 +89,7 @@
     };
 
     ImageParticle.prototype.createParticle = function() {
-        this.img.src = "assets/img/f9c22c58.png";
+        this.img.src = "assets/img/photo-1428908728789-d2de25dbd4e2.png";
 
         var _self = this;
 

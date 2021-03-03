@@ -38,9 +38,7 @@ async function wait(ms) {
 async function main() {
   const browser = await puppeteer.launch(options);
   try {
-    // await asyncUtils.execPromiseInSequence(
-    // );
-    await Promise.all([
+    await asyncUtils.execPromiseInSequence(
       codeDirs.map(async (dir) => {
         const captureUrl = `https://takumifukasawa.github.io/jsdoitArchives/codes/${dir}/`;
         const thumbnailPath = path.join(
@@ -58,8 +56,8 @@ async function main() {
           3000
         );
         console.log(`captured.`);
-      }),
-    ]);
+      })
+    );
   } catch (e) {
     console.error(e);
   } finally {

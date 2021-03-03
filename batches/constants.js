@@ -1,5 +1,17 @@
 const path = require("path");
 
-exports.srcRootPath = path.join(process.cwd(), "src/archives");
+const srcRootPath = path.join(process.cwd(), "src");
 
-exports.distRootPath = path.join(process.cwd(), "docs");
+const archivesSrcRootPath = path.join(srcRootPath, "archives");
+
+const thumbnailsSrcRootPath = path.join(srcRootPath, "thumbnails");
+
+const distRootPath = path.join(process.cwd(), "docs");
+
+exports.srcRootPath = srcRootPath;
+
+exports.archivesSrcRootPath = archivesSrcRootPath;
+
+exports.thumbnailsSrcRootPath = thumbnailsSrcRootPath;
+
+exports.distRootPath = distRootPath;

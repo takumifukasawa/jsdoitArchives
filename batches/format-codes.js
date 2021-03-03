@@ -5,12 +5,15 @@ const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const _ = require("lodash");
 const IOUtils = require("./utils/IOUtils");
-const { srcRootPath, distRootPath } = require("./constants");
+const constants = require("./constants");
 
-const codesDistRootPath = path.join(distRootPath, "codes");
+const codesDistRootPath = path.join(constants.distRootPath, "codes");
 
-const distCommonImgAssetsPath = path.join(distRootPath, "common/img");
-const distCommonAudioAssetsPath = path.join(distRootPath, "common/audio");
+const distCommonImgAssetsPath = path.join(constants.distRootPath, "common/img");
+const distCommonAudioAssetsPath = path.join(
+  constants.distRootPath,
+  "common/audio"
+);
 
 const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
   "jpg",
@@ -351,7 +354,7 @@ function replaceAudio(content) {
  *
  */
 async function main() {
-  const dirs = IOUtils.getDirectories(srcRootPath);
+  const dirs = IOUtils.getDirectories(constants.archivesSrcRootPath);
 
   await IOUtils.removeDir(codesDistRootPath);
 
@@ -362,7 +365,7 @@ async function main() {
   await Promise.all(
     dirs.map(async (dirName) => {
       const files = await IOUtils.getFilesInDirectory(
-        path.join(srcRootPath, dirName)
+        path.join(constants.archivesSrcRootPath, dirName)
       );
 
       const newDirName = uuidv5(
@@ -377,7 +380,11 @@ async function main() {
       await IOUtils.createDir(codeDistRootPath);
 
       files.forEach(async (file) => {
-        const srcFilePath = path.join(srcRootPath, dirName, file);
+        const srcFilePath = path.join(
+          constants.archivesSrcRootPath,
+          dirName,
+          file
+        );
 
         const content = fs.readFileSync(srcFilePath, "utf8");
 

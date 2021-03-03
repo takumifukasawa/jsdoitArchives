@@ -2,49 +2,27 @@ const { parse } = require("node-html-parser");
 const fs = require("fs");
 const path = require("path");
 const { v5: uuidv5 } = require("uuid");
-const { srcRootPath, distRootPath } = require("./constants");
 const IOUtils = require("./utils/IOUtils");
 const asyncUtils = require("./utils/asyncUtils");
 const constants = require("./constants");
 
-const distIndexFilePath = path.join(distRootPath, "index.html");
-
-/**
- *
- *
- * @param {*} content
- * @returns
- */
-function buildIndexHTML(content) {
-  return `<html>
-  <head>
-    <title>Index</title>
-    <style>
-      p {
-        font-size: 12px;
-      }
-    </style>
-  </head>
-<body>
-  <h1>Index</h1>
-  <div id="content"></div>
-  ${content}
-</body>
-</html>`;
-}
+const distIndexFilePath = path.join(constants.distRootPath, "index.html");
 
 /**
  *
  *
  */
 async function main() {
-  const dirs = IOUtils.getDirectories(srcRootPath);
+  const dirs = IOUtils.getDirectories(constants.archivesSrcRootPath);
 
-  let indexContents = "";
+  let contentListString = "";
 
   dirs.sort();
 
-  asyncUtils.execPromiseInSequence(
+  const srcIndexFilePath = path.join(constants.srcRootPath, "index.html");
+  const srcIndexFileContent = fs.readFileSync(srcIndexFilePath, "utf8");
+
+  await asyncUtils.execPromiseInSequence(
     dirs.map((dirName) => async () => {
       return new Promise((resolve) => {
         const newDirName = uuidv5(
@@ -60,23 +38,33 @@ async function main() {
 
         fs.access(thumbnailPath, fs.F_OK, (err) => {
           const thumbnailSrc = err
-            ? "/common/img/thumbnail.png"
-            : path.join("/common/img/", dirName, "thumbnail.png");
-          indexContents += `<p><a href="player.html?code=${newDirName}" target="_blank">${dirName}</a><img src="${thumbnailSrc}" alt="" /></p>\n`;
+            ? "/common/img/default-thumbnail.png"
+            : path.join("/codes", newDirName, "thumbnail.png");
+          const codeLink = `player.html?code=${newDirName}`;
+          contentListString += `
+<div>
+  <p>
+    <a href="${codeLink}" target="_blank">${dirName}</a>
+  </p>
+  <a href="${codeLink}" target="_blank">
+    <img src="" data-src="${thumbnailSrc}" alt="" width="150" height="150"/>
+  </a>
+</div>
+`;
           resolve();
         });
       });
     })
   );
 
-  const root = parse(buildIndexHTML(""));
-  root.set_content(indexContents);
+  const indexFileNode = parse(srcIndexFileContent);
+  appendTargetNode = indexFileNode.querySelector("#content");
+  appendTargetNode.set_content(contentListString);
 
   // index file を書き込み
   fs.writeFile(
     distIndexFilePath,
-    root.toString(),
-    // buildIndexHTML(indexContents),
+    indexFileNode.toString(),
     "utf8",
     (err, data) => {
       if (err) throw err;

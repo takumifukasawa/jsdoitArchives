@@ -39,23 +39,24 @@ async function main() {
   const browser = await puppeteer.launch(options);
   try {
     await asyncUtils.execPromiseInSequence(
-      codeDirs.map(async (dir) => {
+      codeDirs.map((dir) => async () => {
         const captureUrl = `https://takumifukasawa.github.io/jsdoitArchives/codes/${dir}/`;
-        const thumbnailPath = path.join(
-          constants.distRootPath,
-          "codes",
-          dir,
-          "thumbnail.png"
+        const thumbnailDirPath = path.join(
+          constants.thumbnailsSrcRootPath,
+          dir
         );
+        const thumbnailPath = path.join(thumbnailDirPath, "thumbnail.png");
         console.log("----------------------------------");
-        console.log(`capture: ${captureUrl} -> ${thumbnailPath}`);
+        console.log(`begin capture: ${captureUrl}`);
+        await IOUtils.removeDir(thumbnailDirPath);
+        await IOUtils.createDir(thumbnailDirPath);
         await capturePage(
           browser,
           `https://takumifukasawa.github.io/jsdoitArchives/codes/${dir}/`,
           thumbnailPath,
           3000
         );
-        console.log(`captured.`);
+        console.log(`captured: ${thumbnailPath}`);
       })
     );
   } catch (e) {

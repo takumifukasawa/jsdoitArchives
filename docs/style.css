@@ -1,0 +1,14 @@
+#content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 8px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+#content > div {
+  border-top: solid 1px #ccc;
+}
+
+p {
+  font-size: 12px;
+}

@@ -45,7 +45,7 @@
     };
         
     Main.prototype.makeMaterial = function() {         
-        this.texture = THREE.ImageUtils.loadTexture("/common/img/unsplash_5263607dd1bfc_2.png");
+        this.texture = THREE.ImageUtils.loadTexture("/common/img/blue-bird.png");
 
         this.material = new THREE.PointCloudMaterial({
             color: 0xFFFFFF,

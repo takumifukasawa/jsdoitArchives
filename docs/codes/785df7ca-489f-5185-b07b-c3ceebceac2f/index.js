@@ -43,8 +43,8 @@ scene.add(light);
 
 var maskLoader = new THREE.TextureLoader();
 var loader = new THREE.TextureLoader();
-maskLoader.load('/common/img/photo-1462146449396-2d7d4ba877d7.png', function (maskTexture) {
-    loader.load('/common/img/photo-1464621922360-27f3bf0eca75.jpg', function (texture) {
+maskLoader.load('/common/img/JaI1BywIT5Or8Jfmci1E_zakopane.png', function (maskTexture) {
+    loader.load('/common/img/photo-1471110338536-858caa3dbe45.jpeg', function (texture) {
         init(texture, maskTexture);
         onWindowResize();
         window.addEventListener('resize', onWindowResize);

@@ -26,7 +26,7 @@
         */       
         this.container.appendChild(this.renderer.domElement);
         
-        this.texture = THREE.ImageUtils.loadTexture("/common/img/photo-1453974336165-b5c58464f1ed.png");
+        this.texture = THREE.ImageUtils.loadTexture("/common/img/photo-1456428199391-a3b1cb5e93ab.png");
         
         this.stats = new Stats();
         this.stats.domElement.style.position = 'absolute';

@@ -8,7 +8,7 @@ body {
   font: 30px sans-serif; }
 
 .wrapper {
-  background-image: url(/common/img/photo-1422651355218-53453822ebb8.jpg);
+  background-image: url(/common/img/photo-1475475690428-61534882b644.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 465px;
@@ -23,7 +23,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  background-image: url("/common/img/photo-1476819781034-f28f6631e10b.png");
+  background-image: url("/common/img/photo-1429305336325-b84ace7eba3b.png");
   background-size: cover; }
   .btn:after {
     content: '';
@@ -33,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("/common/img/photo-1416431168657-a6c4184348ab.png");
+    background-image: url("/common/img/photo-1482154905330-d746d3a7ca4a.png");
     background-size: cover;
     opacity: 0;
     pointer-events: none;

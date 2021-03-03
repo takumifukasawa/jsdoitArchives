@@ -6,7 +6,7 @@
     var THROTTLE    = 50,
         WID         = window.innerWidth,
         HEI         = window.innerHeight,
-        IMG         = "/common/img/IKMsqwyaR6qN0kq48STw_annapurna.jpg";
+        IMG         = "/common/img/photo-1472195870936-d88b0d4c1b41.jpeg";
        
     
     var Rect = function(opt) {

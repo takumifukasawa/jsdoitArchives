@@ -74,7 +74,7 @@ var changePosition = function changePosition() {
 
 // load texture
 var textureLoader = new THREE.TextureLoader();
-textureLoader.load('/common/img/qBUS7gZyT56yoqGcdnyX_airlines.jpg', function (sprite) {
+textureLoader.load('/common/img/landscape.jpeg', function (sprite) {
     texture = sprite;
     texture.needsUpdate = true;
     /*

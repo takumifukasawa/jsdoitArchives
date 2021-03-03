@@ -13,7 +13,7 @@ var Main = (function () {
     function Main() {
         _classCallCheck(this, Main);
 
-        this.imageSrc = "assets/img/photo-1468476775582-6bede20f356f.png";
+        this.imageSrc = "/jsdoitArchives/assets/img/photo-1465441494912-68f5747c3fe0.png";
         this.beginTime = +new Date();
 
         this.initialize();

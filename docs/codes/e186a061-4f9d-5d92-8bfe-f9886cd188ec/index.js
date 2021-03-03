@@ -122,8 +122,8 @@ var init = function init() {
 var diffuseMapLoader = new THREE.TextureLoader();
 var heightMapLoader = new THREE.TextureLoader();
 
-diffuseMapLoader.load("assets/img/photo-1444842741774-771cf4455a78.jpg", function (diffuseMap) {
-    heightMapLoader.load("assets/img/rqZBrx1WRsCtkqGSVBK6_IMG_0063.png", function (heightMap) {
+diffuseMapLoader.load("/jsdoitArchives/assets/img/IPEivX6xSBaiYOukY88V_DSC06462_tonemapped.jpg", function (diffuseMap) {
+    heightMapLoader.load("/jsdoitArchives/assets/img/photo-1431032843361-ec2cd229c751.png", function (heightMap) {
         createMesh(diffuseMap, heightMap);
         init();
     });

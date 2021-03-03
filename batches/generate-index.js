@@ -38,8 +38,8 @@ async function main() {
 
         fs.access(thumbnailPath, fs.F_OK, (err) => {
           const thumbnailSrc = err
-            ? "./assets/img/default-thumbnail.png"
-            : path.join("./codes", newDirName, "thumbnail.png");
+            ? "/jsdoitArchives/assets/img/default-thumbnail.png"
+            : path.join("/jsdoitArchives/codes", newDirName, "thumbnail.png");
           const codeLink = `player.html?code=${newDirName}`;
           contentListString += `
 <div>

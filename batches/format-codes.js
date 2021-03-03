@@ -314,7 +314,10 @@ function replaceImage(content) {
         break;
     }
     const basename = path.basename(img);
-    tmpContent = tmpContent.replace(url, path.join("./assets/img", basename));
+    tmpContent = tmpContent.replace(
+      url,
+      path.join("/jsdoitArchives/assets/img", basename)
+    );
   }
 
   return tmpContent;
@@ -342,7 +345,10 @@ function replaceAudio(content) {
     const asset = audioAssetSampler.pick();
 
     const basename = path.basename(asset);
-    tmpContent = tmpContent.replace(url, path.join("./assets/audio", basename));
+    tmpContent = tmpContent.replace(
+      url,
+      path.join("/jsdoitArchives/assets/audio", basename)
+    );
   }
 
   return tmpContent;

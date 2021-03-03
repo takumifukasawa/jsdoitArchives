@@ -32,6 +32,6 @@ body {
     display: block;
     width: 400px;
     height: 1064px;
-    background-image: url(assets/img/photo-1471733091092-73a03861dea7.jpeg);
+    background-image: url(/jsdoitArchives/assets/img/photo-1464013778555-8e723c2f01f8.jpg);
     background-size: 400px 1064px;
     animation: sprite-image 1s steps(4) infinite; }

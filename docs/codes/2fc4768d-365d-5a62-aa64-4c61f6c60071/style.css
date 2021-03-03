@@ -39,7 +39,7 @@ body {
   .img:before {
     content: "";
     display: block;
-    background-image: url("assets/img/photo-1465588042420-47a53c2d0320.jpeg");
+    background-image: url("/jsdoitArchives/assets/img/photo-1428452932365-4e7e1c4b0987.jpeg");
     width: 120px;
     height: 92px;
     background-repeat: no-repeat;

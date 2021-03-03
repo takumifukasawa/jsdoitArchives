@@ -1,6 +1,6 @@
 var wrapper = document.getElementById('wrapper');
 
-var src = "assets/audio/jingle9.mp3";
+var src = "/jsdoitArchives/assets/audio/jingle9.mp3";
 
 var audio = document.createElement("audio");
 

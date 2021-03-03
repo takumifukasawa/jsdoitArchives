@@ -38,7 +38,7 @@ light.position.set(0, 0, 200);
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('common/img/unsplash_5263607dd1bfc_2.jpg', function (texture) {
+loader.load('assets/img/photo-1461770354136-8f58567b617a.jpeg', function (texture) {
     init(texture);
 });
 

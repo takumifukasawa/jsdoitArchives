@@ -80,7 +80,7 @@
     };
        
     var opts = {
-        src: "common/img/photo-1422651355218-53453822ebb8.jpg"
+        src: "assets/img/photo-1414788020357-3690cfdab669.jpg"
     };
     var rotateImage = new RotateImage(opts);
     

@@ -9,23 +9,17 @@ const constants = require("./constants");
 
 const codesDistRootPath = path.join(constants.distRootPath, "codes");
 
-const distCommonImgAssetsPath = path.join(constants.distRootPath, "common/img");
-const distCommonAudioAssetsPath = path.join(
-  constants.distRootPath,
-  "common/audio"
-);
+const distImgAssetsPath = path.join(constants.distRootPath, "assets/img");
+const distAudioAssetsPath = path.join(constants.distRootPath, "assets/audio");
 
-const jpgImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
+const jpgImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, [
   "jpg",
   "jpeg",
 ]);
-const pngImages = IOUtils.recursiveFindByExtensions(distCommonImgAssetsPath, [
-  "png",
+const pngImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, ["png"]);
+const audioAssets = IOUtils.recursiveFindByExtensions(distAudioAssetsPath, [
+  "mp3",
 ]);
-const audioAssets = IOUtils.recursiveFindByExtensions(
-  distCommonAudioAssetsPath,
-  ["mp3"]
-);
 
 const pngElemSampler = randomSampler(pngImages);
 const jpgElemSampler = randomSampler(jpgImages);
@@ -315,7 +309,7 @@ function replaceImage(content) {
         break;
     }
     const basename = path.basename(img);
-    tmpContent = tmpContent.replace(url, path.join("./common/img", basename));
+    tmpContent = tmpContent.replace(url, path.join("./assets/img", basename));
   }
 
   return tmpContent;
@@ -343,7 +337,7 @@ function replaceAudio(content) {
     const asset = audioAssetSampler.pick();
 
     const basename = path.basename(asset);
-    tmpContent = tmpContent.replace(url, path.join("/common/audio", basename));
+    tmpContent = tmpContent.replace(url, path.join("./assets/audio", basename));
   }
 
   return tmpContent;

@@ -8,7 +8,7 @@
         SLICES = 12,
         HALF_PI = Math.PI / 2,
         TWO_PI = Math.PI * 2,
-        IMG_SRC = "common/img/photo-1419064642531-e575728395f2.jpeg",
+        IMG_SRC = "assets/img/pelican.jpg",
         
         NUM = 40,
         RADIUS = 120,

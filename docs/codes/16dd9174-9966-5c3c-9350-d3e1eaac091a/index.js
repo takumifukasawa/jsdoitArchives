@@ -47,7 +47,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('common/img/photo-1454789591675-556c287e39e2.jpeg', function (texture) {
+loader.load('assets/img/photo-1457369804613-52c61a468e7d.jpg', function (texture) {
     init(texture);
 });
 

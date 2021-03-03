@@ -59,7 +59,7 @@ document.getElementById('magic-window').addEventListener('click', function () {
     vrButton.requestEnterFullscreen();
 });
 
-var src = 'common/img/photo-1481999666238-d4473c49f4fb.jpeg';
+var src = 'assets/img/photo-1472215001262-9605640fdcdf.jpeg';
 
 var textureLoader = new THREE.TextureLoader();
 textureLoader.load(src, function (tex) {

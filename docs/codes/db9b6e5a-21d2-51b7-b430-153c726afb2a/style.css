@@ -15,7 +15,7 @@ body {
 
 .image {
     -webkit-filter: grayscale(100%);
-    background-image: url(common/img/photo-1469793032099-27d09c984b8b.jpeg);
+    background-image: url(assets/img/photo-1453227588063-bb302b62f50b.jpeg);
     width: 465px;
     height: 465px;
 }

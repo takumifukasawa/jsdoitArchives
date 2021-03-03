@@ -21,13 +21,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = 'common/img/O7A9fAvYSXC7NTdz8gLQ_IMGP1039.jpg';
+bgImage.src = 'assets/img/pelican.jpg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = 'common/img/photo-1482351403047-56c184e23fe1.png';
+texImage.src = 'assets/img/photo-1448318440207-ef1893eb8ac0.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

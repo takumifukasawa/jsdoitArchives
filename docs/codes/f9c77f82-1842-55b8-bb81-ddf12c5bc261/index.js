@@ -41,7 +41,7 @@
     };
         
     Main.prototype.makeMaterial = function() {         
-        this.texture = THREE.ImageUtils.loadTexture("common/img/photo-1418985991508-e47386d96a71.png");
+        this.texture = THREE.ImageUtils.loadTexture("assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png");
 
         this.material = new THREE.PointCloudMaterial({
             color: 0xFFFFFF,

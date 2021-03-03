@@ -50,11 +50,11 @@ var update = function update() {
 
 // load alpha map
 var alphaMapLoader = new THREE.TextureLoader();
-alphaMapLoader.load('common/img/D9xlw7UxTBqQw5sLf8cJ_reef-insp-72.png', function (alphaMapTexture) {
+alphaMapLoader.load('assets/img/photo-1466154714956-9f5f64682fcc.png', function (alphaMapTexture) {
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('common/img/photo-1467521335787-2f0fc0f0e9a0.jpeg', function (texture) {
+    textureLoader.load('assets/img/photo-1482351403047-56c184e23fe1.jpeg', function (texture) {
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;
 

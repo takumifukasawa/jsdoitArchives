@@ -241,7 +241,7 @@ function tick(time) {
 //---------------------------------------------------
 
 var textureLoader = new THREE.TextureLoader();
-textureLoader.load('common/img/photo-1465205568425-23fdd3805e49.png', function (texture) {
+textureLoader.load('assets/img/photo-1416592525293-e65266465eb7.png', function (texture) {
     tex = texture;
     createParticles();
     requestAnimationFrame(tick);

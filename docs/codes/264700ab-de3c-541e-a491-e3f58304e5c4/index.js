@@ -108,7 +108,7 @@
     };
     
     var main = new Main({
-        src: "/jsdoitArchives/assets/img/photo-1471898988302-3d79dfaad25d.jpeg"
+        src: "/jsdoitArchives/assets/img/photo-1415904663467-dfdc16cae794.jpeg"
     });
     
 })(jQuery, window, window.document);

@@ -4,6 +4,18 @@ const IOUtils = require("./utils/IOUtils");
 const asyncUtils = require("./utils/asyncUtils");
 const constants = require("./constants");
 
+function copyFile() {
+  fs.copyFileSync(srcThumbnailPath, distThumbnailPath, (err) => {
+    if (err) {
+      console.error(err);
+      reject();
+      return;
+    }
+    console.log("copied.");
+    resolve();
+  });
+}
+
 async function main() {
   await IOUtils.getFilesInDirectory(constants.srcRootPath, "");
   const dirs = await IOUtils.getDirectories(constants.thumbnailsSrcRootPath);
@@ -21,17 +33,24 @@ async function main() {
           dir,
           "thumbnail.png"
         );
+
+        const srcOgpPath = path.join(
+          constants.thumbnailsSrcRootPath,
+          dir,
+          "ogp.png"
+        );
+        const distOgpPath = path.join(
+          constants.distRootPath,
+          "codes",
+          dir,
+          "ogp.png"
+        );
+
         console.log("------------------------");
         console.log(`copy: ${srcThumbnailPath} -> ${distThumbnailPath}`);
-        fs.copyFile(srcThumbnailPath, distThumbnailPath, (err) => {
-          if (err) {
-            console.error(err);
-            reject();
-            return;
-          }
-          console.log("copied.");
-          resolve();
-        });
+        fs.copyFileSync(srcThumbnailPath, distThumbnailPath);
+        fs.copyFileSync(srcOgpPath, distOgpPath);
+        resolve();
       });
     })
   );

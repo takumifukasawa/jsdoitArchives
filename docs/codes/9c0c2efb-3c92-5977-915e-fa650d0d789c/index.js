@@ -5,7 +5,7 @@
     var THROTTLE    = 50,
         WID         = window.innerWidth,
         HEI         = window.innerHeight,
-        IMG         = "/jsdoitArchives/assets/img/photo-1448960968772-b63b3f40dfc1.jpeg";
+        IMG         = "/jsdoitArchives/assets/img/photo-1474267119072-677dd7959e96.jpeg";
        
     
     var Rect = function(opt) {

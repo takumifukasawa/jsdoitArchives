@@ -1,3 +1,4 @@
+const { parse } = require("node-html-parser");
 const fs = require("fs");
 const path = require("path");
 const { v5: uuidv5 } = require("uuid");
@@ -5,6 +6,7 @@ const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const _ = require("lodash");
 const IOUtils = require("./utils/IOUtils");
+const resolveUrl = require("./utils/resolveUrl");
 const constants = require("./constants");
 
 const codesDistRootPath = path.join(constants.distRootPath, "codes");
@@ -222,6 +224,32 @@ function getThreejsNewCdn(version, path) {
   return `https://unpkg.com/three@0.${version}.0/${path}`;
 }
 
+function formatHtml(content, url) {
+  const root = parse(content);
+  const head = root.querySelector("head");
+  const title = root.querySelector("title").textContent;
+
+  const ogImage = path.join(url, "ogp.png");
+  let headText = head.toString();
+  headText += `
+<meta name="twitter:card" content="summary" />
+<meta property="og:url" content="${url}" />
+<meta property="og:title" content="${title}" />
+<meta property="og:image" content="${ogImage}" />
+`;
+  head.set_content(headText);
+  // head.set_content('<og id="test"></div>');
+
+  // `
+  // <meta property="og:url" content="http://bits.blogs.nytimes.com/2011/12/08/a-twitter-for-my-sister/" />
+  // <meta property="og:title" content="A Twitter for My Sister" />
+  // <meta property="og:description" content="${}" />
+  // <meta property="og:image" content="${}" />
+  // `
+
+  return root.toString();
+}
+
 /**
  *
  *
@@ -436,19 +464,25 @@ async function main() {
 
         // ファイルの拡張子に応じてcompile
         {
-          const [fileName, fileExt] = path.extname(file).split(".")[1];
+          // const [fileName, fileExt] = path.extname(file).split(".")[1];
+          const [fileName, fileExt] = path.basename(file).split(".");
 
-          // compile sass
-          if (fileExt === "scss") {
-            newContent = await compileScss(srcFilePath, newContent);
-            newFile = [fileName, "css"].join(".");
+          // html format html
+          if (fileExt === "html") {
+            newContent = formatHtml(newContent, resolveUrl.codeUrl(newDirName));
           }
 
-          // compile coffee script
-          if (fileExt === "coffee") {
-            newContent = await compileCoffee(newContent);
-            newFile = [fileName, "js"].join(".");
-          }
+          // // compile sass
+          // if (fileExt === "scss") {
+          //   newContent = await compileScss(srcFilePath, newContent);
+          //   newFile = [fileName, "css"].join(".");
+          // }
+
+          // // compile coffee script
+          // if (fileExt === "coffee") {
+          //   newContent = await compileCoffee(newContent);
+          //   newFile = [fileName, "js"].join(".");
+          // }
         }
 
         // 書き込み

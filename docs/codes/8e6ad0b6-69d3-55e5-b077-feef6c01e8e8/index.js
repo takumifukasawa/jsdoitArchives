@@ -20,13 +20,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = '/jsdoitArchives/assets/img/photo-1473167146081-90eecb675695.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/photo-1414502622871-b90b0bec7b1f.jpeg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = '/jsdoitArchives/assets/img/photo-1473167146081-90eecb675695.png';
+texImage.src = '/jsdoitArchives/assets/img/photo-1464468164664-850fcaf6be4a.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

@@ -26,12 +26,12 @@ function initSkybox() {
     sceneCube.add(cameraCube);
 
     var urls = [
-        '/jsdoitArchives/assets/img/photo-1465447142348-e9952c393450.jpeg',
-        '/jsdoitArchives/assets/img/PcLGXNjMTdiFVKTrElCl__DSC2245.jpg',
-        '/jsdoitArchives/assets/img/photo-1458365288895-9f58c5d8ff09.jpeg',
-        '/jsdoitArchives/assets/img/photo-1482784160316-6eb046863ece.jpeg',
-        '/jsdoitArchives/assets/img/JaI1BywIT5Or8Jfmci1E_zakopane.jpg',
-        '/jsdoitArchives/assets/img/photo-1456305951335-bb8134aeab8a.jpeg'
+        '/jsdoitArchives/assets/img/photo-1471070235261-d721818d0312.jpeg',
+        '/jsdoitArchives/assets/img/photo-1465420961937-e0eba4dda519.jpeg',
+        '/jsdoitArchives/assets/img/photo-1443527216320-7e744084f5a7.jpeg',
+        '/jsdoitArchives/assets/img/photo-1417870839255-a23faa90c6b0.jpeg',
+        '/jsdoitArchives/assets/img/photo-1425036458755-dc303a604201.jpeg',
+        '/jsdoitArchives/assets/img/photo-1448960968772-b63b3f40dfc1.jpeg'
     ];
 
     textureCube = THREE.ImageUtils.loadTextureCube(urls);
@@ -73,7 +73,7 @@ function createScene(geometry, materials) {
             },
              texture: {
                 type: 't',
-                value: THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1467810563316-b5476525c0f9.png')
+                value: THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/IKMsqwyaR6qN0kq48STw_annapurna.png')
             }
         }
     });
@@ -123,7 +123,7 @@ function initGround() {
 
     var groundMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: initTexture});
 
-    var groundTexture = THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1464468164664-850fcaf6be4a.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
+    var groundTexture = THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1474835409173-5dc81aae3faa.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
     groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
     groundTexture.repeat.set(25, 25);
     groundTexture.anisotropy = 6;

@@ -3,7 +3,7 @@ $(function() {
 
     "use strict";
 
-    const IMAGE_SRC = "/jsdoitArchives/assets/img/photo-1467810563316-b5476525c0f9.jpeg";
+    const IMAGE_SRC = "/jsdoitArchives/assets/img/photo-1455325528055-ad815afecebe.jpeg";
     
     /*
      * main

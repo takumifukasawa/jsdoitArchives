@@ -45,7 +45,7 @@
     };
         
     Main.prototype.makeMaterial = function() {         
-        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/default-thumbnail.png");
+        this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC-skyline-empire-1.png");
 
         this.material = new THREE.PointCloudMaterial({
             color: 0xFFFFFF,

@@ -1,8 +1,9 @@
 const puppeteer = require("puppeteer");
 const path = require("path");
+const constants = require("./constants");
+const wait = require("./utils/wait");
 const IOUtils = require("./utils/IOUtils");
 const asyncUtils = require("./utils/asyncUtils");
-const constants = require("./constants");
 
 const options = {
   headless: true,
@@ -27,29 +28,23 @@ async function capturePage(browser, url, distPath, delay = 100) {
   }
 }
 
-async function wait(ms) {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(ms);
-    }, ms);
-  });
-}
-
 async function main() {
   const browser = await puppeteer.launch(options);
   try {
-    await asyncUtils.execPromiseInSequence(
-      codeDirs.map((dir) => async () => {
+    await Promise.all(
+      // await asyncUtils.execPromiseInSequence(
+      codeDirs.map(async (dir, i) => {
         const captureUrl = `https://takumifukasawa.github.io/jsdoitArchives/codes/${dir}/`;
         const thumbnailDirPath = path.join(
           constants.thumbnailsSrcRootPath,
           dir
         );
         const thumbnailPath = path.join(thumbnailDirPath, "thumbnail.png");
-        console.log("----------------------------------");
-        console.log(`begin capture: ${captureUrl}`);
         await IOUtils.removeDir(thumbnailDirPath);
         await IOUtils.createDir(thumbnailDirPath);
+        await wait(1500 * i);
+        console.log("----------------------------------");
+        console.log(`begin capture: ${captureUrl}`);
         await capturePage(
           browser,
           `https://takumifukasawa.github.io/jsdoitArchives/codes/${dir}/`,
@@ -58,6 +53,7 @@ async function main() {
         );
         console.log(`captured: ${thumbnailPath}`);
       })
+      // );
     );
   } catch (e) {
     console.error(e);

@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format-codes": "node batches/format-codes.js",
+    "generate-thumbnails": "node batches/generate-thumbnails.js",
+    "copy-thumbnails": "node batches/copy-thumbnails.js",
+    "setup-thumbnails": "npm run generate-thumbnails && npm run copy-thumbnails",
+    "generate-index": "node batches/generate-index.js",
+    "refresh": "npm run format-codes && npm run setup-thumbnails && npm run generate-index"
   },
   "repository": {
     "type": "git",

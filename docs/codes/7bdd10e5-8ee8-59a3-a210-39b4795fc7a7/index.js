@@ -50,11 +50,11 @@ var update = function update() {
 
 // load alpha map
 var alphaMapLoader = new THREE.TextureLoader();
-alphaMapLoader.load('/jsdoitArchives/assets/img/unsplash_5263607dd1bfc_2.png', function (alphaMapTexture) {
+alphaMapLoader.load('/jsdoitArchives/assets/img/photo-1472190649224-495422e1b602.png', function (alphaMapTexture) {
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC skyline empire-1.jpg', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1469793032099-27d09c984b8b.jpeg', function (texture) {
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;
 

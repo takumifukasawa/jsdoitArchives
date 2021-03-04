@@ -41,8 +41,8 @@
         
     Main.prototype.makeMaterial = function() {         
         var texLoader = new THREE.TextureLoader();
-        this.texture = texLoader.load("/jsdoitArchives/assets/img/photo-1422393462206-207b0fbd8d6b.png");
-        //this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1473800447596-01729482b8eb.png");
+        this.texture = texLoader.load("/jsdoitArchives/assets/img/photo-1484639371805-2be12d69e7d5.png");
+        //this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/D9xlw7UxTBqQw5sLf8cJ_reef-insp-72.png");
 
         this.material = new THREE.PointsMaterial({
             color: 0xFFFFFF,

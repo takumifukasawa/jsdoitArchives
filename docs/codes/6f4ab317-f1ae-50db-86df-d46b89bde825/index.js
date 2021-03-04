@@ -37,7 +37,7 @@
             },
             texture: {
                 type: 'c',
-                value: THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1471733091092-73a03861dea7.png")
+                value: THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1462903004115-f8e27d6a3985.png")
             }
         };
         this.shaderMaterial = new THREE.ShaderMaterial({

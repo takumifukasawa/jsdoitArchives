@@ -244,7 +244,6 @@ async function formatHtml(content, dirName, url) {
         ? resolveUrl.imgAssetsPath("default-ogp.png")
         : path.join(url, "ogp.png");
       headText += `
-<meta name="twitter:card" content="summary" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${url}" />
 <meta property="og:title" content="${title}" />
@@ -252,6 +251,10 @@ async function formatHtml(content, dirName, url) {
 <meta property="og:image" content="${ogImage}" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="${title}" />
+<meta name="twitter:description" content="&nbsp;" />
+<meta name="twitter:image" content="${ogImage}" />
 `;
       head.set_content(headText);
       // head.set_content('<og id="test"></div>');

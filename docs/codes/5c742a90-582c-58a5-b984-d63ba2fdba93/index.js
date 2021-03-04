@@ -136,7 +136,7 @@
     
     var main = new Main({
         canvasID: "my-canvas",
-        src: "/jsdoitArchives/assets/img/photo-1440964829947-ca3277bd37f8.jpeg"
+        src: "/jsdoitArchives/assets/img/photo-1471110338536-858caa3dbe45.jpeg"
     });
     
 })(jQuery, window, window.document);

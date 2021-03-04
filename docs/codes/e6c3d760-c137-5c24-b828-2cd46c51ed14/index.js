@@ -20,8 +20,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/JaI1BywIT5Or8Jfmci1E_zakopane.png", "/jsdoitArchives/assets/img/photo-1449942120512-7a6f1ea6b0c4.png", "/jsdoitArchives/assets/img/photo-1469899324414-c72bfb4d4161.png", "/jsdoitArchives/assets/img/landscape.png", "/jsdoitArchives/assets/img/photo-1429371527702-1bfdc0eeea7d.png", "/jsdoitArchives/assets/img/photo-1466721591366-2d5fba72006d.png", "/jsdoitArchives/assets/img/photo-1462733441571-9312d0b53818.png"];
-            this.imageSrc = "/jsdoitArchives/assets/img/photo-1471539491521-29b5b92d0e47.png";
+            this.images = ["/jsdoitArchives/assets/img/photo-1422393462206-207b0fbd8d6b.png", "/jsdoitArchives/assets/img/photo-1437650128481-845e6e35bd75.png", "/jsdoitArchives/assets/img/photo-1469594292607-7bd90f8d3ba4.png", "/jsdoitArchives/assets/img/photo-1452800185063-6db5e12b8e2e.png", "/jsdoitArchives/assets/img/photo-1466278313810-9aca9abea861.png", "/jsdoitArchives/assets/img/rqZBrx1WRsCtkqGSVBK6_IMG_0063.png", "/jsdoitArchives/assets/img/IKMsqwyaR6qN0kq48STw_annapurna.png"];
+            this.imageSrc = "/jsdoitArchives/assets/img/URG2BbWQQ9SAcqLuTOLp_BP7A9947.png";
         }
 
         _createClass(Main, [{

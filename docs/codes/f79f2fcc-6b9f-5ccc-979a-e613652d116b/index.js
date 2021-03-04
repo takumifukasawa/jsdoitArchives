@@ -26,12 +26,12 @@ function initSkybox() {
     sceneCube.add(cameraCube);
 
     var urls = [
+        '/jsdoitArchives/assets/img/D9xlw7UxTBqQw5sLf8cJ_reef insp-72.jpg',
+        '/jsdoitArchives/assets/img/photo-1463123081488-789f998ac9c4.jpg',
+        '/jsdoitArchives/assets/img/unsplash_5263607dd1bfc_2.jpg',
+        '/jsdoitArchives/assets/img/photo-1464822759023-fed622ff2c3b.jpeg',
         '/jsdoitArchives/assets/img/photo-1458724338480-79bc7a8352e4.jpeg',
-        '/jsdoitArchives/assets/img/photo-1471733091092-73a03861dea7.jpeg',
-        '/jsdoitArchives/assets/img/photo-1478059425650-ca13d6d422f4.jpeg',
-        '/jsdoitArchives/assets/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.jpg',
-        '/jsdoitArchives/assets/img/photo-1417716226287-2f8cd2e80274.jpeg',
-        '/jsdoitArchives/assets/img/unsplash_524010c76b52a_1.jpeg'
+        '/jsdoitArchives/assets/img/photo-1433360405326-e50f909805b3.jpeg'
     ];
 
     textureCube = THREE.ImageUtils.loadTextureCube(urls);
@@ -73,7 +73,7 @@ function createScene(geometry, materials) {
             },
              texture: {
                 type: 't',
-                value: THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1472215001262-9605640fdcdf.png')
+                value: THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1428908728789-d2de25dbd4e2.png')
             }
         }
     });
@@ -123,7 +123,7 @@ function initGround() {
 
     var groundMaterial = new THREE.MeshPhongMaterial({color: 0xffffff, specular: 0x111111, map: initTexture});
 
-    var groundTexture = THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1453280339213-efb07f95531b.jpeg', undefined, function () { groundMaterial.map = groundTexture; });
+    var groundTexture = THREE.ImageUtils.loadTexture('/jsdoitArchives/assets/img/photo-1464054313797-e27fb58e90a9.jpg', undefined, function () { groundMaterial.map = groundTexture; });
     groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
     groundTexture.repeat.set(25, 25);
     groundTexture.anisotropy = 6;

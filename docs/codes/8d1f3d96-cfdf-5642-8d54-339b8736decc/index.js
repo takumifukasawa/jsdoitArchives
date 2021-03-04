@@ -20,7 +20,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1468476396571-4d6f2a427ee7.png", "/jsdoitArchives/assets/img/photo-1473865327424-e85f6d40d354.png", "/jsdoitArchives/assets/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.png", "/jsdoitArchives/assets/img/photo-1428999418909-363f8e091c50.png", "/jsdoitArchives/assets/img/photo-1475475690428-61534882b644.png", "/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC-skyline-empire-1.png", "/jsdoitArchives/assets/img/photo-1456305951335-bb8134aeab8a.png"];
+            this.images = ["/jsdoitArchives/assets/img/photo-1431492299426-2ea1ce429cc0.png", "/jsdoitArchives/assets/img/photo-1464822759023-fed622ff2c3b.png", "/jsdoitArchives/assets/img/photo-1451417379553-15d8e8f49cde.png", "/jsdoitArchives/assets/img/photo-1458724338480-79bc7a8352e4.png", "/jsdoitArchives/assets/img/photo-1464039397811-476f652a343b.png", "/jsdoitArchives/assets/img/photo-1473849512542-60ddc51e1c9f.png", "/jsdoitArchives/assets/img/photo-1471898988302-3d79dfaad25d.png"];
         }
 
         _createClass(Main, [{

@@ -300,44 +300,44 @@ async function formatHtml(content, dirName, url) {
   });
 }
 
-/**
- *
- *
- * @param {*} file
- * @param {*} content
- * @returns
- */
-async function compileScss(file, content) {
-  return new Promise((resolve, reject) => {
-    sass.render({ file }, (err, result) => {
-      if (err) {
-        reject(content);
-        return;
-      }
-      resolve(result);
-    });
-  });
-}
-
-/**
- *
- *
- * @param {*} file
- * @param {*} content
- * @returns
- */
-async function compileCoffee(content) {
-  return new Promise((resolve, reject) => {
-    const res = CoffeeScript.compile(newContent, {
-      transpile: { presets: ["@babel/env"] },
-    });
-    if (!res) {
-      reject(content);
-      return;
-    }
-    resolve(res);
-  });
-}
+// /**
+//  *
+//  *
+//  * @param {*} file
+//  * @param {*} content
+//  * @returns
+//  */
+// async function compileScss(file, content) {
+//   return new Promise((resolve, reject) => {
+//     sass.render({ file }, (err, result) => {
+//       if (err) {
+//         reject(content);
+//         return;
+//       }
+//       resolve(result);
+//     });
+//   });
+// }
+//
+// /**
+//  *
+//  *
+//  * @param {*} file
+//  * @param {*} content
+//  * @returns
+//  */
+// async function compileCoffee(content) {
+//   return new Promise((resolve, reject) => {
+//     const res = CoffeeScript.compile(newContent, {
+//       transpile: { presets: ["@babel/env"] },
+//     });
+//     if (!res) {
+//       reject(content);
+//       return;
+//     }
+//     resolve(res);
+//   });
+// }
 
 // /**
 //  *
@@ -367,7 +367,7 @@ async function compileCoffee(content) {
  * @param {*} content
  * @returns
  */
-function replaceImage(content, hashKey) {
+function replaceImage(content) {
   let tmpContent = content;
 
   const regex = /(http:\/\/jsrun\.it)?\/assets\/.*?\.(png|jpg|gif)/g;
@@ -408,7 +408,7 @@ function replaceImage(content, hashKey) {
  * @param {*} content
  * @returns
  */
-function replaceAudio(content, hashKey) {
+function replaceAudio(content) {
   let tmpContent = content;
 
   const regex = /https?:\/\/.*?.mp3/g;
@@ -418,7 +418,7 @@ function replaceAudio(content, hashKey) {
     return tmpContent;
   }
 
-  const audioAssetSampler = ringSampler(audioAssets, hashKey);
+  const audioAssetSampler = ringSampler(audioAssets, content);
 
   for (let i = 0; i < matched.length; i++) {
     const [url] = matched[i];
@@ -507,15 +507,15 @@ async function main() {
         }
 
         // replace image assets
-        newContent = replaceImage(newContent, newDirName);
+        newContent = replaceImage(newContent);
 
         // replace audio assets
-        newContent = replaceAudio(newContent, newDirName);
+        newContent = replaceAudio(newContent);
 
         // ファイルの拡張子に応じてcompile
         {
           // const [fileName, fileExt] = path.extname(file).split(".")[1];
-          const [fileName, fileExt] = path.basename(file).split(".");
+          const [, fileExt] = path.basename(file).split(".");
 
           // html format html
           if (fileExt === "html") {

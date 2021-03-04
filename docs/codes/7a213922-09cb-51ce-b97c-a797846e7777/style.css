@@ -8,7 +8,7 @@ body {
   font: 30px sans-serif; }
 
 .wrapper {
-  background-image: url(/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.jpg);
+  background-image: url(/jsdoitArchives/assets/img/photo-1471110338536-858caa3dbe45.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 465px;
@@ -23,7 +23,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  background-image: url("/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png");
+  background-image: url("/jsdoitArchives/assets/img/photo-1471110338536-858caa3dbe45.png");
   background-size: cover; }
   .btn:after {
     content: '';
@@ -33,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("/jsdoitArchives/assets/img/rqZBrx1WRsCtkqGSVBK6_IMG_0063.png");
+    background-image: url("/jsdoitArchives/assets/img/photo-1471455558438-c1e9d5854d85.png");
     background-size: cover;
     opacity: 0;
     pointer-events: none;

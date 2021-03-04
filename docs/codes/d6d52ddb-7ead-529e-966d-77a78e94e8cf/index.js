@@ -8,7 +8,7 @@
         SLICES = NUM,
         HALF_PI = Math.PI / 2,
         TWO_PI = Math.PI * 2,
-        IMG_SRC = "/jsdoitArchives/assets/img/photo-1473849512542-60ddc51e1c9f.jpeg";
+        IMG_SRC = "/jsdoitArchives/assets/img/photo-1473865327424-e85f6d40d354.jpeg";
      
     var Kaleidscope = function(opt) {
         this.opts = opt || {};

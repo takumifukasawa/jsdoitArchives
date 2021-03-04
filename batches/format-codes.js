@@ -377,9 +377,9 @@ function replaceImage(content, hashKey) {
     return tmpContent;
   }
 
-  const pngElemSampler = ringSampler(pngImages, hashKey);
-  const jpgElemSampler = ringSampler(jpgImages, hashKey);
-  const gifElemSampler = ringSampler(gifImages, hashKey);
+  const pngElemSampler = ringSampler(pngImages, content);
+  const jpgElemSampler = ringSampler(jpgImages, content);
+  const gifElemSampler = ringSampler(gifImages, content);
 
   for (let i = 0; i < matched.length; i++) {
     const [url, , ext] = matched[i];

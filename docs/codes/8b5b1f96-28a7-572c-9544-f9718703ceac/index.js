@@ -54,7 +54,7 @@ function updateVertices() {
 }
 
 var plane = new THREE.Mesh(planeGeometry, planeMaterial);
-textureLoader.load("/jsdoitArchives/assets/img/photo-1422651355218-53453822ebb8.jpg", function (texture) {
+textureLoader.load("/jsdoitArchives/assets/img/photo-1449942120512-7a6f1ea6b0c4.jpeg", function (texture) {
     planeMaterial.map = texture;
     planeMaterial.needsUpdate = true;
 });

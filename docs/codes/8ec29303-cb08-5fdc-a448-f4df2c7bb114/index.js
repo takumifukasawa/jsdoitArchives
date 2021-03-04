@@ -89,7 +89,7 @@
     };
 
     ImageParticle.prototype.createParticle = function() {
-        this.img.src = "/jsdoitArchives/assets/img/photo-1465447142348-e9952c393450.png";
+        this.img.src = "/jsdoitArchives/assets/img/photo-1416431168657-a6c4184348ab.png";
 
         var _self = this;
 

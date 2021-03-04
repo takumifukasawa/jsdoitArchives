@@ -7,10 +7,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 var img = new Image();
-img.src = "/jsdoitArchives/assets/img/photo-1460400408855-36abd76648b9.jpg";
+img.src = "/jsdoitArchives/assets/img/photo-1468476396571-4d6f2a427ee7.jpeg";
 
 // キャッシュを強制的に使わせない -> onloadが必ず呼ばれる
-//img.src = "/jsdoitArchives/assets/img/photo-1460499593944-39e14f96a8c6.jpg" + "?" + new Date().getTime();
+//img.src = "/jsdoitArchives/assets/img/photo-1468476775582-6bede20f356f.jpeg" + "?" + new Date().getTime();
 
 var draw = function(image) {
     // 2.naturalWidth, naturalHeightプロパティがある

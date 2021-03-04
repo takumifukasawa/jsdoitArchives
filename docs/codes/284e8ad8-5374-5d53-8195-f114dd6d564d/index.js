@@ -80,7 +80,7 @@
     };
        
     var opts = {
-        src: "/jsdoitArchives/assets/img/photo-1451417379553-15d8e8f49cde.jpeg"
+        src: "/jsdoitArchives/assets/img/photo-1468476396571-4d6f2a427ee7.jpeg"
     };
     var rotateImage = new RotateImage(opts);
     

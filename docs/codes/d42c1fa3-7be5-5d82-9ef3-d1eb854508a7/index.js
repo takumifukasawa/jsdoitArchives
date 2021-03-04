@@ -23,7 +23,7 @@ var bgImage = new Image();
 bgImage.onload = function () {
     start();
 };
-bgImage.src = '/jsdoitArchives/assets/img/photo-1437422061949-f6efbde0a471.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/PcLGXNjMTdiFVKTrElCl__DSC2245.jpg';
 
 function onWindowResize() {
     wrapper.style.width = '';

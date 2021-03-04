@@ -11,7 +11,7 @@ var currentPointIndex = 0;
 
 var radius = 800;
 var deltaArc = 36;
-var imageSrc = '/jsdoitArchives/assets/img/photo-1473865327424-e85f6d40d354.png';
+var imageSrc = '/jsdoitArchives/assets/img/photo-1464621922360-27f3bf0eca75.png';
 
 var tubeWidth = 8;
 var linesNum = 30;

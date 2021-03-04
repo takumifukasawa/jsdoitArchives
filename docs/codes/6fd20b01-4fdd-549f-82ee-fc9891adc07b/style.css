@@ -39,7 +39,7 @@ body {
   .img:before {
     content: "";
     display: block;
-    background-image: url("/jsdoitArchives/assets/img/photo-1471851455650-fae7acd5364f.jpeg");
+    background-image: url("/jsdoitArchives/assets/img/blue-bird.jpeg");
     width: 120px;
     height: 92px;
     background-repeat: no-repeat;

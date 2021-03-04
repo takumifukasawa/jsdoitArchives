@@ -14,7 +14,7 @@ canvas.height = window.innerHeight;
 var ctx = canvas.getContext("2d");
 
 var image = new Image();
-image.src = "/jsdoitArchives/assets/img/photo-1466721591366-2d5fba72006d.jpg";
+image.src = "/jsdoitArchives/assets/img/photo-1463780324318-d1a8ddc05a11.jpeg";
 
 var start = function() {
     var startTime = Date.now();

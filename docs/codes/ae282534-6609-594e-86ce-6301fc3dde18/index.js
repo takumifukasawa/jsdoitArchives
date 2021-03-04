@@ -79,12 +79,12 @@ var changePosition = function changePosition() {
 var plane = undefined;
 var alphaMapTextureLoader = new THREE.TextureLoader();
 
-alphaMapTextureLoader.load('/jsdoitArchives/assets/img/photo-1463946377180-f5185c2783e5.png', function (texture) {
+alphaMapTextureLoader.load('/jsdoitArchives/assets/img/IKMsqwyaR6qN0kq48STw_annapurna.png', function (texture) {
     var alphaMap = texture;
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/photo-1462733441571-9312d0b53818.jpg', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1473167146081-90eecb675695.jpeg', function (texture) {
         sprite = texture;
         sprite.needsUpdate = true;
 

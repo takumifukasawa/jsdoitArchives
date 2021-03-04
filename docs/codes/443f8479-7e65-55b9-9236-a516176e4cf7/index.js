@@ -19,13 +19,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = '/jsdoitArchives/assets/img/photo-1429547584745-d8bec594c82e.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/photo-1474835409173-5dc81aae3faa.jpeg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = '/jsdoitArchives/assets/img/alejandroescamilla-somethingpretty.png';
+texImage.src = '/jsdoitArchives/assets/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

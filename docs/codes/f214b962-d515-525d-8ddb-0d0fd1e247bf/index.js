@@ -19,8 +19,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1455325528055-ad815afecebe.png", "/jsdoitArchives/assets/img/photo-1432117068802-b224427256a5.png", "/jsdoitArchives/assets/img/whtXWmDGTTuddi1ncK5v_IMG_0097.png", "/jsdoitArchives/assets/img/photo-1470104240373-bc1812eddc9f.png", "/jsdoitArchives/assets/img/photo-1472215001262-9605640fdcdf.png", "/jsdoitArchives/assets/img/photo-1470165511815-34e78ff7a111.png", "/jsdoitArchives/assets/img/photo-1437422061949-f6efbde0a471.png"];
-            this.imageSrc = "/jsdoitArchives/assets/img/PcLGXNjMTdiFVKTrElCl__DSC2245.png";
+            this.images = ["/jsdoitArchives/assets/img/photo-1427501482951-3da9b725be23.png", "/jsdoitArchives/assets/img/829d24cf.png", "/jsdoitArchives/assets/img/photo-1476862921040-227a643bf014.png", "/jsdoitArchives/assets/img/photo-1475452488328-eba178d37e85.png", "/jsdoitArchives/assets/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.png", "/jsdoitArchives/assets/img/photo-1484639371805-2be12d69e7d5.png", "/jsdoitArchives/assets/img/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.png"];
+            this.imageSrc = "/jsdoitArchives/assets/img/photo-1475598322381-f1b499717dda.png";
         }
 
         _createClass(Main, [{

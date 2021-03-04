@@ -31,7 +31,7 @@ var img = document.createElement("img");
 img.onload = function () {
     init();
 };
-img.src = "/jsdoitArchives/assets/img/photo-1468476775582-6bede20f356f.jpeg";
+img.src = "/jsdoitArchives/assets/img/photo-1458724338480-79bc7a8352e4.jpeg";
 
 //---------------------------------------------------
 // box

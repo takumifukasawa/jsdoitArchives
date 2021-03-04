@@ -1,7 +1,9 @@
 const path = require("path");
 
+const absoluteUrl = "https://takumifukasawa.github.io/jsdoitArchives";
+
 exports.codeUrl = (codeName) => {
-  return `https://takumifukasawa.github.io/jsdoitArchives/codes/${codeName}/`;
+  return `${absoluteUrl}/codes/${codeName}/`;
 };
 
 exports.imgAssetsPath = (src) => {
@@ -9,10 +11,7 @@ exports.imgAssetsPath = (src) => {
 };
 
 exports.imgAssetsAbsolutePath = (src) => {
-  return path.join(
-    "https://takumifukasawa.github.io/jsdoitArchives/assets/img",
-    src
-  );
+  return `${absoluteUrl}/assets/img/${src}`;
 };
 
 exports.videoAssetsPath = (src) => {

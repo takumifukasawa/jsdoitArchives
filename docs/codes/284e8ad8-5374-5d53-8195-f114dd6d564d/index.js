@@ -80,7 +80,7 @@
     };
        
     var opts = {
-        src: "/jsdoitArchives/assets/img/photo-1468476775582-6bede20f356f.jpg"
+        src: "/jsdoitArchives/assets/img/D9xlw7UxTBqQw5sLf8cJ_reef insp-72.jpg"
     };
     var rotateImage = new RotateImage(opts);
     

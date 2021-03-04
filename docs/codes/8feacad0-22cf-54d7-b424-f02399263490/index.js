@@ -52,7 +52,7 @@ var graphics = new PIXI.Graphics();
 graphics.beginFill(0xffffff, .05);
 graphics.drawRect(0, 0, 465, 465);
 
-var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1428999418909-363f8e091c50.jpeg');
+var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1422651355218-53453822ebb8.jpg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);
@@ -60,8 +60,8 @@ bgTexture.baseTexture.addListener('loaded', function () {
 
     //app.stage.addChild(graphics);
 
-    //let paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1437422061949-f6efbde0a471.jpeg');
-    var paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/wdXqHcTwSTmLuKOGz92L_Landscape.jpg');
+    //let paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1467521335787-2f0fc0f0e9a0.jpeg');
+    var paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1478281437946-5179e2443a10.jpeg');
 
     paperMapTexture.baseTexture.addListener('loaded', function () {
         var vertexShader = document.querySelector('#vertex-shader');

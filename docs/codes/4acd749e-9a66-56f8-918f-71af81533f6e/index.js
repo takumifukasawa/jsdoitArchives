@@ -11,7 +11,7 @@ var height = 0;
 
 var beforeTime = 0;
 
-var imageSrc = '/jsdoitArchives/assets/img/photo-1448960968772-b63b3f40dfc1.png';
+var imageSrc = '/jsdoitArchives/assets/img/photo-1414521203994-7efc0bc37d65.png';
 
 var vertexShader = document.querySelector('#vertexShader').textContent;
 var fragmentShader = document.querySelector('#fragmentShader').textContent;

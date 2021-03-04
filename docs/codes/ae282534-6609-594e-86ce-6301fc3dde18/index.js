@@ -79,12 +79,12 @@ var changePosition = function changePosition() {
 var plane = undefined;
 var alphaMapTextureLoader = new THREE.TextureLoader();
 
-alphaMapTextureLoader.load('/jsdoitArchives/assets/img/photo-1468224970805-92d72c619545.png', function (texture) {
+alphaMapTextureLoader.load('/jsdoitArchives/assets/img/landscape.png', function (texture) {
     var alphaMap = texture;
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC skyline empire-1.jpg', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1468476775582-6bede20f356f.jpeg', function (texture) {
         sprite = texture;
         sprite.needsUpdate = true;
 

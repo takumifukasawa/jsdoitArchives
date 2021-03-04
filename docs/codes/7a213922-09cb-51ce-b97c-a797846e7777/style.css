@@ -8,7 +8,7 @@ body {
   font: 30px sans-serif; }
 
 .wrapper {
-  background-image: url(/jsdoitArchives/assets/img/photo-1416934625760-d56f5e79f6fe.jpeg);
+  background-image: url(/jsdoitArchives/assets/img/photo-1468476396571-4d6f2a427ee7.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 465px;
@@ -23,7 +23,7 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  background-image: url("/jsdoitArchives/assets/img/aOcWqRTfQ12uwr3wWevA_14401305508_804b300054_o.png");
+  background-image: url("/jsdoitArchives/assets/img/photo-1428999418909-363f8e091c50.png");
   background-size: cover; }
   .btn:after {
     content: '';
@@ -33,7 +33,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url("/jsdoitArchives/assets/img/photo-1460500063983-994d4c27756c.png");
+    background-image: url("/jsdoitArchives/assets/img/photo-1458724338480-79bc7a8352e4.png");
     background-size: cover;
     opacity: 0;
     pointer-events: none;

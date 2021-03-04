@@ -1,8 +1,8 @@
 // forked from mayumii's "2016-06-09 1st" http://jsdo.it/mayumii/ev8L
 var queue = new createjs.LoadQueue(true);
 var manifest = [
-        {"id":"image01", "src":"/jsdoitArchives/assets/img/photo-1455325528055-ad815afecebe.jpeg"},
-        {"id":"image02", "src":"/jsdoitArchives/assets/img/photo-1458724338480-79bc7a8352e4.jpeg"},
+        {"id":"image01", "src":"/jsdoitArchives/assets/img/photo-1476862921040-227a643bf014.jpeg"},
+        {"id":"image02", "src":"/jsdoitArchives/assets/img/photo-1465158753229-aa725fff85a1.jpeg"},
 ];
     
 queue.addEventListener('fileload', fileLoad);

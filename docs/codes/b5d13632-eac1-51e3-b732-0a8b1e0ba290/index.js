@@ -52,11 +52,11 @@ var update = function update() {
 
 // load alpha map
 var alphaMapLoader = new THREE.TextureLoader();
-alphaMapLoader.load('/jsdoitArchives/assets/img/pink-sky.png', function (alphaMapTexture) {
+alphaMapLoader.load('/jsdoitArchives/assets/img/ZLSw0SXxThSrkXRIiCdT_DSC_0345.png', function (alphaMapTexture) {
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/photo-1454789591675-556c287e39e2.jpeg', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1482154905330-d746d3a7ca4a.jpeg', function (texture) {
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;
 

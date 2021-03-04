@@ -19,8 +19,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             };
             this.start = Date.now();
             this.beginTime = +new Date();
-            this.images = ["/jsdoitArchives/assets/img/photo-1482784160316-6eb046863ece.png", "/jsdoitArchives/assets/img/photo-1428189923803-e9801d464d76.png", "/jsdoitArchives/assets/img/photo-1462524500090-89443873e2b4.png", "/jsdoitArchives/assets/img/photo-1433208406127-d9e1a0a1f1aa.png", "/jsdoitArchives/assets/img/photo-1434139240289-56c519f77cb0.png", "/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.png", "/jsdoitArchives/assets/img/photo-1429734160945-4f85244d6a5a.png"];
-            this.imageSrc = "/jsdoitArchives/assets/img/photo-1471733091092-73a03861dea7.png";
+            this.images = ["/jsdoitArchives/assets/img/photo-1440847899694-90043f91c7f9.png", "/jsdoitArchives/assets/img/whtXWmDGTTuddi1ncK5v_IMG_0097.png", "/jsdoitArchives/assets/img/photo-1454779132693-e5cd0a216ed3.png", "/jsdoitArchives/assets/img/photo-1428908684367-2fe456a630bb.png", "/jsdoitArchives/assets/img/rqZBrx1WRsCtkqGSVBK6_IMG_0063.png", "/jsdoitArchives/assets/img/photo-1456305951335-bb8134aeab8a.png", "/jsdoitArchives/assets/img/photo-1434139240289-56c519f77cb0.png"];
+            this.imageSrc = "/jsdoitArchives/assets/img/photo-1428908728789-d2de25dbd4e2.png";
         }
 
         _createClass(Main, [{

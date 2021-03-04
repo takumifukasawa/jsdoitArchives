@@ -27,7 +27,7 @@ renderer.setPixelRatio(ratio);
 container.appendChild(renderer.domElement);
 
 var textureLoader = new THREE.TextureLoader();
-textureLoader.load("/jsdoitArchives/assets/img/photo-1466220666686-90bdba318c9a.png", function (tex) {
+textureLoader.load("/jsdoitArchives/assets/img/MIbCzcvxQdahamZSNQ26_12082014-IMG_3526.png", function (tex) {
     console.log(tex);
     init(tex);
 });

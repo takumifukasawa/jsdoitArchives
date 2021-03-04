@@ -40,7 +40,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/jsdoitArchives/assets/img/photo-1439123068749-20f4035bd7ed.jpg', function (texture) {
+loader.load('/jsdoitArchives/assets/img/IPEivX6xSBaiYOukY88V_DSC06462_tonemapped.jpg', function (texture) {
     init(texture);
 });
 

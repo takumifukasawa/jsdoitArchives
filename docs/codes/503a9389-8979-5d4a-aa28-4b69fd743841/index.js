@@ -9,7 +9,7 @@ function load() {
         videoDom.addEventListener('canplaythrough', function () {
             resolve();
         });
-        videoDom.src = 'http://jsrun.it/assets/q/s/K/0/qsK08';
+        videoDom.src = '/jsdoitArchives/assets/video/sample-1.mp4';
     });
 }
 

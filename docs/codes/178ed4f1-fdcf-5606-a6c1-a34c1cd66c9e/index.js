@@ -34,16 +34,16 @@ var reflection = PIXI.RenderTexture.create(width, height);
 
 var outputSprite = new PIXI.Sprite();
 
-var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1429734160945-4f85244d6a5a.jpeg');
+var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/wdXqHcTwSTmLuKOGz92L_Landscape.jpg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);
     container.addChild(bgSprite);
 
-    var paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1483728642387-6c3bdd6c93e5.jpeg');
+    var paperMapTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1474302694023-9711af8045cf.jpeg');
 
     paperMapTexture.baseTexture.addListener('loaded', function () {
-        var displacementTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1470921269614-2937493e6a2c.jpeg');
+        var displacementTexture = new PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1469053913977-1d2f009670d9.jpeg');
 
         displacementTexture.baseTexture.addListener('loaded', function () {
             var vertexShader = document.querySelector('#vertex-shader');

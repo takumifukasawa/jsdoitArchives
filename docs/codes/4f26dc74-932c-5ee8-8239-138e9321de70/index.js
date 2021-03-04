@@ -138,7 +138,7 @@ scene.add(light);
 // load texture
 for (var i = 0; i < TILE_NUM; i++) {
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/photo-1455325528055-ad815afecebe.jpeg?+Date.now()', function (texture) {
+    textureLoader.load('/jsdoitArchives/assets/img/photo-1452800185063-6db5e12b8e2e.jpeg?+Date.now()', function (texture) {
 
         texture.needsUpdate = true;
 

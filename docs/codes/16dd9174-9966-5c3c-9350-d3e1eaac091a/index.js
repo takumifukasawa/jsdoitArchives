@@ -47,7 +47,7 @@ light.position.set(0, 0, 1).normalize();
 scene.add(light);
 
 var loader = new THREE.TextureLoader();
-loader.load('/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC skyline empire-1.jpg', function (texture) {
+loader.load('/jsdoitArchives/assets/img/photo-1434139240289-56c519f77cb0.jpeg', function (texture) {
     init(texture);
 });
 

@@ -41,8 +41,8 @@
         
     Main.prototype.makeMaterial = function() {         
         var texLoader = new THREE.TextureLoader();
-        this.texture = texLoader.load("/jsdoitArchives/assets/img/default-thumbnail.png");
-        //this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1460500063983-994d4c27756c.png");
+        this.texture = texLoader.load("/jsdoitArchives/assets/img/PlEgx5PSoiiJOmnE2izQ_NYC-skyline-empire-1.png");
+        //this.texture = THREE.ImageUtils.loadTexture("/jsdoitArchives/assets/img/photo-1417870839255-a23faa90c6b0.png");
 
         this.material = new THREE.PointsMaterial({
             color: 0xFFFFFF,

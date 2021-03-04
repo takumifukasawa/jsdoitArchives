@@ -43,8 +43,8 @@ scene.add(light);
 
 var maskLoader = new THREE.TextureLoader();
 var loader = new THREE.TextureLoader();
-maskLoader.load('/jsdoitArchives/assets/img/photo-1415045384817-2f9cf7f2ed79.png', function (maskTexture) {
-    loader.load('/jsdoitArchives/assets/img/photo-1432836431433-925d3cc0a5cd.jpeg', function (texture) {
+maskLoader.load('/jsdoitArchives/assets/img/landscape.png', function (maskTexture) {
+    loader.load('/jsdoitArchives/assets/img/photo-1471539491521-29b5b92d0e47.jpeg', function (texture) {
         init(texture, maskTexture);
         onWindowResize();
         window.addEventListener('resize', onWindowResize);

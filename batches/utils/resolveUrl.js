@@ -7,3 +7,7 @@ exports.codeUrl = (codeName) => {
 exports.imgAssetsPath = (src) => {
   return path.join("/jsdoitArchives/assets/img/", src);
 };
+
+exports.videoAssetsPath = (src) => {
+  return path.join("/jsdoitArchives/assets/video/", src);
+};

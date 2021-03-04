@@ -51,7 +51,7 @@ var graphics = new PIXI.Graphics();
 graphics.beginFill(0xffffff, .05);
 graphics.drawRect(0, 0, 465, 465);
 
-var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/whtXWmDGTTuddi1ncK5v_IMG_0097.jpg');
+var bgTexture = PIXI.Texture.fromImage('/jsdoitArchives/assets/img/photo-1472190649224-495422e1b602.jpeg');
 
 bgTexture.baseTexture.addListener('loaded', function () {
     bgSprite = new PIXI.Sprite(bgTexture);

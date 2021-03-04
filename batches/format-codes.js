@@ -13,6 +13,7 @@ const codesDistRootPath = path.join(constants.distRootPath, "codes");
 
 const distImgAssetsPath = path.join(constants.distRootPath, "assets/img");
 const distAudioAssetsPath = path.join(constants.distRootPath, "assets/audio");
+// const distVideoAssetsPath = path.join(constants.distRootPath, "assets/video");
 
 const jpgImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, [
   "jpg",
@@ -23,11 +24,15 @@ const gifImages = IOUtils.recursiveFindByExtensions(distImgAssetsPath, ["gif"]);
 const audioAssets = IOUtils.recursiveFindByExtensions(distAudioAssetsPath, [
   "mp3",
 ]);
+// const videoAssets = IOUtils.recursiveFindByExtensions(distVideoAssetsPath, [
+//   "mp4",
+// ]);
 
 const pngElemSampler = randomSampler(pngImages);
 const jpgElemSampler = randomSampler(jpgImages);
-const audioAssetSampler = randomSampler(audioAssets);
 const gifElemSampler = randomSampler(gifImages);
+const audioAssetSampler = randomSampler(audioAssets);
+// const videoAssetSampler = randomSampler(videoAssets);
 
 const threejsCdnRegexs = [
   /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
@@ -38,25 +43,25 @@ const threejsCdnRegexs = [
 const linkReplacers = [
   {
     regexs: [/http:\/\/jsdo\.it\/lib\/jquery-([0-9|\.]*?)\/js/],
-    buildCdn: (version) => `https://code.jquery.com/jquery-${version}.min.js`,
+    buildLink: (version) => `https://code.jquery.com/jquery-${version}.min.js`,
   },
   {
     regexs: [/http:\/\/jsdo\.it\/lib\/jquery\.easing\.([0-9|\.]*?)\/js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/${version}/jquery.easing.min.js`,
   },
   {
     regexs: [/http:\/\/jsdo\.it\/lib\/createjs-([0-9|\.])*?\/js/],
-    buildCdn: () => "https://code.createjs.com/1.0.0/createjs.min.js",
+    buildLink: () => "https://code.createjs.com/1.0.0/createjs.min.js",
   },
   {
     regexs: [/http:\/\/jsdo\.it\/lib\/underscore-([0-9|\.]*?)\/js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       `https://cdnjs.cloudflare.com/ajax/libs/underscore.js/${version}/underscore-min.js`,
   },
   {
     regexs: [/http:\/\/jsrun\.it\/assets\/6\/X\/t\/N\/6XtNc/],
-    buildCdn: () =>
+    buildLink: () =>
       "https://cdn.jsdelivr.net/npm/stats-js@1.0.1/build/stats.min.js",
   },
   {
@@ -64,15 +69,19 @@ const linkReplacers = [
       /http:\/\/jsrun\.it\/assets\/M\/7\/M\/h\/M7Mhi/,
       /http:\/\/jsrun\.it\/assets\/E\/D\/W\/u\/EDWut/,
     ],
-    buildCdn: () =>
+    buildLink: () =>
       getThreejsNewCdn(88, "examples/js/controls/OrbitControls.js"),
+  },
+  {
+    regexs: [/http:\/\/jsrun\.it\/assets\/q\/s\/K\/0\/qsK08/],
+    buildLink: () => resolveUrl.videoAssetsPath("sample-1.mp4"),
   },
 ];
 
 const threeModulesReplacers = [
   {
     regexs: threejsCdnRegexs,
-    buildCdn: (version) => {
+    buildLink: (version) => {
       if (version < 78) {
         return getThreejsNewCdn(version, "three.min.js");
       }
@@ -83,19 +92,19 @@ const threeModulesReplacers = [
     regexs: [
       /http:\/\/mrdoob\.github\.io\/three\.js\/examples\/js\/renderers\/CanvasRenderer\.js/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/renderers/CanvasRenderer.js"),
   },
   {
     regexs: [
       /http:\/\/mrdoob\.github\.io\/three\.js\/examples\/js\/renderers\/Projector\.js/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/renderers/Projector.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/libs\/tween\.min\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/libs/tween.min.js"),
   },
   {
@@ -104,72 +113,73 @@ const threeModulesReplacers = [
       /http:\/\/n0bisuke\.github\.io\/practice_threejs\/OrbitControls\.js/,
       /http:\/\/jsrun\.it\/assets\/W\/k\/Z\/U\/WkZUc/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/controls/OrbitControls.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/Detector\.js/],
-    buildCdn: (version) => getThreejsNewCdn(version, "examples/js/Detector.js"),
+    buildLink: (version) =>
+      getThreejsNewCdn(version, "examples/js/Detector.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/libs\/stats\.min\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/libs/stats.min.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/utils\/FontUtils\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/utils/FontUtils.js"),
   },
   {
     regexs: [
       /http:\/\/threejs\.org\/examples\/js\/geometries\/TextGeometry\.js/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/geometries/TextGeometry.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/libs\/stats\.min\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/libs/stats.min.js"),
   },
   {
     regexs: [
       /http:\/\/threejs\.org\/examples\/fonts\/gentilis_regular\.typeface\.js/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/fonts/gentilis_regular.typeface.js"),
   },
   {
     regexs: [/http:\/\/threejs.org\/examples\/obj\/walt\/WaltHead\.obj/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/obj/walt/WaltHead.obj"),
   },
   {
     regexs: [/http:\/\/threejs.org\/examples\/obj\/walt\/WaltHead\.mtl/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/obj/walt/WaltHead.mtl"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/loaders\/OBJLoader\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/loaders/OBJLoader.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/loaders\/MTLLoader\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/loaders/MTLLoader.js"),
   },
   {
     regexs: [/http:\/\/threejs\.org\/examples\/js\/loaders\/GLTFLoader\.js/],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/loaders/GLTFLoader.js"),
   },
   {
     regexs: [
       /http:\/\/threejs.org\/examples\/js\/geometries\/TextGeometry\.js/,
     ],
-    buildCdn: (version) =>
+    buildLink: (version) =>
       getThreejsNewCdn(version, "examples/js/geometries/TextGeometry.js"),
   },
 ];
@@ -456,7 +466,7 @@ async function main() {
               if (matched) {
                 // console.log(matched[0]);
                 const [regexCdn] = matched;
-                const newCdn = replacer.buildCdn(threejsVersion);
+                const newCdn = replacer.buildLink(threejsVersion);
                 newContent = newContent.replace(regexCdn, newCdn);
               }
             }
@@ -471,7 +481,7 @@ async function main() {
             if (matched) {
               // console.log(matched[0]);
               const [regexCdn, version] = matched;
-              const newCdn = replacer.buildCdn(version);
+              const newCdn = replacer.buildLink(version);
               newContent = newContent.replace(regexCdn, newCdn);
             }
           }

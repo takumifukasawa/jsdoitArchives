@@ -28,7 +28,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
 
-var src = "/jsdoitArchives/assets/img/IKMsqwyaR6qN0kq48STw_annapurna.png";
+var src = "/jsdoitArchives/assets/img/photo-1451479456262-b94f205059be.png";
 
 var textureLoader = new THREE.TextureLoader();
 textureLoader.load(src, function (tex) {

@@ -72,7 +72,7 @@ alphaMapLoader.load('/jsdoitArchives/assets/img/photo-1474821792123-fa67193d18a5
 
     // load texture
     var textureLoader = new THREE.TextureLoader();
-    textureLoader.load('/jsdoitArchives/assets/img/photo-1416431168657-a6c4184348ab.jpeg', function (sprite) {
+    textureLoader.load('/jsdoitArchives/assets/img/L2NfDz5SOm7Gbf755qpw_DSCF0490.jpg', function (sprite) {
         texture = sprite;
         texture.needsUpdate = true;
         texture.minFilter = THREE.LinearFilter;

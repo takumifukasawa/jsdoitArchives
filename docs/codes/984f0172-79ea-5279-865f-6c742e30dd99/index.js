@@ -168,6 +168,6 @@ function createParticle() {
         particleFlg = true;
     };
 
-    img.src = "/jsdoitArchives/assets/img/photo-1461295025362-7547f63dbaea.png";
+    img.src = "/jsdoitArchives/assets/img/photo-1431576901776-e539bd916ba2.png";
     
 }

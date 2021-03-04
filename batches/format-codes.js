@@ -6,8 +6,9 @@ const sass = require("sass");
 const CoffeeScript = require("coffeescript");
 const _ = require("lodash");
 const IOUtils = require("./utils/IOUtils");
-const resolveUrl = require("./utils/resolveUrl");
+const resolvePath = require("./utils/resolvePath");
 const constants = require("./constants");
+const hashCode = require("./utils/hashCode");
 
 const codesDistRootPath = path.join(constants.distRootPath, "codes");
 
@@ -28,11 +29,29 @@ const audioAssets = IOUtils.recursiveFindByExtensions(distAudioAssetsPath, [
 //   "mp4",
 // ]);
 
-const pngElemSampler = randomSampler(pngImages);
-const jpgElemSampler = randomSampler(jpgImages);
-const gifElemSampler = randomSampler(gifImages);
-const audioAssetSampler = randomSampler(audioAssets);
+const ringSampler = (arr, str) => {
+  const hash = hashCode(str);
+  let index = Math.abs(hash) % arr.length;
+  const pick = () => {
+    const elem = arr[index];
+    index++;
+    if (index >= arr.length) {
+      index = 0;
+    }
+    return elem;
+  };
+  return {
+    pick,
+  };
+};
+
+// const pngElemSampler = randomSampler(pngImages);
+// const jpgElemSampler = randomSampler(jpgImages);
+// const gifElemSampler = randomSampler(gifImages);
+// const audioAssetSampler = randomSampler(audioAssets);
 // const videoAssetSampler = randomSampler(videoAssets);
+
+// const audioAssetSampler = ringSampler(audioAssets);
 
 const threejsCdnRegexs = [
   /http:\/\/jsdo\.it\/lib\/three\.js-r([0-9]*?)\/js/,
@@ -74,7 +93,7 @@ const linkReplacers = [
   },
   {
     regexs: [/http:\/\/jsrun\.it\/assets\/q\/s\/K\/0\/qsK08/],
-    buildLink: () => resolveUrl.videoAssetsPath("sample-1.mp4"),
+    buildLink: () => resolvePath.videoAssetsPath("sample-1.mp4"),
   },
 ];
 
@@ -251,8 +270,8 @@ async function formatHtml(content, dirName, url) {
 
     fs.access(ogpPath, fs.F_OK, (err) => {
       const ogImage = err
-        ? resolveUrl.imgAssetsAbsolutePath("default-ogp.png")
-        : path.join(url, "ogp.png");
+        ? resolvePath.imgAssetsAbsolutePath("default-ogp.png")
+        : resolvePath.fromCodeAbsolutePath(dirName, "ogp.png");
       headText += `
 <meta property="og:type" content="website" />
 <meta property="og:url" content="${url}" />
@@ -320,27 +339,27 @@ async function compileCoffee(content) {
   });
 }
 
-/**
- *
- *
- * @param {*} pool
- * @returns
- */
-function randomSampler(pool) {
-  let tmpPool = [];
-  const pick = () => {
-    if (tmpPool.length < 1) {
-      tmpPool = _.cloneDeep(pool);
-    }
-    const elem = _.sample(tmpPool);
-    const index = tmpPool.indexOf(elem);
-    tmpPool.slice(index, 1);
-    return elem;
-  };
-  return {
-    pick,
-  };
-}
+// /**
+//  *
+//  *
+//  * @param {*} pool
+//  * @returns
+//  */
+// function randomSampler(pool) {
+//   let tmpPool = [];
+//   const pick = () => {
+//     if (tmpPool.length < 1) {
+//       tmpPool = _.cloneDeep(pool);
+//     }
+//     const elem = _.sample(tmpPool);
+//     const index = tmpPool.indexOf(elem);
+//     tmpPool.slice(index, 1);
+//     return elem;
+//   };
+//   return {
+//     pick,
+//   };
+// }
 
 /**
  *
@@ -348,7 +367,7 @@ function randomSampler(pool) {
  * @param {*} content
  * @returns
  */
-function replaceImage(content) {
+function replaceImage(content, hashKey) {
   let tmpContent = content;
 
   const regex = /(http:\/\/jsrun\.it)?\/assets\/.*?\.(png|jpg|gif)/g;
@@ -357,6 +376,10 @@ function replaceImage(content) {
   if (matched.length < 1) {
     return tmpContent;
   }
+
+  const pngElemSampler = ringSampler(pngImages, hashKey);
+  const jpgElemSampler = ringSampler(jpgImages, hashKey);
+  const gifElemSampler = ringSampler(gifImages, hashKey);
 
   for (let i = 0; i < matched.length; i++) {
     const [url, , ext] = matched[i];
@@ -373,7 +396,7 @@ function replaceImage(content) {
         break;
     }
     const basename = path.basename(img);
-    tmpContent = tmpContent.replace(url, resolveUrl.imgAssetsPath(basename));
+    tmpContent = tmpContent.replace(url, resolvePath.imgAssetsPath(basename));
   }
 
   return tmpContent;
@@ -385,7 +408,7 @@ function replaceImage(content) {
  * @param {*} content
  * @returns
  */
-function replaceAudio(content) {
+function replaceAudio(content, hashKey) {
   let tmpContent = content;
 
   const regex = /https?:\/\/.*?.mp3/g;
@@ -395,13 +418,15 @@ function replaceAudio(content) {
     return tmpContent;
   }
 
+  const audioAssetSampler = ringSampler(audioAssets, hashKey);
+
   for (let i = 0; i < matched.length; i++) {
     const [url] = matched[i];
 
     const asset = audioAssetSampler.pick();
 
     const basename = path.basename(asset);
-    tmpContent = tmpContent.replace(url, resolveUrl.audioAssetsPath(basename));
+    tmpContent = tmpContent.replace(url, resolvePath.audioAssetsPath(basename));
   }
 
   return tmpContent;
@@ -482,10 +507,10 @@ async function main() {
         }
 
         // replace image assets
-        newContent = replaceImage(newContent);
+        newContent = replaceImage(newContent, newDirName);
 
         // replace audio assets
-        newContent = replaceAudio(newContent);
+        newContent = replaceAudio(newContent, newDirName);
 
         // ファイルの拡張子に応じてcompile
         {
@@ -497,7 +522,7 @@ async function main() {
             newContent = await formatHtml(
               newContent,
               newDirName,
-              resolveUrl.codeUrl(newDirName)
+              resolvePath.codeAbsolutePath(newDirName)
             );
           }
 

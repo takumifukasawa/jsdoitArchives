@@ -32,7 +32,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             this.beforeTimeDomain = 0;
             this.beforeUpdateLoop = 0;
 
-            this.imgSrc = "/jsdoitArchives/assets/img/iZkDQMqeQlqhoCIywoFv_6005485056_c8622e0824_o.jpg";
+            this.imgSrc = "/jsdoitArchives/assets/img/photo-1442589031151-61d5645469d7.jpeg";
         }
 
         _createClass(Main, [{

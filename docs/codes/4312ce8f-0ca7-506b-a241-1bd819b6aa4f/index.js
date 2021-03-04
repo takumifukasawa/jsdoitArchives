@@ -47,7 +47,7 @@ var img = document.createElement("img");
 img.onload = function () {
     init();
 };
-img.src = "/jsdoitArchives/assets/img/photo-1416431168657-a6c4184348ab.jpeg";
+img.src = "/jsdoitArchives/assets/img/alejandroescamilla somethingpretty.jpg";
 
 //---------------------------------------------------
 // box

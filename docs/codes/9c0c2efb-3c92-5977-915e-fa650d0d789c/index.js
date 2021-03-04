@@ -5,7 +5,7 @@
     var THROTTLE    = 50,
         WID         = window.innerWidth,
         HEI         = window.innerHeight,
-        IMG         = "/jsdoitArchives/assets/img/photo-1481999666238-d4473c49f4fb.jpeg";
+        IMG         = "/jsdoitArchives/assets/img/blue-bird.jpeg";
        
     
     var Rect = function(opt) {

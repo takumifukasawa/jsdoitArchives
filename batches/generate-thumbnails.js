@@ -3,7 +3,7 @@ const path = require("path");
 const constants = require("./constants");
 const wait = require("./utils/wait");
 const IOUtils = require("./utils/IOUtils");
-const resolveUrl = require("./utils/resolveUrl");
+const resolvePath = require("./utils/resolvePath";;
 const asyncUtils = require("./utils/asyncUtils");
 
 const options = {
@@ -35,7 +35,7 @@ async function main() {
     await Promise.all(
       // await asyncUtils.execPromiseInSequence(
       codeDirs.map(async (dir, i) => {
-        const captureUrl = resolveUrl.codeUrl(dir);
+        const captureUrl = resolvePath.codeAbsolutePath(dir)
         const thumbnailDirPath = path.join(
           constants.thumbnailsSrcRootPath,
           dir

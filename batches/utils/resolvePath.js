@@ -1,12 +1,18 @@
 const path = require("path");
 
-const absolutePath = "https://takumifukasawa.github.io/jsdoitArchives";
-const absoluteAssetsPath = `${absolutePath}/assets/`;
+const absolutePath = "https://takumifukasawa.github.io/jsdoitArchives/";
+const absoluteAssetsPath = `${absolutePath}assets/`;
 const basePath = "/jsdoitArchives/";
 const assetsPath = path.join(basePath, "assets/");
 
-exports.codeUrl = (codeName) => {
-  return `${absolutePath}/codes/${codeName}/`;
+const codeAbsolutePath = (codeName) => {
+  return `${absolutePath}codes/${codeName}/`;
+};
+
+exports.codeAbsolutePath = codeAbsolutePath;
+
+exports.fromCodeAbsolutePath = (codeName, src) => {
+  return `${codeAbsolutePath(codeName)}${src}`;
 };
 
 exports.imgAssetsPath = (src) => {

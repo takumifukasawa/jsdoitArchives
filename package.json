@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate-codes": "node batches/format-codes.js && node batches/copy-thumbnails.js && node batches/generate-index.js"
+    "generate": "node batches/format-codes.js && node batches/copy-thumbnails.js && node batches/generate-index.js"
   },
   "repository": {
     "type": "git",

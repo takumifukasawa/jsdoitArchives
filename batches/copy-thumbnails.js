@@ -4,18 +4,6 @@ const IOUtils = require("./utils/IOUtils");
 const asyncUtils = require("./utils/asyncUtils");
 const constants = require("./constants");
 
-function copyFile() {
-  fs.copyFileSync(srcThumbnailPath, distThumbnailPath, (err) => {
-    if (err) {
-      console.error(err);
-      reject();
-      return;
-    }
-    console.log("copied.");
-    resolve();
-  });
-}
-
 async function main() {
   await IOUtils.getFilesInDirectory(constants.srcRootPath, "");
   const dirs = await IOUtils.getDirectories(constants.thumbnailsSrcRootPath);

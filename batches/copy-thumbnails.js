@@ -49,6 +49,7 @@ async function main() {
         console.log("------------------------");
         console.log(`copy: ${srcThumbnailPath} -> ${distThumbnailPath}`);
         fs.copyFileSync(srcThumbnailPath, distThumbnailPath);
+        console.log(`copy: ${srcOgpPath} -> ${distOgpPath}`);
         fs.copyFileSync(srcOgpPath, distOgpPath);
         resolve();
       });

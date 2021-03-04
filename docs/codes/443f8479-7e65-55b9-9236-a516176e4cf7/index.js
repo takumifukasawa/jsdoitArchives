@@ -19,13 +19,13 @@ var canvasFilter = document.querySelector('.canvas-filter');
 var ctxFilter = canvasFilter.getContext('2d');
 
 var bgImage = new Image();
-bgImage.src = '/jsdoitArchives/assets/img/photo-1429371527702-1bfdc0eeea7d.jpeg';
+bgImage.src = '/jsdoitArchives/assets/img/photo-1457369804613-52c61a468e7d.jpg';
 
 var texImage = new Image();
 texImage.onload = function () {
     start();
 };
-texImage.src = '/jsdoitArchives/assets/img/JaI1BywIT5Or8Jfmci1E_zakopane.png';
+texImage.src = '/jsdoitArchives/assets/img/photo-1465420961937-e0eba4dda519.png';
 
 function onWindowResize() {
     wrapper.style.width = '';

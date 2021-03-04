@@ -251,7 +251,7 @@ async function formatHtml(content, dirName, url) {
 
     fs.access(ogpPath, fs.F_OK, (err) => {
       const ogImage = err
-        ? resolveUrl.imgAssetsPath("default-ogp.png")
+        ? resolveUrl.imgAssetsAbsolutePath("default-ogp.png")
         : path.join(url, "ogp.png");
       headText += `
 <meta property="og:type" content="website" />

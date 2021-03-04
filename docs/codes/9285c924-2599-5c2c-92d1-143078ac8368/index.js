@@ -3,7 +3,7 @@ $(function() {
 
     "use strict";
 
-    const IMAGE_SRC = "/jsdoitArchives/assets/img/photo-1433190152045-5a94184895da.jpeg";
+    const IMAGE_SRC = "/jsdoitArchives/assets/img/qBUS7gZyT56yoqGcdnyX_airlines.jpg";
     
     /*
      * main

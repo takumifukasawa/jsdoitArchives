@@ -33,7 +33,7 @@
         this.container.appendChild(this.renderer.domElement);
         
         var texLoader = new THREE.TextureLoader();
-        var tex = texLoader.load("/jsdoitArchives/assets/img/photo-1448960968772-b63b3f40dfc1.png");
+        var tex = texLoader.load("/jsdoitArchives/assets/img/photo-1464468164664-850fcaf6be4a.png");
 
         
         this.shaderMaterial = new THREE.ShaderMaterial({
